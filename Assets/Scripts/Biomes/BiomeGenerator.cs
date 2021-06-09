@@ -14,13 +14,19 @@ public class BiomeGenerator : MonoBehaviour
     [Tooltip("Generation altitude")]
     public float generationAltitude = 0f;
 
+    public float xBiomeSize = 100f;
+    public float zBiomeSize = 100f;
+
+    [Header("Assets")]
+    public BiomeObject[] biomeObjects;
+
 
     void Start ()
     {
         this.ReadCSV();
     }
 
-    void ReadCSV ()//string[] args)
+    void ReadCSV ()
     {
         using (var reader = new StreamReader (Constants.settingsPathRelative))
         {
@@ -47,10 +53,26 @@ public class BiomeGenerator : MonoBehaviour
 
                 listA.Add(values[0]);
                 listB.Add(values[1]);
+
+                // Store CSV as a list of biomes
             }
         }
     }
+
+    void GenerateBiomes ()
+    {
+        // Will all be placed in world (NOT as children of BiomeGenerator), with an offset of this.transform.position
+    }
     
+}
+
+
+[System.Serializable]
+public struct BiomeObject
+{
+    public string name;
+    public int layerId;
+    public GameObject gameObject;
 }
 
 
