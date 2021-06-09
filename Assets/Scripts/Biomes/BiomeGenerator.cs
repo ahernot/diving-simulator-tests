@@ -62,10 +62,12 @@ public class BiomeGenerator : MonoBehaviour
     void GenerateBiomes ()
     {
         // Will all be placed in world (NOT as children of BiomeGenerator), with an offset of this.transform.position
+        // Will create objects named assetName + id
+
+        // Generate biome visualisation panes in the Biome-0-0 parent object etc.
     }
     
 }
-
 
 [System.Serializable]
 public struct BiomeObject
@@ -73,8 +75,6 @@ public struct BiomeObject
     public string name;
     public int layerId;
     public GameObject gameObject;
+    public Material material;
+    public bool addMeshCollider;
 }
-
-
-
-
