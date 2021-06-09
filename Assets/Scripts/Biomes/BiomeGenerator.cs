@@ -12,6 +12,9 @@ using UnityEngine;
 using System.IO;
 
 // TODO: change biome asset naming (use incrementing numbers)
+// TODO: one file per biome, and then lay biomes out on grid?
+// TODO: add biome material, mesh
+// TODO: make biomes permanent, instead of during runtime only
 
 static class Constants
 {
@@ -28,11 +31,15 @@ public class BiomeGenerator : MonoBehaviour
     public int xNbBiomes = 4;
     public int zNbBiomes = 4;
 
+    [Space(30)]
+
     // Lazy coordinates range for calling all biomes
     public int xBiomeMin = 0;
     public int xBiomeMax = 3;
     public int zBiomeMin = 0;
     public int zBiomeMax = 3;
+
+    [Space(30)]
 
     public float xBiomeSize = 250f;
     public float zBiomeSize = 250f;
@@ -53,14 +60,17 @@ public class BiomeGenerator : MonoBehaviour
 
     public void Generate ()
     {
-        // Initialise biomes array
-        this.biomes = new Biome[xNbBiomes, zNbBiomes];
+        // Generate biomes array
+        this.GenerateBiomeArray();
 
         // Generate assets dictionary
         this.GenerateAssetDictionary();
         
         // Read CSV
         this.ReadCSV();
+
+        // Build biomes
+        this.BuildBiomes();
     }
 
     void GenerateAssetDictionary ()
@@ -75,17 +85,36 @@ public class BiomeGenerator : MonoBehaviour
         }
     }
 
+    void GenerateBiomeArray ()
+    {
+        // Initialise biomes array
+        this.biomes = new Biome[xNbBiomes, zNbBiomes];
+
+        // Fill biomes array
+        for (int xBiomeId = this.xBiomeMin; xBiomeId <= this.xBiomeMax; xBiomeId ++)
+        {
+            for (int zBiomeId = this.zBiomeMin; zBiomeId <= this.zBiomeMax; zBiomeId ++)
+            {
+                Debug.Log("generating" + xBiomeId.ToString() + "_" + zBiomeId.ToString());
+                this.biomes [xBiomeId, zBiomeId] = new Biome();
+            }
+        }
+    }
+
     void ReadCSV ()
     {
         using (var reader = new StreamReader (Constants.settingsPathRelative))
         {
             
-            int lineId = 0;
+            int lineId = -1;
             while (!reader.EndOfStream)
             {
+                // Increment lineId
+                lineId ++;
+
                 // Read line
                 var line = reader.ReadLine();
-                if (lineId == 0) { continue; }
+                if (lineId <= 0) { continue; }
 
                 // Split line
                 var values = line.Split (Constants.CSVSeparator);
@@ -94,17 +123,17 @@ public class BiomeGenerator : MonoBehaviour
                 int   xBiomeId          = int.Parse   (values[0]);
                 int   zBiomeId          = int.Parse   (values[1]);
                 string assetName        =              values[2];
-                int   layer             = int.Parse   (values[3]);
-                float xPositionRelative = float.Parse (values[4]);
-                float yPositionRelative = float.Parse (values[5]);
-                float zPositionRelative = float.Parse (values[6]);
-                float xRotation         = float.Parse (values[7]);
-                float yRotation         = float.Parse (values[8]);
-                float zRotation         = float.Parse (values[9]);
-                float xScale            = float.Parse (values[10]);
-                float yScale            = float.Parse (values[11]);
-                float zScale            = float.Parse (values[12]);
+                float xPositionRelative = float.Parse (values[3]);
+                float yPositionRelative = float.Parse (values[4]);
+                float zPositionRelative = float.Parse (values[5]);
+                float xRotation         = float.Parse (values[6]);
+                float yRotation         = float.Parse (values[7]);
+                float zRotation         = float.Parse (values[8]);
+                float xScale            = float.Parse (values[9]);
+                float yScale            = float.Parse (values[10]);
+                float zScale            = float.Parse (values[11]);
 
+                // Format data
                 Vector3 positionRelative = new Vector3 (xPositionRelative, yPositionRelative, zPositionRelative);
                 Vector3 rotation = new Vector3 (xRotation, yRotation, zRotation);
                 Vector3 scale = new Vector3 (xScale, yScale, zScale);
@@ -113,10 +142,8 @@ public class BiomeGenerator : MonoBehaviour
                 BiomeElement biomeElement = new BiomeElement (assetName, positionRelative, rotation, scale);
 
                 // Add to corresponding biome
-                this.biomes [xBiomeId, zBiomeId] .biomeElements .Add(biomeElement);
-
-                // Increment lineId
-                lineId ++;
+                Debug.Log("adding_" + xBiomeId.ToString() + "_" + zBiomeId.ToString());
+                this.biomes [xBiomeId, zBiomeId].biomeElements .Add(biomeElement);
             }
         }
     }
@@ -129,13 +156,14 @@ public class BiomeGenerator : MonoBehaviour
         // Generate biome visualisation panes in the Biome-0-0 parent object etc.
 
         // Generate biomeWrapper GameObject
-        GameObject biomeWrapper = new GameObject();
-        biomeWrapper.name = "Biome Wrapper";
+        GameObject biomeWrapper = this.gameObject; //new GameObject();
+        //biomeWrapper.name = "Biome Wrapper";
 
         for (int xBiomeId = this.xBiomeMin; xBiomeId < this.xBiomeMax; xBiomeId ++)
         {
             for (int zBiomeId = this.zBiomeMin; zBiomeId < this.zBiomeMax; zBiomeId ++)
             {
+
                 // Generate biome GameObject
                 GameObject biome = new GameObject();
                 biome.name = "Biome" + "_" + xBiomeId.ToString() + "_" + zBiomeId.ToString();
@@ -147,6 +175,8 @@ public class BiomeGenerator : MonoBehaviour
                 // Generate biome elements
                 for (int elementId = 0; elementId < biomeElements.Count; elementId ++)
                 {
+                    Debug.Log("Adding an element");
+
                     // Get elementSettings struct instance
                     BiomeElement biomeElement = biomeElements [elementId];
 
@@ -154,23 +184,22 @@ public class BiomeGenerator : MonoBehaviour
                     Asset asset = this.assetDictionary [biomeElement.name];
 
                     // Generate biomeAsset GameObject
-                    GameObject biomeElementObject = asset.gameObject .Instantiate();
+                    GameObject biomeElementObject = GameObject.Instantiate (asset.gameObject);// .Instantiate();
                     biomeElementObject.name = biomeElement.name + "_" + elementId.ToString();
                     biomeElementObject .transform.parent = biome.transform;
 
                     // Set biomeAsset's parameters
                     biomeElementObject.transform.position = biomeElement.positionRelative;
                     biomeElementObject.transform.rotation = Quaternion.Euler (biomeElement.rotation);
-                    biomeElementObject.transform.scale = biomeElement.scale;
+                    biomeElementObject.transform.localScale = biomeElement.scale;
 
                     // Apply material
                     //asset.material
                 }
 
-                // move biome
-                //
-
-                
+                // Move biome
+                biome .transform.position = new Vector3 (this.xBiomeSize * xBiomeId, this.generationAltitude, this.zBiomeSize * zBiomeId);
+   
             }
         }
     }   
@@ -186,7 +215,6 @@ public struct Asset
     public Material material;
     public bool addMeshCollider;
 }
-
 
 // Biome element (system)
 public struct BiomeElement
@@ -206,7 +234,12 @@ public struct BiomeElement
 }
 
 // Biome
-public struct Biome
+public class Biome
 {
     public List<BiomeElement> biomeElements;
+
+    public Biome ()
+    {
+        this.biomeElements = new List<BiomeElement>();
+    }
 }
