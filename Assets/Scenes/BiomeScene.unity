@@ -333,8 +333,8 @@ MonoBehaviour:
   xBiomeMax: 3
   zBiomeMin: 0
   zBiomeMax: 3
-  xBiomeSize: 250
-  zBiomeSize: 250
+  xBiomeSize: 10
+  zBiomeSize: 10
   assets:
   - name: Cube
     layerId: 0
