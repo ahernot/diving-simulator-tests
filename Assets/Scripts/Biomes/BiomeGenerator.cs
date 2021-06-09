@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.0
+ BiomeGenerator v1.0
 */
 
 using System.Collections;
