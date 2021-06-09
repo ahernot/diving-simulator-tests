@@ -1,7 +1,15 @@
-﻿using System.Collections;
+﻿/*
+ Copyright Anatole Hernot, 2021
+ All rights reserved
+
+ FishMovement v1.0
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+
 
 static class Constants
 {
@@ -9,55 +17,88 @@ static class Constants
     public const char CSVSeparator = ',';
 }
 
+
 public class BiomeGenerator : MonoBehaviour
 {
     [Tooltip("Generation altitude")]
     public float generationAltitude = 0f;
 
-    public float xBiomeSize = 100f;
-    public float zBiomeSize = 100f;
+    public int xNbBiomes = 4;
+    public int zNbBiomes = 4;
+
+    public float xBiomeSize = 250f;
+    public float zBiomeSize = 250f;
 
     [Header("Assets")]
-    public BiomeObject[] biomeObjects;
+    public Asset[] assets;
+    Dictionary<string, Asset> assetDictionary;
+
+    // Array of biomes
+    Biome[,] biomes;
+
 
 
     void Start ()
     {
+        // Initialise biomes array
+        this.biomes = new Biome[xNbBiomes, zNbBiomes];
+        
         this.ReadCSV();
     }
+
+
+    void GenerateAssetDictionary ()
+    {
+        // Initialise dictionary
+        this.assetDictionary = new Dictionary<string, Asset>();
+
+        // Fill dictionary
+        for (int i = 0; i < this.assets.Length; i ++)
+        {
+            this.assetDictionary [this.assets[i].name] = this.assets[i];
+        }
+    }
+
 
     void ReadCSV ()
     {
         using (var reader = new StreamReader (Constants.settingsPathRelative))
         {
-            List<string> listA = new List<string>();
-            List<string> listB = new List<string>();
-
             while (!reader.EndOfStream)
             {
+                // Read line
                 var line = reader.ReadLine();
                 var values = line.Split (Constants.CSVSeparator);
 
-                string lineString = "";
-                for (int i = 0; i < values.Length; i ++)
-                {
-                    lineString += values[i];
+                // Unpack line
+                int   xBiomeId          = int.Parse   (values[0]);
+                int   zBiomeId          = int.Parse   (values[1]);
+                string assetName        =              values[2];
+                int   layer             = int.Parse   (values[3]);
+                float xPositionRelative = float.Parse (values[4]);
+                float yPositionRelative = float.Parse (values[5]);
+                float zPositionRelative = float.Parse (values[6]);
+                float xRotation         = float.Parse (values[7]);
+                float yRotation         = float.Parse (values[8]);
+                float zRotation         = float.Parse (values[9]);
+                float xScale            = float.Parse (values[10]);
+                float yScale            = float.Parse (values[11]);
+                float zScale            = float.Parse (values[12]);
 
-                    if (i + 1 != values.Length)
-                    {
-                        lineString += " | ";
-                    }   
-                }
+                Vector3 positionRelative = new Vector3 (xPositionRelative, yPositionRelative, zPositionRelative);
+                Vector3 rotation = new Vector3 (xRotation, yRotation, zRotation);
+                Vector3 scale = new Vector3 (xScale, yScale, zScale);
 
-                Debug.Log(lineString);
+                // Create BiomeElement
+                BiomeElement biomeElement = new BiomeElement(assetName, positionRelative, rotation, scale);
 
-                listA.Add(values[0]);
-                listB.Add(values[1]);
+                // Add to corresponding biome
+                this.biomes [xBiomeId, zBiomeId] .biomeElements .Add(biomeElement);
 
-                // Store CSV as a list of biomes
             }
         }
     }
+
 
     void GenerateBiomes ()
     {
@@ -65,16 +106,41 @@ public class BiomeGenerator : MonoBehaviour
         // Will create objects named assetName + id
 
         // Generate biome visualisation panes in the Biome-0-0 parent object etc.
-    }
-    
+    }   
 }
 
+
 [System.Serializable]
-public struct BiomeObject
+public struct Asset
 {
     public string name;
     public int layerId;
     public GameObject gameObject;
     public Material material;
     public bool addMeshCollider;
+}
+
+
+// Biome element (system)
+public struct BiomeElement
+{
+    public string name;
+    public Vector3 positionRelative;
+    public Vector3 rotation;
+    public Vector3 scale;
+
+    public BiomeElement (string name, Vector3 positionRelative, Vector3 rotation, Vector3 scale)
+    {
+        this.name = name;
+        this.positionRelative = positionRelative;
+        this.rotation = rotation;
+        this.scale = scale;
+    }
+}
+
+// Biome
+[System.Serializable]
+public struct Biome
+{
+    public List<BiomeElement> biomeElements;
 }
