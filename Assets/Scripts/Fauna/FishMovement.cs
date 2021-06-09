@@ -1,5 +1,6 @@
 ﻿/*
  Copyright Anatole Hernot, 2021
+ Licensed to CRC Mines ParisTech
  All rights reserved
 
  FishMovement v1.2
