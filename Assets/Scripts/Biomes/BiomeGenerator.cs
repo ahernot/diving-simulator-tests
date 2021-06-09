@@ -145,23 +145,32 @@ public class BiomeGenerator : MonoBehaviour
                 List<BiomeElement> biomeElements = this.biomes[xBiomeId, zBiomeId] .biomeElements;
 
                 // Generate biome elements
-                for (int elementId = 0; elementId < biomeElements.Length; elementId ++)
+                for (int elementId = 0; elementId < biomeElements.Count; elementId ++)
                 {
                     // Get elementSettings struct instance
-                    BiomeElement elementSettings = biomeElements [elementId];
+                    BiomeElement biomeElement = biomeElements [elementId];
+
+                    // Get asset
+                    Asset asset = this.assetDictionary [biomeElement.name];
 
                     // Generate biomeAsset GameObject
-                    GameObject biomeAsset = this.assetDictionary [elementSettings.name] .Instantiate();
-                    biomeAsset.name = elementSettings.name + "_" + elementId.ToString();
-                    biomeAsset .transform.parent = biome.transform;
+                    GameObject biomeElementObject = asset.gameObject .Instantiate();
+                    biomeElementObject.name = biomeElement.name + "_" + elementId.ToString();
+                    biomeElementObject .transform.parent = biome.transform;
 
                     // Set biomeAsset's parameters
-                    biomeAsset.transform.position = elementSettings.positionRelative;
-                    biomeAsset.transform.rotation = Quaternion.Euler (elementSettings.rotation);
-                    biomeAsset.transform.scale = elementSettings.scale;
+                    biomeElementObject.transform.position = biomeElement.positionRelative;
+                    biomeElementObject.transform.rotation = Quaternion.Euler (biomeElement.rotation);
+                    biomeElementObject.transform.scale = biomeElement.scale;
 
                     // Apply material
+                    //asset.material
                 }
+
+                // move biome
+                //
+
+                
             }
         }
     }   
