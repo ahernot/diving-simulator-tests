@@ -1,5 +1,5 @@
 ﻿/*
- Copyright CRC Mines ParisTech, 2021
+ Copyright Anatole Hernot, 2021
  All rights reserved
 
  FishMovement v1.1
@@ -9,6 +9,8 @@
 // TODO: cone of headings, with random direction chosen (to restrict angle)
 // TODO: adjust speed setting to be the only setting available >> this.heading normalized, * this.speed
 // TODO: increase répulsion aux parois, decrease répulsion en haut de l'eau
+// TODO: add offset for rocks
+// TODO: work with forces&accelerations instead of speeds
 
 using System.Collections;
 using System.Collections.Generic;
