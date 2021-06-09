@@ -1,5 +1,6 @@
 ﻿/*
  Copyright Anatole Hernot, 2021
+ Licensed to CRC Mines ParisTech
  All rights reserved
 
  FishMovement v1.0
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+// TODO: change biome asset naming (use incrementing numbers)
 
 static class Constants
 {
@@ -26,6 +28,12 @@ public class BiomeGenerator : MonoBehaviour
     public int xNbBiomes = 4;
     public int zNbBiomes = 4;
 
+    // Lazy coordinates range for calling all biomes
+    public int xBiomeMin = 0;
+    public int xBiomeMax = 3;
+    public int zBiomeMin = 0;
+    public int zBiomeMax = 3;
+
     public float xBiomeSize = 250f;
     public float zBiomeSize = 250f;
 
@@ -37,11 +45,11 @@ public class BiomeGenerator : MonoBehaviour
     Biome[,] biomes;
 
 
-
     void Start ()
     {
         this.Generate();
     }
+
 
     public void Generate ()
     {
@@ -102,7 +110,7 @@ public class BiomeGenerator : MonoBehaviour
                 Vector3 scale = new Vector3 (xScale, yScale, zScale);
 
                 // Create BiomeElement
-                BiomeElement biomeElement = new BiomeElement(assetName, positionRelative, rotation, scale);
+                BiomeElement biomeElement = new BiomeElement (assetName, positionRelative, rotation, scale);
 
                 // Add to corresponding biome
                 this.biomes [xBiomeId, zBiomeId] .biomeElements .Add(biomeElement);
@@ -113,13 +121,49 @@ public class BiomeGenerator : MonoBehaviour
         }
     }
 
-
     void BuildBiomes ()
     {
         // Will all be placed in world (NOT as children of BiomeGenerator), with an offset of this.transform.position
         // Will create objects named assetName + id
 
         // Generate biome visualisation panes in the Biome-0-0 parent object etc.
+
+        // Generate biomeWrapper GameObject
+        GameObject biomeWrapper = new GameObject();
+        biomeWrapper.name = "Biome Wrapper";
+
+        for (int xBiomeId = this.xBiomeMin; xBiomeId < this.xBiomeMax; xBiomeId ++)
+        {
+            for (int zBiomeId = this.zBiomeMin; zBiomeId < this.zBiomeMax; zBiomeId ++)
+            {
+                // Generate biome GameObject
+                GameObject biome = new GameObject();
+                biome.name = "Biome" + "_" + xBiomeId.ToString() + "_" + zBiomeId.ToString();
+                biome .transform.parent = biomeWrapper.transform;
+
+                // Get biome elements list
+                List<BiomeElement> biomeElements = this.biomes[xBiomeId, zBiomeId] .biomeElements;
+
+                // Generate biome elements
+                for (int elementId = 0; elementId < biomeElements.Length; elementId ++)
+                {
+                    // Get elementSettings struct instance
+                    BiomeElement elementSettings = biomeElements [elementId];
+
+                    // Generate biomeAsset GameObject
+                    GameObject biomeAsset = this.assetDictionary [elementSettings.name] .Instantiate();
+                    biomeAsset.name = elementSettings.name + "_" + elementId.ToString();
+                    biomeAsset .transform.parent = biome.transform;
+
+                    // Set biomeAsset's parameters
+                    biomeAsset.transform.position = elementSettings.positionRelative;
+                    biomeAsset.transform.rotation = Quaternion.Euler (elementSettings.rotation);
+                    biomeAsset.transform.scale = elementSettings.scale;
+
+                    // Apply material
+                }
+            }
+        }
     }   
 }
 
@@ -153,7 +197,6 @@ public struct BiomeElement
 }
 
 // Biome
-[System.Serializable]
 public struct Biome
 {
     public List<BiomeElement> biomeElements;
