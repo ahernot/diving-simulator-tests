@@ -233,6 +233,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2478fbe699c4b5396e747f346cf87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generationAltitude: 0
+  xNbBiomes: 4
+  zNbBiomes: 4
+  xBiomeSize: 250
+  zBiomeSize: 250
+  assets: []
 --- !u!4 &992512803
 Transform:
   m_ObjectHideFlags: 0
