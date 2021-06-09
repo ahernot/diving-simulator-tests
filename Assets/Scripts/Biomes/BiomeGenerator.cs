@@ -40,12 +40,20 @@ public class BiomeGenerator : MonoBehaviour
 
     void Start ()
     {
-        // Initialise biomes array
-        this.biomes = new Biome[xNbBiomes, zNbBiomes];
-        
-        this.ReadCSV();
+        this.Generate();
     }
 
+    public void Generate ()
+    {
+        // Initialise biomes array
+        this.biomes = new Biome[xNbBiomes, zNbBiomes];
+
+        // Generate assets dictionary
+        this.GenerateAssetDictionary();
+        
+        // Read CSV
+        this.ReadCSV();
+    }
 
     void GenerateAssetDictionary ()
     {
@@ -59,15 +67,19 @@ public class BiomeGenerator : MonoBehaviour
         }
     }
 
-
     void ReadCSV ()
     {
         using (var reader = new StreamReader (Constants.settingsPathRelative))
         {
+            
+            int lineId = 0;
             while (!reader.EndOfStream)
             {
                 // Read line
                 var line = reader.ReadLine();
+                if (lineId == 0) { continue; }
+
+                // Split line
                 var values = line.Split (Constants.CSVSeparator);
 
                 // Unpack line
@@ -95,12 +107,14 @@ public class BiomeGenerator : MonoBehaviour
                 // Add to corresponding biome
                 this.biomes [xBiomeId, zBiomeId] .biomeElements .Add(biomeElement);
 
+                // Increment lineId
+                lineId ++;
             }
         }
     }
 
 
-    void GenerateBiomes ()
+    void BuildBiomes ()
     {
         // Will all be placed in world (NOT as children of BiomeGenerator), with an offset of this.transform.position
         // Will create objects named assetName + id
