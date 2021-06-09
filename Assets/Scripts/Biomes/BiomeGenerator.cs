@@ -32,7 +32,18 @@ public class BiomeGenerator : MonoBehaviour
                 var line = reader.ReadLine();
                 var values = line.Split (Constants.CSVSeparator);
 
-                Debug.Log(values);
+                string lineString = "";
+                for (int i = 0; i < values.Length; i ++)
+                {
+                    lineString += values[i];
+
+                    if (i + 1 != values.Length)
+                    {
+                        lineString += " | ";
+                    }   
+                }
+
+                Debug.Log(lineString);
 
                 listA.Add(values[0]);
                 listB.Add(values[1]);
