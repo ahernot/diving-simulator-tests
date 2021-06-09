@@ -2,19 +2,23 @@
  Copyright Anatole Hernot, 2021
  All rights reserved
 
- FishMovement v1.1
+ FishMovement v1.2
 */
 
 // TODO: new random movement frequency selector
-// TODO: cone of headings, with random direction chosen (to restrict angle)
+// TODO: cone of headings, with random direction chosen (to restrict angle) –> Gaussian probability, with backwards still possible but way less likely
 // TODO: adjust speed setting to be the only setting available >> this.heading normalized, * this.speed
 // TODO: increase répulsion aux parois, decrease répulsion en haut de l'eau
 // TODO: add offset for rocks
 // TODO: work with forces&accelerations instead of speeds
 
+// TODO: add a max speed parameter
+// TODO: add a getter in TerrainChunkManager to know current player chunk, and nearest vertex position
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class FishMovement : MonoBehaviour
 {
@@ -41,6 +45,9 @@ public class FishMovement : MonoBehaviour
     [Header("Repulsion Layers")]
     [Tooltip("Water level")]
     public float waterHeight;
+
+    [Tooltip("Terrain")]
+    public GameObject terrainChunkManager;
 
     [Tooltip("Static repulsive objects")]
     public RepulsionLayer[] repulsionLayersStatic;
@@ -617,4 +624,26 @@ public static class GameFunctions
         }
         return goList.ToArray();
     }
+
+    // public static float RandomGaussian(float minValue = 0.0f, float maxValue = 1.0f)
+    // {
+    //     float u, v, S;
+    
+    //     do
+    //     {
+    //         u = 2.0f * UnityEngine.Random.value - 1.0f;
+    //         v = 2.0f * UnityEngine.Random.value - 1.0f;
+    //         S = u * u + v * v;
+    //     }
+    //     while (S >= 1.0f);
+    
+    //     // Standard Normal Distribution
+    //     float std = u * Mathf.Sqrt(-2.0f * Mathf.Log(S) / S);
+    
+    //     // Normal Distribution centered between the min and max value
+    //     // and clamped following the "three-sigma rule"
+    //     float mean = (minValue + maxValue) / 2.0f;
+    //     float sigma = (maxValue - mean) / 3.0f;
+    //     return Mathf.Clamp(std * sigma + mean, minValue, maxValue);
+    // }
 }
