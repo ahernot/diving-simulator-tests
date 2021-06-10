@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- BiomeGenerator v1.0
+ BiomeGenerator v1.1
 */
 
 using System.Collections;
@@ -11,9 +11,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-// TODO: change biome asset naming (use incrementing numbers)
 // TODO: one file per biome, and then lay biomes out on grid?
-// TODO: add biome material, mesh
 // TODO: make biomes permanent, instead of during runtime only
 
 static class Constants
@@ -142,7 +140,6 @@ public class BiomeGenerator : MonoBehaviour
                 BiomeElement biomeElement = new BiomeElement (assetName, positionRelative, rotation, scale);
 
                 // Add to corresponding biome
-                Debug.Log("adding_" + xBiomeId.ToString() + "_" + zBiomeId.ToString());
                 this.biomes [xBiomeId, zBiomeId].biomeElements .Add(biomeElement);
             }
         }
@@ -175,7 +172,6 @@ public class BiomeGenerator : MonoBehaviour
                 // Generate biome elements
                 for (int elementId = 0; elementId < biomeElements.Count; elementId ++)
                 {
-                    Debug.Log("Adding an element");
 
                     // Get elementSettings struct instance
                     BiomeElement biomeElement = biomeElements [elementId];
@@ -185,7 +181,7 @@ public class BiomeGenerator : MonoBehaviour
 
                     // Generate biomeAsset GameObject
                     GameObject biomeElementObject = GameObject.Instantiate (asset.gameObject);// .Instantiate();
-                    biomeElementObject.name = biomeElement.name + "_" + elementId.ToString();
+                    biomeElementObject.name = elementId.ToString() + "_" + biomeElement.name;
                     biomeElementObject .transform.parent = biome.transform;
 
                     // Set biomeAsset's parameters
@@ -194,7 +190,19 @@ public class BiomeGenerator : MonoBehaviour
                     biomeElementObject.transform.localScale = biomeElement.scale;
 
                     // Apply material
-                    //asset.material
+                    MeshRenderer meshRenderer = biomeElementObject .GetComponent<MeshRenderer>();
+                    meshRenderer.material = (Material)Instantiate (asset.material);
+
+                    //MeshCollider meshCollider = 
+                    if (asset.addMeshCollider) { biomeElementObject .AddComponent<MeshCollider>(); }
+
+                    // Hidden status
+                    if (asset.hidden) { 
+                        biomeElementObject.SetActive (false);
+                    } else {
+                        biomeElementObject.SetActive (true);
+                    }
+                    
                 }
 
                 // Move biome
@@ -214,6 +222,7 @@ public struct Asset
     public GameObject gameObject;
     public Material material;
     public bool addMeshCollider;
+    public bool hidden;
 }
 
 // Biome element (system)
