@@ -210,7 +210,20 @@ public class BiomeGenerator : MonoBehaviour
    
             }
         }
-    }   
+    }
+
+
+    void GenerateBoundariesMesh ()
+    {
+        for (int xBiomeId = this.xBiomeMin; xBiomeId < this.xBiomeMax; xBiomeId ++)
+        {
+            for (int zBiomeId = this.zBiomeMin; zBiomeId < this.zBiomeMax; zBiomeId ++)
+            {
+            }
+        }
+    }
+
+    
 }
 
 
