@@ -21,7 +21,7 @@ public class BiomeContainer : MonoBehaviour
 
     [Header("Vertical axis dimensions")]
     public float yMin = -100f;
-    public float yMax = 100f;
+    public float yMax = 10f;
 
     [Header("Mesh color")]
     public Color boundariesMeshColor = new Color (1f, 0f, 0f, 0.35f);
@@ -46,7 +46,7 @@ public class BiomeContainer : MonoBehaviour
 
 
 
-    void OnDrawGizmos ()
+    void OnDrawGizmosSelected ()
     {
         Gizmos.color = this.boundariesMeshColor;
         Gizmos.DrawMesh (this.boundariesMesh, Vector3.zero);
