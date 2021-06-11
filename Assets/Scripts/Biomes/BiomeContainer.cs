@@ -24,7 +24,7 @@ public class BiomeContainer : MonoBehaviour
     public float yMax = 10f;
 
     [Header("Mesh color")]
-    public Color boundariesMeshColor = new Color (1f, 0f, 0f, 0.35f);
+    public Color boundariesMeshColor = new Color (1f, 0f, 0f, 0.15f);
 
     // Boundary coordinates (horizontal)
     Vector2 minCoordinates;
