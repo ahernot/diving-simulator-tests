@@ -207,24 +207,18 @@ public class BiomeGenerator : MonoBehaviour
 
                 // Move biome
                 biome .transform.position = new Vector3 (this.xBiomeSize * xBiomeId, this.generationAltitude, this.zBiomeSize * zBiomeId);
-   
+
+                // Add BiomeGizmos
+                BiomeGizmos biomeGizmos = biome .AddComponent<BiomeGizmos>();
+                biomeGizmos .xSize = this.xBiomeSize;
+                biomeGizmos .zSize = this.zBiomeSize;
+
             }
         }
     }
 
-
-    void GenerateBoundariesMesh ()
-    {
-        for (int xBiomeId = this.xBiomeMin; xBiomeId < this.xBiomeMax; xBiomeId ++)
-        {
-            for (int zBiomeId = this.zBiomeMin; zBiomeId < this.zBiomeMax; zBiomeId ++)
-            {
-            }
-        }
-    }
-
-    
 }
+
 
 
 [System.Serializable]
