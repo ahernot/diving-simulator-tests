@@ -177,6 +177,7 @@ public class BiomeGenerator : MonoBehaviour
                     BiomeElement biomeElement = biomeElements [elementId];
 
                     // Get asset
+                    if (!this.assetDictionary.ContainsKey (biomeElement.name)) { continue; }
                     Asset asset = this.assetDictionary [biomeElement.name];
 
                     // Generate biomeAsset GameObject
