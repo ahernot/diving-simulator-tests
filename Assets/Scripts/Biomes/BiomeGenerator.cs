@@ -209,9 +209,9 @@ public class BiomeGenerator : MonoBehaviour
                 biome .transform.position = new Vector3 (this.xBiomeSize * xBiomeId, this.generationAltitude, this.zBiomeSize * zBiomeId);
 
                 // Add BiomeGizmos
-                BiomeGizmos biomeGizmos = biome .AddComponent<BiomeGizmos>();
-                biomeGizmos .xSize = this.xBiomeSize;
-                biomeGizmos .zSize = this.zBiomeSize;
+                BiomeContainer biomeContainer = biome .AddComponent<BiomeContainer>();
+                biomeContainer .xSize = this.xBiomeSize;
+                biomeContainer .zSize = this.zBiomeSize;
 
             }
         }
