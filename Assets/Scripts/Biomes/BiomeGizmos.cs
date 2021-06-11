@@ -20,8 +20,8 @@ public class BiomeContainer : MonoBehaviour
     public float zSize = 250f;
 
     [Header("Vertical axis dimensions")]
-    public float yMin;
-    public float yMax;
+    public float yMin = -100f;
+    public float yMax = 100f;
 
     [Header("Mesh color")]
     public Color boundariesMeshColor = new Color (1f, 0f, 0f, 0.35f);
