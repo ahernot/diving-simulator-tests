@@ -600,8 +600,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947e3f134fde74e05b25809da8d7a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeadingDeflectionAngle: 30
   movementForceMultiplier: 10
   dragForceMultiplier: 5
+  headingChangeProbability: 0.002
   minCoordinates: {x: -50, y: -50}
   maxCoordinates: {x: 50, y: 50}
   boundaryRepulsionMultiplier: 0.5
@@ -609,6 +611,7 @@ MonoBehaviour:
   waterHeight: 10
   waterSurfaceRepulsionMultiplier: 10
   waterSurfaceRepulsionDistance: 1
+  groundHeight: -10
   terrainChunkManager: {fileID: 0}
   repulsionLayersStatic:
   - name: Rocks
@@ -623,7 +626,7 @@ MonoBehaviour:
   globalRepulsionMultiplier: 1
   speed: 1
   repulsionSpeed: 1
-  heading: {x: 0, y: 0, z: 0}
+  u: {x: 0, y: 0, z: 0}
   movementForce: {x: 0, y: 0, z: 0}
   dragForce: {x: 0, y: 0, z: 0}
   objectsRepulsionForce: {x: 0, y: 0, z: 0}

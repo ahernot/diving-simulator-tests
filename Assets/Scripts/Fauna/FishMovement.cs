@@ -34,19 +34,20 @@ public class FishMovement : MonoBehaviour
 {
 
     // Random heading
-    [Tooltip("Max heading deflection angle, in degrees")]
+    [Tooltip("Max heading deflection angle, in degrees")] // not really: should pair cylindrical geometry with (u,v,w) to get a true max angle
     public float maxHeadingDeflectionAngle = 30f;
     public float movementForceMultiplier = 10f;
     public float dragForceMultiplier = 5f;
+    [Tooltip("Probability of heading change per frame")]
     [Range(0, 1)]
     public float headingChangeProbability = 0.002f;
 
     // Repulsion: bounding box
     [Header("Movement boundaries")]
     [Tooltip("Min boundaries on the x and z axes")]
-    public Vector2 minCoordinates;
+    public Vector2 minCoordinates = new Vector2 (-50f, -50f);
     [Tooltip("Max boundaries on the x and z axes")]
-    public Vector2 maxCoordinates;
+    public Vector2 maxCoordinates = new Vector2 (50f, 50f);
     public float boundaryRepulsionMultiplier = 0.5f;
     public float boundaryRepulsionDistance = 1f;
     
@@ -54,10 +55,10 @@ public class FishMovement : MonoBehaviour
     // Repulsion: water level
     [Header("Water level")]
     [Tooltip("Water level")]
-    public float waterHeight = 0f;
-    public float waterSurfaceRepulsionMultiplier = 100f;
+    public float waterHeight = 10f;
+    public float waterSurfaceRepulsionMultiplier = 10f;
     public float waterSurfaceRepulsionDistance = 1f;
-    public float groundHeight = -150f;
+    public float groundHeight = -30f;
 
     [Space(10)]
     [Tooltip("Terrain")]
@@ -71,27 +72,23 @@ public class FishMovement : MonoBehaviour
     [Tooltip("Dynamic repulsive objects (position recalculatedd each frame)")]
     public RepulsionLayer[] repulsionLayersDynamic;
     // Repulsion function parameters
-    public float globalRepulsionMultiplier = 100f;
-    
-
-    // Speed
-    public float speed = 2f;
-    public float repulsionSpeed = 10f;
+    public float globalRepulsionMultiplier = 1f;
 
 
-    Vector3 acceleration;
-    Vector3 velocity; // replaces heading
-    // do not bother with rotation inertia for now
-
-
-
-    [Header("Current heading")]
+    [Header("Heading")]
+    [Tooltip("Current heading")]
     [SerializeField]
     Vector3 u; // heading
     Vector3 v;
     Vector3 w;
 
-    // Force vectors
+    [Header("Motion variables")]
+    [SerializeField]
+    Vector3 acceleration;
+    [SerializeField]
+    Vector3 velocity;
+
+    [Header("Force vectors")]
     [SerializeField]
     Vector3 movementForce;
     [SerializeField]
@@ -142,7 +139,7 @@ public class FishMovement : MonoBehaviour
 
     void Update ()
     {
-        // Pick a new direction (0.2% chance per frame)
+        // Pick a new direction
         float rd = UnityEngine.Random.Range(0f, 1f);
         if (rd <= this.headingChangeProbability) {
             this.ChangeHeading();
@@ -154,8 +151,9 @@ public class FishMovement : MonoBehaviour
 
         // Calculate repulsion forces
         this.CalculateObjectsRepulsion();
-        this.CalculateSeaLevelRepulsion();
         this.CalculateBoundaryRepulsion();
+        this.CalculateSeaLevelRepulsion();
+        this.CalculateTerrainRepulsion();
         this.CalculateDragForce();
 
         // Apply objects repulsion force
@@ -174,9 +172,15 @@ public class FishMovement : MonoBehaviour
         if (!float.IsNaN(this.terrainRepulsionForce.x) && !float.IsNaN(this.terrainRepulsionForce.y) && !float.IsNaN(this.terrainRepulsionForce.z)) {
             this.acceleration += this.terrainRepulsionForce;
         }
-
         // Apply drag force
         this.acceleration += this.dragForce;
+
+
+        // Update movement force (heading) accordingly
+        this.movementForce += 0.5f * this.velocity;
+        this.u = this.movementForce / this.movementForce.magnitude;
+        this.movementForce = this.u * this.movementForceMultiplier;
+        
 
         // Integrate motion
         this.velocity += this.acceleration * Time.deltaTime;
@@ -193,6 +197,10 @@ public class FishMovement : MonoBehaviour
         if ((this.debugMode) && (this.boundariesMesh == null)) { this.GenerateBoundariesMesh(); };
     }
 
+
+    /**
+    * Initialise the heading (run on start)
+    */
     void InitialiseHeading ()
     {
         // Set random heading parameters
@@ -213,7 +221,10 @@ public class FishMovement : MonoBehaviour
         this.ChangeHeading();
     }
 
-
+    /**
+    * Change the heading using a flat probability function in a 'cone' around the current heading.
+    * No rotation inertia.
+    */
     void ChangeHeading ()
     {
         // Recalculate base vectors
@@ -583,13 +594,13 @@ public class FishMovement : MonoBehaviour
             Gizmos.DrawLine (transform.position, transform.position + this.terrainRepulsionForce);
         }
 
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine (transform.position, transform.position + this.u);
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine (transform.position, transform.position + this.v);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine (transform.position, transform.position + this.w);
+        // uvw gizmos
+        // Gizmos.color = Color.red;
+        // Gizmos.DrawLine (transform.position, transform.position + this.u);
+        // Gizmos.color = Color.green;
+        // Gizmos.DrawLine (transform.position, transform.position + this.v);
+        // Gizmos.color = Color.blue;
+        // Gizmos.DrawLine (transform.position, transform.position + this.w);
 
         // Draw boundaries mesh and its vertices
         if (Application.isPlaying)
