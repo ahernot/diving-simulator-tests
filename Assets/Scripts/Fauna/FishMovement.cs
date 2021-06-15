@@ -26,6 +26,7 @@
 *   Object mass is 1kg
 */
 
+using System;
 
 using System.Collections;
 using System.Collections.Generic;
@@ -86,7 +87,9 @@ public class FishMovement : MonoBehaviour
 
     [Header("Current heading")]
     [SerializeField]
-    Vector3 heading;
+    Vector3 u; // heading
+    Vector3 v;
+    Vector3 w;
 
     // Force vectors
     [SerializeField]
@@ -146,6 +149,12 @@ public class FishMovement : MonoBehaviour
         // Pick a new direction (0.2% chance per frame)
         float rd = UnityEngine.Random.Range(0, 999);
         if (rd <= 2) { this.ChangeHeading(); }
+
+        this.Calculatevw();
+        Debug.Log (Math.Round(Vector3.Dot (this.u, this.v), 5));
+        Debug.Log (Math.Round(Vector3.Dot (this.u, this.w), 5));
+        Debug.Log (Math.Round(Vector3.Dot (this.v, this.w), 5));
+        Debug.Log ("---");
         
         // Reset acceleration
         this.acceleration = this.movementForce;
@@ -181,7 +190,7 @@ public class FishMovement : MonoBehaviour
         Vector3 positionDelta = this.velocity * Time.deltaTime;
 
         // Move and rotate
-        // --- TODO --- TODO: Apply fish rotation and animation here too, using (Vector3)this.heading
+        // --- TODO --- TODO: Apply fish rotation and animation here too, using (Vector3)this.u
         transform.position += positionDelta;
         //transform.rotation = Quaternion.Euler();
 
@@ -202,7 +211,31 @@ public class FishMovement : MonoBehaviour
         );
 
         // Set heading
-        this.movementForce = this.movementForceMultiplier * randomHeading / randomHeading.magnitude;
+        this.u = randomHeading / randomHeading.magnitude;
+        this.movementForce = this.movementForceMultiplier * this.u;
+    }
+
+
+    /**
+    * Calculate the heading's orthonormal base
+    */
+    void Calculatevw ()
+    {
+        this.v = new Vector3 (
+            1f,
+            1f,
+            -1f * (this.u.x + this.u.y) / this.u.z
+        );
+        this.v /= this.v.magnitude;
+
+        float wy = (this.u.x + this.u.y + (this.u.z * this.u.z) / this.u.x) / (this.u.z * (1 - this.u.y / this.u.x));
+        float wx = -1f * (this.u.z + wy * this.u.y) / this.u.x;
+        this.w = new Vector3 (
+            wx,
+            wy,
+            1f
+        );
+        this.w /= this.w.magnitude;
     }
 
 
@@ -541,6 +574,14 @@ public class FishMovement : MonoBehaviour
             Gizmos.color = Color.yellow;
             Gizmos.DrawLine (transform.position, transform.position + this.terrainRepulsionForce);
         }
+
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine (transform.position, transform.position + this.u);
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine (transform.position, transform.position + this.v);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine (transform.position, transform.position + this.w);
 
         // Draw boundaries mesh and its vertices
         if (Application.isPlaying)
