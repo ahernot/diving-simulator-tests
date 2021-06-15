@@ -602,23 +602,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoordinates: {x: -50, y: -50}
   maxCoordinates: {x: 50, y: 50}
-  speed: 1
-  repulsionSpeed: 1
+  boundaryRepulsionMultiplier: 0.1
+  boundaryRepulsionDistance: 0.1
   waterHeight: 10
+  waterSurfaceRepulsionMultiplier: 10
+  waterSurfaceRepulsionDistance: 1
+  terrainChunkManager: {fileID: 0}
   repulsionLayersStatic:
   - name: Rocks
     layerId: 20
+    repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
   - name: Rocks 2
     layerId: 21
+    repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 10
   repulsionLayersDynamic: []
+  globalRepulsionMultiplier: 0
+  speed: 1
+  repulsionSpeed: 1
   heading: {x: 0, y: 0, z: 0}
   objectsRepulsion: {x: 0, y: 0, z: 0}
+  boundaryRepulsion: {x: 0, y: 0, z: 0}
   terrainRepulsion: {x: 0, y: 0, z: 0}
   seaLevelRepulsion: {x: 0, y: 0, z: 0}
-  boundaryRepulsion: {x: 0, y: 0, z: 0}
-  debugMode: 0
+  debugMode: 1
 --- !u!1 &1366957017
 GameObject:
   m_ObjectHideFlags: 0
