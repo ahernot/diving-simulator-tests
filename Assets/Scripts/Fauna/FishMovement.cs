@@ -16,6 +16,16 @@
 // TODO: add a max speed parameter
 // TODO: add a getter in TerrainChunkManager to know current player chunk, and nearest vertex position
 
+/*
+* Special instructions:
+*   If new objects are added, run FishMovement.LocateObjects (false);
+* 
+* Information:
+*   The water level, terrain, and object boundaries are hard boundaries
+*   The bounding box boundaries are flexible
+*/
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,6 +48,8 @@ public class FishMovement : MonoBehaviour
     // Repulsion: water level
     [Tooltip("Water level")]
     public float waterHeight;
+    public float waterSurfaceRepulsionMultiplier = 100f;
+    public float waterSurfaceRepulsionDistance = 1f;
 
     [Tooltip("Terrain")]
     public GameObject terrainChunkManager;
@@ -55,7 +67,6 @@ public class FishMovement : MonoBehaviour
     float repulsionAmplitude = 100f;
     float repulsionScale = 5f;
     float boundaryRepulsionDistance = 0.1f;
-    float waterSurfaceRepulsionDistance = 1f;
 
     // Speed
     public float speed = 2f;
@@ -71,20 +82,21 @@ public class FishMovement : MonoBehaviour
     [Header("Current heading")]
     [SerializeField]
     Vector3 heading;
+
+    // Force vectors
     [SerializeField]
     Vector3 objectsRepulsion;
+    [SerializeField]
+    Vector3 boundaryRepulsion;
     [SerializeField]
     Vector3 terrainRepulsion;
     [SerializeField]
     Vector3 seaLevelRepulsion;
-    [SerializeField]
-    Vector3 boundaryRepulsion;
+    
 
     // Optimised lists
-    // List<Vector3[]> repulsionObjectsCoordinatesStatic = new List<Vector3[]>();
     List<GameObject[]> repulsionObjectsStatic = new List<GameObject[]>();
     List<float> repulsionRadiiStatic = new List<float>();
-    // List<Vector3[]> repulsionObjectsCoordinatesDynamic = new List<Vector3[]>();
     List<GameObject[]> repulsionObjectsDynamic = new List<GameObject[]>();
     List<float> repulsionRadiiDynamic = new List<float>();
 
@@ -122,9 +134,6 @@ public class FishMovement : MonoBehaviour
         // Pick a new direction (0.2% chance per frame)
         float rd = UnityEngine.Random.Range(0, 999);
         if (rd <= 2) { this.ChangeHeading(); }
-
-        // Refresh dynamic objects' location
-        // this.LocateObjects (false);
 
         // Calculate repulsion vectors
         this.CalculateObjectsRepulsion();
@@ -194,15 +203,6 @@ public class FishMovement : MonoBehaviour
                 // Get GameObjects
                 GameObject[] repulsionObjects = GameFunctions.FindGameObjectsWithLayer (repulsionLayer.layerId);
 
-                // Vector3[] objectCoordinates = new Vector3 [repulsionObjects.Length]; // Initialise array of coordinates
-                // Get coordinates
-                // for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
-                // {
-                //     objectCoordinates [objectId] = repulsionObjects[objectId] .transform.position;
-                // }
-                // Write coordinates array to list
-                // this.repulsionObjectsCoordinatesStatic.Add (objectCoordinates);
-
                 // Add GameObject[] to list
                 this.repulsionObjectsStatic.Add (repulsionObjects);   
             }
@@ -220,22 +220,15 @@ public class FishMovement : MonoBehaviour
             // Get GameObjects
             GameObject[] repulsionObjects = GameFunctions.FindGameObjectsWithLayer (repulsionLayer.layerId);
 
-            // Vector3[] objectCoordinates = new Vector3 [repulsionObjects.Length]; // Initialise array of coordinates
-            // // Get coordinates
-            // for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
-            // {
-            //     objectCoordinates [objectId] = repulsionObjects[objectId] .transform.position;
-            // }
-            // // Write coordinates array to list
-            // this.repulsionObjectsCoordinatesDynamic.Add (objectCoordinates);
-
             // Add GameObject[] to list
                 this.repulsionObjectsDynamic.Add (repulsionObjects); 
         }
     }
 
 
-    // Calculate repulsion vectors (static & dynamic objects)
+    /**
+    * Calculate the object repulsion force vectors
+    */
     void CalculateObjectsRepulsion ()
     {
         // Initialise objectsRepulsion vector
@@ -245,9 +238,6 @@ public class FishMovement : MonoBehaviour
         // Static objects' repulsion
         for (int i = 0; i < this.repulsionLayersStatic.Length; i ++)
         {
-            // Extract coordinates array
-            // Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesStatic[i];
-
             // Get GameObject[] and repulsionRadius
             float repulsionRadius = this.repulsionRadiiStatic [i];
             GameObject[] repulsionObjects = this.repulsionObjectsStatic [i];
@@ -311,85 +301,125 @@ public class FishMovement : MonoBehaviour
 
     }
 
-    void CalculateSeaLevelRepulsion ()
-    {
-        // Initialise seaLevelRepulsion vector
-        this.seaLevelRepulsion = new Vector3();
-
-        // Calculate water surface repulsion force
-        float distance = -1 * transform.position.y;
-
-        if (distance <= this.waterSurfaceRepulsionDistance * 10)
-        {
-            float repulsionForce = this.repulsionAmplitude * Mathf.Exp (-1 * this.repulsionScale * distance / this.waterSurfaceRepulsionDistance);
-            this.seaLevelRepulsion = repulsionForce * Vector3.down;
-        }        
-    }
-
+    /**
+    * Calculate the lateral boundary repulsion force vectors
+    */
     void CalculateBoundaryRepulsion ()
     {
         // Initialise boundaryRepulsion vector
         this.boundaryRepulsion = new Vector3();
 
         // Calculate distances to boundaries
-        float minXDistance = transform.position.x - this.minCoordinates.x;
-        float maxXDistance = this.maxCoordinates.x - transform.position.x;
-        float minZDistance = transform.position.z - this.minCoordinates.y;
-        float maxZDistance = this.maxCoordinates.y - transform.position.z;
+        float minXDistanceSigned = transform.position.x - this.minCoordinates.x;
+        float maxXDistanceSigned = this.maxCoordinates.x - transform.position.x;
+        float minZDistanceSigned = transform.position.z - this.minCoordinates.y;
+        float maxZDistanceSigned = this.maxCoordinates.y - transform.position.z;
 
-        // Calculate repulsion force and vector (if not too far away)
-        if (minXDistance <= boundaryRepulsionDistance * 10) {
-            float repulsionForce;
+        // Min X
+        if (minXDistanceSigned <= boundaryRepulsionDistance * 10)
+        {
+            // Initialise repulsion force vector
+            Vector3 repulsionForce = new Vector3 (1f, 0f, 0f);
 
-            if (minXDistance < boundaryRepulsionDistance) {
-                repulsionForce = this.repulsionAmplitude;
+            // Calculate repulsion force multiplier (based on distance)
+            float repulsionMult;
+            if (minXDistanceSigned < boundaryRepulsionDistance) {
+                repulsionMult = this.repulsionAmplitude;
             } else {
-                repulsionForce = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * minXDistance / boundaryRepulsionDistance);
+                repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * minXDistanceSigned / boundaryRepulsionDistance);
             };
-            Vector3 repulsionVector = new Vector3 (1f, 0f, 0f) * repulsionForce;
+            repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
-            this.boundaryRepulsion += repulsionVector;
-        } else if (maxXDistance <= boundaryRepulsionDistance * 10) {
-            float repulsionForce;
-            
-            if (maxXDistance < boundaryRepulsionDistance) {
-                repulsionForce = this.repulsionAmplitude;
+            this.boundaryRepulsion += repulsionForce;
+        }
+        
+        // Max X
+        else if (maxXDistanceSigned <= boundaryRepulsionDistance * 10)
+        {
+            // Initialise repulsion force vector
+            Vector3 repulsionForce = new Vector3 (-1f, 0f, 0f);
+
+            // Calculate repulsion force multiplier (based on distance)
+            float repulsionMult;
+            if (maxXDistanceSigned < boundaryRepulsionDistance) {
+                repulsionMult = this.repulsionAmplitude;
             } else {
-                repulsionForce = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * maxXDistance / boundaryRepulsionDistance);
+                repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * maxXDistanceSigned / boundaryRepulsionDistance);
             };
-            Vector3 repulsionVector = new Vector3 (-1f, 0f, 0f) * repulsionForce;
+            repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
-            this.boundaryRepulsion += repulsionVector;
+            this.boundaryRepulsion += repulsionForce;
         }
 
-        if (minZDistance <= boundaryRepulsionDistance * 10) {
-            float repulsionForce;
+        // Min Z
+        if (minZDistanceSigned <= boundaryRepulsionDistance * 10)
+        {
+            // Initialise repulsion force vector
+            Vector3 repulsionForce = new Vector3 (0f, 0f, 1f);
 
-            if (minZDistance < boundaryRepulsionDistance) {
-                repulsionForce = this.repulsionAmplitude;
+            // Calculate repulsion force multiplier (based on distance)
+            float repulsionMult;
+            if (minZDistanceSigned < boundaryRepulsionDistance) {
+                repulsionMult = this.repulsionAmplitude;
             } else {
-                repulsionForce = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * minZDistance / boundaryRepulsionDistance);
+                repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * minZDistanceSigned / boundaryRepulsionDistance);
             };
-            Vector3 repulsionVector = new Vector3 (0f, 0f, 1f) * repulsionForce;
+            repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
-            this.boundaryRepulsion += repulsionVector;
-        } else if (maxZDistance <= boundaryRepulsionDistance * 10) {
-            float repulsionForce;
-            
-            if (maxZDistance < boundaryRepulsionDistance) {
-                repulsionForce = this.repulsionAmplitude;
+            this.boundaryRepulsion += repulsionForce;
+        }
+        
+        // Max Z
+        else if (maxZDistanceSigned <= boundaryRepulsionDistance * 10)
+        {
+            // Initialise repulsion force vector
+            Vector3 repulsionForce = new Vector3 (0f, 0f, -1f);
+
+            // Calculate repulsion force multiplier (based on distance)
+            float repulsionMult;
+            if (maxZDistanceSigned < boundaryRepulsionDistance) {
+                repulsionMult = this.repulsionAmplitude;
             } else {
-                repulsionForce = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * maxZDistance / boundaryRepulsionDistance);
+                repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * maxZDistanceSigned / boundaryRepulsionDistance);
             };
-            Vector3 repulsionVector = new Vector3 (1f, 0f, -1f) * repulsionForce;
+            repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
-            this.boundaryRepulsion += repulsionVector;
+            this.boundaryRepulsion += repulsionForce;
         }
     }
+
+    /**
+    * Calculate the water surface repulsion force vector
+    */
+    void CalculateSeaLevelRepulsion ()
+    {
+        // Initialise seaLevelRepulsion vector
+        this.seaLevelRepulsion = new Vector3();
+
+        // Calculate distance to water surface
+        float distanceSigned = this.waterHeight - transform.position.y;
+
+        // Initialise repulsion force vector
+        Vector3 repulsionForce = Vector3.down;
+        
+        // Calculate repulsion force multiplier (based on distance)
+        float repulsionMult = 0f;
+        if (distanceSigned <= this.waterSurfaceRepulsionDistance * 10)
+        {
+            // float repulsionForce = this.repulsionAmplitude * Mathf.Exp (-1 * this.repulsionScale * distance / this.waterSurfaceRepulsionDistance);
+            // this.seaLevelRepulsion = repulsionForce * Vector3.down;
+            repulsionMult = GameFunctions.HardRepulsionFunction (this.waterSurfaceRepulsionMultiplier, this.waterSurfaceRepulsionDistance, distanceSigned);
+        }
+        repulsionForce *= repulsionMult;
+
+        this.seaLevelRepulsion = repulsionForce; 
+    }
+
+
 
     void CalculateTerrainRepulsion ()
     {
@@ -414,7 +444,6 @@ public class FishMovement : MonoBehaviour
             for (int i = 0; i < this.repulsionLayersStatic.Length; i ++)
             {
                 // Extract coordinates array
-                // Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesStatic[i];
                 GameObject[] repulsionObjects = this.repulsionObjectsStatic [i];
 
                 // Get replusion radius
@@ -436,7 +465,6 @@ public class FishMovement : MonoBehaviour
             for (int i = 0; i < this.repulsionLayersDynamic.Length; i ++)
             {
                 // Extract coordinates array
-                // Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesDynamic[i];
                 GameObject[] repulsionObjects = this.repulsionObjectsDynamic [i];
 
                 // Get replusion radius
@@ -615,6 +643,28 @@ public static class GameFunctions
             return null;
         }
         return goList.ToArray();
+    }
+
+    public static float HardRepulsionFunction (float multiplier, float radius, float x)
+    {
+        if (x > 0) {
+            return (float) multiplier * radius / x;
+        } else {
+            return multiplier;
+        }
+        
+    }
+
+    public static float SoftRepulsionFunction (float multiplier, float radius, float x)
+    {
+        return (float) multiplier * Mathf.Exp ((radius - x) / radius);
+
+        // Other option: cap at multiplier
+        // if (x < radius) {
+        //     return multiplier;
+        // } else {
+        //     return (float) multiplier * Mathf.Exp ((radius - x) / radius);
+        // }
     }
 
     // public static float RandomGaussian(float minValue = 0.0f, float maxValue = 1.0f)
