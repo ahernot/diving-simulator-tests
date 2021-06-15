@@ -35,9 +35,11 @@ public class FishMovement : MonoBehaviour
 {
 
     // Random heading
+    public float movementForceMultiplier = 1f;
     Vector3 minHeading;
     Vector3 maxHeading;
 
+    [Header("Repulsion Objects")]
     // Repulsion: bounding box
     [Header("Movement boundaries")]
     [Tooltip("Min boundaries on the x and z axes")]
@@ -46,16 +48,19 @@ public class FishMovement : MonoBehaviour
     public Vector2 maxCoordinates;
     public float boundaryRepulsionMultiplier = 100f;
     public float boundaryRepulsionDistance = 0.1f;
-
+    
+    [Space(10)]
     // Repulsion: water level
     [Tooltip("Water level")]
     public float waterHeight;
     public float waterSurfaceRepulsionMultiplier = 100f;
     public float waterSurfaceRepulsionDistance = 1f;
 
+    [Space(10)]
     [Tooltip("Terrain")]
     public GameObject terrainChunkManager;
 
+    [Space(10)]
     // Repulsion: layers
     [Header("Repulsion Layers")]
     [Tooltip("Static repulsive objects")]
@@ -83,14 +88,13 @@ public class FishMovement : MonoBehaviour
 
     // Force vectors
     [SerializeField]
-    Vector3 objectsRepulsion;
+    Vector3 objectsRepulsionForce;
     [SerializeField]
-    Vector3 boundaryRepulsion;
+    Vector3 boundaryRepulsionForce;
     [SerializeField]
-    Vector3 terrainRepulsion;
+    Vector3 seaLevelRepulsionForce;
     [SerializeField]
-    Vector3 seaLevelRepulsion;
-    
+    Vector3 terrainRepulsionForce;
 
     // Optimised lists
     List<GameObject[]> repulsionObjectsStatic = new List<GameObject[]>();
@@ -141,7 +145,7 @@ public class FishMovement : MonoBehaviour
 
         // Apply objects repulsion vector
         if (!float.IsNaN(this.objectsRepulsion.x) && !float.IsNaN(this.objectsRepulsion.y) && !float.IsNaN(this.objectsRepulsion.z)) {
-            this.heading += this.objectsRepulsion;
+            this.acceleration += this.objectsRepulsionForce;
         }
         // Apply sea level repulsion vector
         if (!float.IsNaN(this.seaLevelRepulsion.x) && !float.IsNaN(this.seaLevelRepulsion.y) && !float.IsNaN(this.seaLevelRepulsion.z)) {
@@ -230,8 +234,8 @@ public class FishMovement : MonoBehaviour
     */
     void CalculateObjectsRepulsion ()
     {
-        // Initialise objectsRepulsion vector
-        this.objectsRepulsion = new Vector3();
+        // Initialise objectsRepulsionForce vector
+        this.objectsRepulsionForce = new Vector3();
 
 
         // Static objects' repulsion
@@ -261,7 +265,7 @@ public class FishMovement : MonoBehaviour
                     repulsionForce = (repulsionForce / distance) * repulsionMult;
 
                     // Add to global repulsion vector
-                    this.objectsRepulsion += repulsionForce;
+                    this.objectsRepulsionForce += repulsionForce;
                 }   
             } 
         }
@@ -293,7 +297,7 @@ public class FishMovement : MonoBehaviour
                     repulsionForce = (repulsionForce / distance) * repulsionMult;
 
                     // Add to global repulsion vector
-                    this.objectsRepulsion += repulsionForce;
+                    this.objectsRepulsionForce += repulsionForce;
                 }
             }
         }
@@ -305,8 +309,8 @@ public class FishMovement : MonoBehaviour
     */
     void CalculateBoundaryRepulsion ()
     {
-        // Initialise boundaryRepulsion vector
-        this.boundaryRepulsion = new Vector3();
+        // Initialise boundaryRepulsionForce vector
+        this.boundaryRepulsionForce = new Vector3();
 
         // Calculate distances to boundaries
         float minXDistanceSigned = transform.position.x - this.minCoordinates.x;
@@ -330,7 +334,7 @@ public class FishMovement : MonoBehaviour
             repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
-            this.boundaryRepulsion += repulsionForce;
+            this.boundaryRepulsionForce += repulsionForce;
         }
         
         // Max X
@@ -349,7 +353,7 @@ public class FishMovement : MonoBehaviour
             repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
-            this.boundaryRepulsion += repulsionForce;
+            this.boundaryRepulsionForce += repulsionForce;
         }
 
         // Min Z
@@ -368,7 +372,7 @@ public class FishMovement : MonoBehaviour
             repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
-            this.boundaryRepulsion += repulsionForce;
+            this.boundaryRepulsionForce += repulsionForce;
         }
         
         // Max Z
@@ -387,7 +391,7 @@ public class FishMovement : MonoBehaviour
             repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
-            this.boundaryRepulsion += repulsionForce;
+            this.boundaryRepulsionForce += repulsionForce;
         }
     }
 
@@ -396,8 +400,8 @@ public class FishMovement : MonoBehaviour
     */
     void CalculateSeaLevelRepulsion ()
     {
-        // Initialise seaLevelRepulsion vector
-        this.seaLevelRepulsion = new Vector3();
+        // Initialise seaLevelRepulsionForce vector
+        this.seaLevelRepulsionForce = new Vector3();
 
         // Calculate distance to water surface
         float distanceSigned = this.waterHeight - transform.position.y;
@@ -415,15 +419,17 @@ public class FishMovement : MonoBehaviour
         }
         repulsionForce *= repulsionMult;
 
-        this.seaLevelRepulsion = repulsionForce; 
+        this.seaLevelRepulsionForce = repulsionForce; 
     }
 
-
-
+    /**
+    * Calculate the terrain repulsion force vector
+    --- TODO ---
+    */
     void CalculateTerrainRepulsion ()
     {
-        // Initialise terrainRepulsion vector
-        this.terrainRepulsion = new Vector3();
+        // Initialise terrainRepulsionForce vector
+        this.terrainRepulsionForce = new Vector3();
 
         // TODO: Get max terrain height on nearest vertices of current chunk
         //
