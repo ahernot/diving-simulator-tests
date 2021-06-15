@@ -124,7 +124,7 @@ public class FishMovement : MonoBehaviour
         if (rd <= 2) { this.ChangeHeading(); }
 
         // Refresh dynamic objects' location
-        this.LocateObjects (false);
+        // this.LocateObjects (false);
 
         // Calculate repulsion vectors
         this.CalculateObjectsRepulsion();
