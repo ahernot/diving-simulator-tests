@@ -13,6 +13,7 @@
 // TODO: work with forces&accelerations instead of speeds
 
 // TODO: add a getter in TerrainChunkManager to know current player chunk, and nearest vertex position
+// TODO: add a cone gizmo to visualise the possible deflection paths
 
 /*
 * Special instructions:
@@ -38,7 +39,7 @@ public class FishMovement : MonoBehaviour
     public float movementForceMultiplier = 10f;
     public float dragForceMultiplier = 5f;
     [Range(0, 1)]
-    public float headingChangeProbability = 0.002;
+    public float headingChangeProbability = 0.002f;
 
     // Repulsion: bounding box
     [Header("Movement boundaries")]
@@ -142,7 +143,10 @@ public class FishMovement : MonoBehaviour
     {
         // Pick a new direction (0.2% chance per frame)
         float rd = UnityEngine.Random.Range(0f, 1f);
-        if (rd <= this.headingChangeProbability) { this.ChangeHeading(); }
+        if (rd <= this.headingChangeProbability) {
+            this.ChangeHeading();
+            Debug.Log ("Changed heading");
+        }
 
         // Reset acceleration
         this.acceleration = this.movementForce;
@@ -215,8 +219,8 @@ public class FishMovement : MonoBehaviour
         this.Calculatevw();
 
         // Generate random angles
-        float thetav = Random.Range(-1f * this.maxHeadingDeflectionAngle, this.maxHeadingDeflectionAngle);
-        float thetaw = Random.Range(-1f * this.maxHeadingDeflectionAngle, this.maxHeadingDeflectionAngle);
+        float thetav = Random.Range(-1f * this.maxHeadingDeflectionAngle, this.maxHeadingDeflectionAngle) / 180f * Mathf.PI;
+        float thetaw = Random.Range(-1f * this.maxHeadingDeflectionAngle, this.maxHeadingDeflectionAngle) / 180f * Mathf.PI;
 
         // Calculate new heading (projection along (u,v,w))
         Vector3 newHeading = Mathf.Cos(thetav) * this.u + Mathf.Sin(thetav) * this.v + Mathf.Cos(thetaw) * this.u + Mathf.Sin(thetaw) * this.w;
@@ -748,26 +752,4 @@ public static class GameFunctions
         //     return (float) multiplier * Mathf.Exp ((radius - x) / radius);
         // }
     }
-
-    // public static float RandomGaussian(float minValue = 0.0f, float maxValue = 1.0f)
-    // {
-    //     float u, v, S;
-    
-    //     do
-    //     {
-    //         u = 2.0f * UnityEngine.Random.value - 1.0f;
-    //         v = 2.0f * UnityEngine.Random.value - 1.0f;
-    //         S = u * u + v * v;
-    //     }
-    //     while (S >= 1.0f);
-    
-    //     // Standard Normal Distribution
-    //     float std = u * Mathf.Sqrt(-2.0f * Mathf.Log(S) / S);
-    
-    //     // Normal Distribution centered between the min and max value
-    //     // and clamped following the "three-sigma rule"
-    //     float mean = (minValue + maxValue) / 2.0f;
-    //     float sigma = (maxValue - mean) / 3.0f;
-    //     return Mathf.Clamp(std * sigma + mean, minValue, maxValue);
-    // }
 }
