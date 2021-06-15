@@ -81,10 +81,13 @@ public class FishMovement : MonoBehaviour
     Vector3 boundaryRepulsion;
 
     // Optimised lists
-    List<Vector3[]> repulsionObjectsCoordinatesStatic = new List<Vector3[]>();
+    // List<Vector3[]> repulsionObjectsCoordinatesStatic = new List<Vector3[]>();
+    List<GameObject[]> repulsionObjectsStatic = new List<GameObject>();
     List<float> repulsionRadiiStatic = new List<float>();
-    List<Vector3[]> repulsionObjectsCoordinatesDynamic = new List<Vector3[]>();
+    // List<Vector3[]> repulsionObjectsCoordinatesDynamic = new List<Vector3[]>();
+    List<GameObject[]> repulsionObjectsDynamic = new List<GameObject>();
     List<float> repulsionRadiiDynamic = new List<float>();
+
 
     // Gizmos (debug mode)
     [Tooltip("Enable Gizmos visualisations")]
@@ -190,16 +193,18 @@ public class FishMovement : MonoBehaviour
 
                 // Get GameObjects
                 GameObject[] repulsionObjects = GameFunctions.FindGameObjectsWithLayer (repulsionLayer.layerId);
-                Vector3[] objectCoordinates = new Vector3 [repulsionObjects.Length]; // Initialise array of coordinates
-                
-                // Get coordinates
-                for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
-                {
-                    objectCoordinates [objectId] = repulsionObjects[objectId] .transform.position;
-                }
 
+                // Vector3[] objectCoordinates = new Vector3 [repulsionObjects.Length]; // Initialise array of coordinates
+                // Get coordinates
+                // for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
+                // {
+                //     objectCoordinates [objectId] = repulsionObjects[objectId] .transform.position;
+                // }
                 // Write coordinates array to list
-                this.repulsionObjectsCoordinatesStatic.Add (objectCoordinates);      
+                // this.repulsionObjectsCoordinatesStatic.Add (objectCoordinates);
+
+                // Add GameObject[] to list
+                this.repulsionObjectsStatic.Add (repulsionObjects);   
             }
         }
 
@@ -214,16 +219,18 @@ public class FishMovement : MonoBehaviour
 
             // Get GameObjects
             GameObject[] repulsionObjects = GameFunctions.FindGameObjectsWithLayer (repulsionLayer.layerId);
-            Vector3[] objectCoordinates = new Vector3 [repulsionObjects.Length]; // Initialise array of coordinates
-            
-            // Get coordinates
-            for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
-            {
-                objectCoordinates [objectId] = repulsionObjects[objectId] .transform.position;
-            }
 
-            // Write coordinates array to list
-            this.repulsionObjectsCoordinatesDynamic.Add (objectCoordinates);
+            // Vector3[] objectCoordinates = new Vector3 [repulsionObjects.Length]; // Initialise array of coordinates
+            // // Get coordinates
+            // for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
+            // {
+            //     objectCoordinates [objectId] = repulsionObjects[objectId] .transform.position;
+            // }
+            // // Write coordinates array to list
+            // this.repulsionObjectsCoordinatesDynamic.Add (objectCoordinates);
+
+            // Add GameObject[] to list
+                this.repulsionObjectsDynamic.Add (repulsionObjects); 
         }
     }
 
@@ -234,37 +241,38 @@ public class FishMovement : MonoBehaviour
         // Initialise objectsRepulsion vector
         this.objectsRepulsion = new Vector3();
 
+
         // Static objects' repulsion
         for (int i = 0; i < this.repulsionLayersStatic.Length; i ++)
         {
             // Extract coordinates array
-            Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesStatic[i];
+            // Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesStatic[i];
 
-            // Get replusion radius
-            float repulsionRadius = this.repulsionRadiiStatic[i];
+            // Get GameObject[] and repulsionRadius
+            float repulsionRadius = this.repulsionRadiiStatic [i];
+            GameObject[] repulsionObjects = this.repulsionObjectsStatic [i];
 
             // Run through objects' coordinates
-            for (int objectId = 0; objectId < objectCoordinates.Length; objectId ++)
+            for (int k = 0; k < repulsionObjects.Length; k ++)
             {
                 // Compute direction from repulsive object to current GameObject
-                Vector3 impulsionDirectionRaw = transform.position - objectCoordinates[objectId];
-
-                // Compute object distance to current GameObject
-                float distance = impulsionDirectionRaw.magnitude;
+                Vector3 repulsionForce = transform.position - repulsionObjects[k].transform.position;
+                float distance = repulsionForce.magnitude;
 
                 // Calculate repulsion force and vector (if not too far away)
                 if (distance <= repulsionRadius * 10)
                 {
-                    float repulsionForce;
+                    // Calculate repulsion force multipiler (based on distance)
+                    float repulsionMult;
                     if (distance < repulsionRadius) {
-                        repulsionForce = this.repulsionAmplitude;
+                        repulsionMult = this.repulsionAmplitude;
                     } else {
-                        repulsionForce = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * (distance - repulsionRadius) / repulsionRadius);
+                        repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * (distance - repulsionRadius) / repulsionRadius);  
                     };
-                    Vector3 repulsionVector = impulsionDirectionRaw / distance * repulsionForce;
+                    repulsionForce = (repulsionForce / distance) * repulsionMult;
 
                     // Add to global repulsion vector
-                    this.objectsRepulsion += repulsionVector;
+                    this.objectsRepulsion += repulsionForce;
                 }   
             } 
         }
@@ -276,30 +284,30 @@ public class FishMovement : MonoBehaviour
             Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesDynamic[i];
 
             // Get replusion radius
-            float repulsionRadius = this.repulsionRadiiDynamic[i];
+            float repulsionRadius = this.repulsionRadiiDynamic [i];
+            GameObject[] repulsionObjects = this.repulsionObjectsDynamic [i];
 
             // Run through objects' coordinates
-            for (int objectId = 0; objectId < objectCoordinates.Length; objectId ++)
+            for (int k = 0; k < repulsionObjects.Length; k ++)
             {
                 // Compute direction from repulsive object to current GameObject
-                Vector3 impulsionDirectionRaw = transform.position - objectCoordinates[objectId];
-
-                // Compute object distance to current GameObject
-                float distance = impulsionDirectionRaw.magnitude;
+                Vector3 repulsionForce = transform.position - repulsionObjects[k].transform.position;
+                float distance = repulsionForce.magnitude;
 
                 // Calculate repulsion force and vector (if not too far away)
                 if (distance <= repulsionRadius * 10)
                 {
-                    float repulsionForce;
+                    // Calculate repulsion force multipiler (based on distance)
+                    float repulsionMult;
                     if (distance < repulsionRadius) {
-                        repulsionForce = this.repulsionAmplitude;
+                        repulsionMult = this.repulsionAmplitude;
                     } else {
-                        repulsionForce = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * (distance - repulsionRadius) / repulsionRadius);
+                        repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * (distance - repulsionRadius) / repulsionRadius);  
                     };
-                    Vector3 repulsionVector = impulsionDirectionRaw / distance * repulsionForce;
+                    repulsionForce = (repulsionForce / distance) * repulsionMult;
 
                     // Add to global repulsion vector
-                    this.objectsRepulsion += repulsionVector;
+                    this.objectsRepulsion += repulsionForce;
                 }
             }
         }
