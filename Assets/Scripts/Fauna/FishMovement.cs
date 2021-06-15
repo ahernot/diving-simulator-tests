@@ -253,10 +253,10 @@ public class FishMovement : MonoBehaviour
             GameObject[] repulsionObjects = this.repulsionObjectsStatic [i];
 
             // Run through objects' coordinates
-            for (int k = 0; k < repulsionObjects.Length; k ++)
+            for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
             {
                 // Compute direction from repulsive object to current GameObject
-                Vector3 repulsionForce = transform.position - repulsionObjects[k].transform.position;
+                Vector3 repulsionForce = transform.position - repulsionObjects[objectId].transform.position;
                 float distance = repulsionForce.magnitude;
 
                 // Calculate repulsion force and vector (if not too far away)
@@ -280,18 +280,15 @@ public class FishMovement : MonoBehaviour
         // Dynamic objects' repulsion
         for (int i = 0; i < this.repulsionLayersDynamic.Length; i ++)
         {
-            // Extract coordinates array
-            Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesDynamic[i];
-
             // Get replusion radius
             float repulsionRadius = this.repulsionRadiiDynamic [i];
             GameObject[] repulsionObjects = this.repulsionObjectsDynamic [i];
 
             // Run through objects' coordinates
-            for (int k = 0; k < repulsionObjects.Length; k ++)
+            for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
             {
                 // Compute direction from repulsive object to current GameObject
-                Vector3 repulsionForce = transform.position - repulsionObjects[k].transform.position;
+                Vector3 repulsionForce = transform.position - repulsionObjects[objectId].transform.position;
                 float distance = repulsionForce.magnitude;
 
                 // Calculate repulsion force and vector (if not too far away)
@@ -410,40 +407,46 @@ public class FishMovement : MonoBehaviour
         // Exit method if debug mode off
         if (!this.debugMode) { return; };
 
+        // Draw static objects' gizmos
         if (Application.isPlaying)
         {
             Gizmos.color = new Color (0.09f, 0.94f, 0.6f, 0.2f);
             for (int i = 0; i < this.repulsionLayersStatic.Length; i ++)
             {
                 // Extract coordinates array
-                Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesStatic[i];
+                // Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesStatic[i];
+                GameObject[] repulsionObjects = this.repulsionObjectsStatic [i];
 
                 // Get replusion radius
                 float repulsionRadius = this.repulsionRadiiStatic[i];
 
                 // Run through objects' coordinates
-                for (int objectId = 0; objectId < objectCoordinates.Length; objectId ++)
+                for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
                 {
-                    Gizmos.DrawSphere (objectCoordinates[objectId], repulsionRadius);
+                    Vector3 objectCoordinates = repulsionObjects[objectId].transform.position;
+                    Gizmos.DrawSphere (objectCoordinates, repulsionRadius);
                 }
             }
         }
         
+        // Draw dynamic objects' gizmos
         if (Application.isPlaying)
         {
             Gizmos.color = new Color (0.1f, 0.96f, 0.09f, 0.2f);
             for (int i = 0; i < this.repulsionLayersDynamic.Length; i ++)
             {
                 // Extract coordinates array
-                Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesDynamic[i];
+                // Vector3[] objectCoordinates = this.repulsionObjectsCoordinatesDynamic[i];
+                GameObject[] repulsionObjects = this.repulsionObjectsDynamic [i];
 
                 // Get replusion radius
                 float repulsionRadius = this.repulsionRadiiDynamic[i];
 
                 // Run through objects' coordinates
-                for (int objectId = 0; objectId < objectCoordinates.Length; objectId ++)
+                for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
                 {
-                    Gizmos.DrawSphere (objectCoordinates[objectId], repulsionRadius);
+                    Vector3 objectCoordinates = repulsionObjects[objectId].transform.position;
+                    Gizmos.DrawSphere (objectCoordinates, repulsionRadius);
                 }
             }
         }  
