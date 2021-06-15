@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- BiomeGenerator v1.1
+ BiomeGenerator v1.2
 */
 
 using System.Collections;
@@ -55,6 +55,67 @@ public class BiomeGenerator : MonoBehaviour
         this.Generate();
     }
 
+    
+    // DOESN'T WORK GREAT
+    public void PreBuildAssets ()
+    {
+        this.assets = new Asset[5];
+
+        // Add Rock U
+        this.assets[0] = new Asset (
+            "Rock U",
+            20,
+            (GameObject)Resources.Load("Downloaded Assets/Environment/Rock-U/models/nature_rock_cliff_U"),
+            // (GameObject)Resources.Load("Downloaded Assets/Environment/Rock-U/models/Rock U Prefab"),
+            (Material)Resources.Load("Downloaded Assets/Environment/Rock-U/materials/Rock-U Material"),
+            true,
+            false
+        );
+        
+        // Add Rock V
+        this.assets[1] = new Asset (
+            "Rock V",
+            20,
+            (GameObject)Resources.Load("Downloaded Assets/Environment/Rock-V/models/nature_rock_cliff_V"),
+            // (GameObject)Resources.Load("Downloaded Assets/Environment/Rock-V/models/Rock V Prefab"),
+            (Material)Resources.Load("Downloaded Assets/Environment/Rock-V/materials/Rock-V Material"),
+            true,
+            false
+        );
+
+        // Add Rock W
+        this.assets[2] = new Asset (
+            "Rock W",
+            20,
+            // (GameObject)Resources.Load("Downloaded Assets/Environment/Rock-W/models/nature_rock_cliff_W"),
+            (GameObject)Resources.Load("Downloaded Assets/Environment/Rock-W/models/Rock W Prefab"),
+            (Material)Resources.Load("Downloaded Assets/Environment/Rock-W/materials/Rock-W Material"),
+            true,
+            false
+        );
+
+        // Add Rock X
+        this.assets[3] = new Asset (
+            "Rock X",
+            20,
+            (GameObject)Resources.Load("Downloaded Assets/Environment/Rock-X/models/nature_rock_cliff_X"),
+            // (GameObject)Resources.Load("Downloaded Assets/Environment/Rock-X/models/Rock X Prefab"),
+            (Material)Resources.Load("Downloaded Assets/Environment/Rock-X/materials/Rock-X Material"),
+            true,
+            false
+        );
+
+        // Add Rock Y
+        this.assets[4] = new Asset (
+            "Rock Y",
+            20,
+            (GameObject)Resources.Load("Downloaded Assets/Environment/Rock-Y/models/nature_rock_cliff_Y"),
+            // (GameObject)Resources.Load("Downloaded Assets/Environment/Rock-Y/models/Rock Y Prefab"),
+            (Material)Resources.Load("Downloaded Assets/Environment/Rock-Y/materials/Rock-Y Material"),
+            true,
+            false
+        );
+    }
 
     public void Generate ()
     {
@@ -93,7 +154,7 @@ public class BiomeGenerator : MonoBehaviour
         {
             for (int zBiomeId = this.zBiomeMin; zBiomeId <= this.zBiomeMax; zBiomeId ++)
             {
-                Debug.Log("generating" + xBiomeId.ToString() + "_" + zBiomeId.ToString());
+                // Debug.Log("generating" + xBiomeId.ToString() + "_" + zBiomeId.ToString());
                 this.biomes [xBiomeId, zBiomeId] = new Biome();
             }
         }
@@ -121,15 +182,15 @@ public class BiomeGenerator : MonoBehaviour
                 int   xBiomeId          = int.Parse   (values[0]);
                 int   zBiomeId          = int.Parse   (values[1]);
                 string assetName        =              values[2];
-                float xPositionRelative = float.Parse (values[3]);
-                float yPositionRelative = float.Parse (values[4]);
-                float zPositionRelative = float.Parse (values[5]);
-                float xRotation         = float.Parse (values[6]);
-                float yRotation         = float.Parse (values[7]);
-                float zRotation         = float.Parse (values[8]);
-                float xScale            = float.Parse (values[9]);
-                float yScale            = float.Parse (values[10]);
-                float zScale            = float.Parse (values[11]);
+                float xPositionRelative = float.Parse (values[3]);//.Replace('.',','));
+                float yPositionRelative = float.Parse (values[4]);//.Replace('.',','));
+                float zPositionRelative = float.Parse (values[5]);//.Replace('.',','));
+                float xRotation         = float.Parse (values[6]);//.Replace('.',','));
+                float yRotation         = float.Parse (values[7]);//.Replace('.',','));
+                float zRotation         = float.Parse (values[8]);//.Replace('.',','));
+                float xScale            = float.Parse (values[9]);//.Replace('.',','));
+                float yScale            = float.Parse (values[10]);//.Replace('.',','));
+                float zScale            = float.Parse (values[11]);//.Replace('.',','));
 
                 // Format data
                 Vector3 positionRelative = new Vector3 (xPositionRelative, yPositionRelative, zPositionRelative);
@@ -191,8 +252,11 @@ public class BiomeGenerator : MonoBehaviour
                     biomeElementObject.transform.localScale = biomeElement.scale;
 
                     // Apply material
-                    MeshRenderer meshRenderer = biomeElementObject .GetComponent<MeshRenderer>();
-                    meshRenderer.material = (Material)Instantiate (asset.material);
+                    if (biomeElementObject.GetComponent<MeshRenderer>() == null) {
+                        Debug.Log("adding new mesh renderer");
+                        MeshRenderer meshRenderer = biomeElementObject .AddComponent<MeshRenderer>();
+                        meshRenderer.material = (Material)Instantiate (asset.material);
+                    }
 
                     //MeshCollider meshCollider = 
                     if (asset.addMeshCollider) { biomeElementObject .AddComponent<MeshCollider>(); }
@@ -223,7 +287,7 @@ public class BiomeGenerator : MonoBehaviour
 
 
 [System.Serializable]
-public struct Asset
+public class Asset
 {
     public string name;
     public int layerId;
@@ -231,6 +295,17 @@ public struct Asset
     public Material material;
     public bool addMeshCollider;
     public bool hidden;
+
+    public Asset (string name, int layerId, GameObject gameObject, Material material, bool addMeshCollider, bool hidden)
+    {
+        this.name = name;
+        this.layerId = layerId;
+        this.gameObject = gameObject;
+        [Tooltip("Material (optional)")]
+        this.material = material;
+        this.addMeshCollider = addMeshCollider;
+        this.hidden = hidden;
+    }
 }
 
 // Biome element (system)
