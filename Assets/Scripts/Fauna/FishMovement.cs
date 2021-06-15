@@ -82,10 +82,10 @@ public class FishMovement : MonoBehaviour
 
     // Optimised lists
     // List<Vector3[]> repulsionObjectsCoordinatesStatic = new List<Vector3[]>();
-    List<GameObject[]> repulsionObjectsStatic = new List<GameObject>();
+    List<GameObject[]> repulsionObjectsStatic = new List<GameObject[]>();
     List<float> repulsionRadiiStatic = new List<float>();
     // List<Vector3[]> repulsionObjectsCoordinatesDynamic = new List<Vector3[]>();
-    List<GameObject[]> repulsionObjectsDynamic = new List<GameObject>();
+    List<GameObject[]> repulsionObjectsDynamic = new List<GameObject[]>();
     List<float> repulsionRadiiDynamic = new List<float>();
 
 
