@@ -301,7 +301,7 @@ public class Asset
         this.name = name;
         this.layerId = layerId;
         this.gameObject = gameObject;
-        [Tooltip("Material (optional)")]
+        // [Tooltip("Material (optional)")]
         this.material = material;
         this.addMeshCollider = addMeshCollider;
         this.hidden = hidden;
