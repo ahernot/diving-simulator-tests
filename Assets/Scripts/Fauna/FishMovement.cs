@@ -6,12 +6,7 @@
  FishMovement v1.3
 */
 
-// TODO: cone of headings, with random direction chosen (to restrict angle) –> Gaussian probability, with backwards still possible but way less likely
-// TODO: adjust speed setting to be the only setting available >> this.heading normalized, * this.speed
-// TODO: increase répulsion aux parois, decrease répulsion en haut de l'eau
-// TODO: add offset for rocks
-// TODO: work with forces&accelerations instead of speeds
-
+// TODO: apply repulsion sphere offset
 // TODO: add a getter in TerrainChunkManager to know current player chunk, and nearest vertex position
 // TODO: add a cone gizmo to visualise the possible deflection paths
 
@@ -60,9 +55,10 @@ public class FishMovement : MonoBehaviour
     public float waterSurfaceRepulsionDistance = 1f;
     public float groundHeight = -30f;
 
-    [Space(10)]
-    [Tooltip("Terrain")]
-    public GameObject terrainChunkManager;
+    // --- TODO --- (not used yet)
+    // [Space(10)]
+    // [Tooltip("Terrain")]
+    // public GameObject terrainChunkManager;
 
     [Space(10)]
     // Repulsion: layers
@@ -111,7 +107,7 @@ public class FishMovement : MonoBehaviour
 
     // Gizmos (debug mode)
     [Tooltip("Enable Gizmos visualisations")]
-    public bool debugMode;
+    public bool debugMode = false;
     Mesh boundariesMesh;
     Mesh topMesh;
 
@@ -143,7 +139,7 @@ public class FishMovement : MonoBehaviour
         float rd = UnityEngine.Random.Range(0f, 1f);
         if (rd <= this.headingChangeProbability) {
             this.ChangeHeading();
-            Debug.Log ("Changed heading");
+            if (this.debugMode) { Debug.Log ("Changed heading"); }
         }
 
         // Reset acceleration
@@ -189,7 +185,8 @@ public class FishMovement : MonoBehaviour
         // Move and rotate
         // --- TODO --- TODO: Apply fish rotation and animation here too, using (Vector3)this.u
         transform.position += positionDelta;
-        //transform.rotation = Quaternion.Euler();
+        // Set heading
+        transform.forward = this.velocity; // = this.u;
 
 
         // Generate gizmo meshes if debug mode toggled on during runtime
@@ -304,7 +301,7 @@ public class FishMovement : MonoBehaviour
             GameObject[] repulsionObjects = GameFunctions.FindGameObjectsWithLayer (repulsionLayer.layerId);
 
             // Add GameObject[] to list
-                this.repulsionObjectsDynamic.Add (repulsionObjects); 
+            this.repulsionObjectsDynamic.Add (repulsionObjects); 
         }
     }
 
