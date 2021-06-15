@@ -6,14 +6,12 @@
  FishMovement v1.3
 */
 
-// TODO: new random movement frequency selector
 // TODO: cone of headings, with random direction chosen (to restrict angle) –> Gaussian probability, with backwards still possible but way less likely
 // TODO: adjust speed setting to be the only setting available >> this.heading normalized, * this.speed
 // TODO: increase répulsion aux parois, decrease répulsion en haut de l'eau
 // TODO: add offset for rocks
 // TODO: work with forces&accelerations instead of speeds
 
-// TODO: add a max speed parameter
 // TODO: add a getter in TerrainChunkManager to know current player chunk, and nearest vertex position
 
 /*
@@ -26,8 +24,6 @@
 *   Object mass is 1kg
 */
 
-using System;
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,10 +33,12 @@ public class FishMovement : MonoBehaviour
 {
 
     // Random heading
+    [Tooltip("Max heading deflection angle, in degrees")]
+    public float maxHeadingDeflectionAngle = 30f;
     public float movementForceMultiplier = 10f;
     public float dragForceMultiplier = 5f;
-    Vector3 minHeading;
-    Vector3 maxHeading;
+    [Range(0, 1)]
+    public float headingChangeProbability = 0.002;
 
     // Repulsion: bounding box
     [Header("Movement boundaries")]
@@ -133,29 +131,19 @@ public class FishMovement : MonoBehaviour
             this.GenerateTopMesh();
         }
 
-        // Set random heading parameters
-        this.minHeading = new Vector3 (-10f, -10f, -10f);
-        this.maxHeading = new Vector3 (10f, 10f, 10f);
-
         // Locate all objects
         this.LocateObjects (true);
 
-        // Set initial heading
-        this.ChangeHeading();
+        // Initialise heading
+        this.InitialiseHeading();
     }
 
     void Update ()
     {
         // Pick a new direction (0.2% chance per frame)
-        float rd = UnityEngine.Random.Range(0, 999);
-        if (rd <= 2) { this.ChangeHeading(); }
+        float rd = UnityEngine.Random.Range(0f, 1f);
+        if (rd <= this.headingChangeProbability) { this.ChangeHeading(); }
 
-        this.Calculatevw();
-        Debug.Log (Math.Round(Vector3.Dot (this.u, this.v), 5));
-        Debug.Log (Math.Round(Vector3.Dot (this.u, this.w), 5));
-        Debug.Log (Math.Round(Vector3.Dot (this.v, this.w), 5));
-        Debug.Log ("---");
-        
         // Reset acceleration
         this.acceleration = this.movementForce;
 
@@ -200,9 +188,12 @@ public class FishMovement : MonoBehaviour
         if ((this.debugMode) && (this.boundariesMesh == null)) { this.GenerateBoundariesMesh(); };
     }
 
-    // TODO: change within a cone
-    void ChangeHeading ()
+    void InitialiseHeading ()
     {
+        // Set random heading parameters
+        Vector3 minHeading = new Vector3 (-10f, -10f, -10f);
+        Vector3 maxHeading = new Vector3 (10f, 10f, 10f);
+
         // Generate random vector
         Vector3 randomHeading = new Vector3 (
             UnityEngine.Random.Range(minHeading.x, maxHeading.x),
@@ -212,6 +203,27 @@ public class FishMovement : MonoBehaviour
 
         // Set heading
         this.u = randomHeading / randomHeading.magnitude;
+
+        // Set initial heading
+        this.ChangeHeading();
+    }
+
+    // TODO: change within a cone
+    void ChangeHeading ()
+    {
+        // Recalculate base vectors
+        this.Calculatevw();
+
+        // Generate random angles
+        float thetav = Random.Range(-1f * this.maxHeadingDeflectionAngle, this.maxHeadingDeflectionAngle);
+        float thetaw = Random.Range(-1f * this.maxHeadingDeflectionAngle, this.maxHeadingDeflectionAngle);
+
+        // Calculate new heading (projection along (u,v,w))
+        Vector3 newHeading = Mathf.Cos(thetav) * this.u + Mathf.Sin(thetav) * this.v + Mathf.Cos(thetaw) * this.u + Mathf.Sin(thetaw) * this.w;
+        newHeading /= newHeading.magnitude;
+
+        // Set new heading
+        this.u = newHeading / newHeading.magnitude;
         this.movementForce = this.movementForceMultiplier * this.u;
     }
 
