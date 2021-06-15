@@ -116,10 +116,6 @@ public class FishMovement : MonoBehaviour
 
     void Update ()
     {
-        // Generate gizmo meshes if debug mode toggled on
-        if ((this.debugMode) && (this.topMesh == null)) { this.GenerateTopMesh(); };
-        if ((this.debugMode) && (this.boundariesMesh == null)) { this.GenerateBoundariesMesh(); };
-
         // Pick a new direction (0.2% chance per frame)
         float rd = UnityEngine.Random.Range(0, 999);
         if (rd <= 2) { this.ChangeHeading(); }
@@ -153,9 +149,15 @@ public class FishMovement : MonoBehaviour
         // TODO: Apply fish rotation and animation here too, using (Vector3)this.heading
         transform.position += this.heading * Time.deltaTime;
         //transform.rotation = Quaternion.Euler();
+
+
+
+        // Generate gizmo meshes if debug mode toggled on during runtime
+        if ((this.debugMode) && (this.topMesh == null)) { this.GenerateTopMesh(); };
+        if ((this.debugMode) && (this.boundariesMesh == null)) { this.GenerateBoundariesMesh(); };
     }
 
-
+    // TODO: change within a cone
     void ChangeHeading ()
     {
         // Generate random vector
@@ -171,35 +173,7 @@ public class FishMovement : MonoBehaviour
 
     void LocateObjects (bool locateStaticObjects)
     {
-
-        // Test of using one function for both static and dynamic (tbc)
-        // void Locate (RepulsionLayer[] repulsionLayers, ref List<Vector3[]> repulsionObjectsCoordinates, ref List<float> repulsionRadii)
-        // {
-        //     for (int i = 0; i < this.repulsionLayersStatic.Length; i ++)
-        //     {
-        //         // Get repulsionLayer
-        //         RepulsionLayer repulsionLayer = this.repulsionLayersStatic [i];
-
-        //         // Write repulsion radius
-        //         repulsionRadii.Add (repulsionLayer.repulsionRadius);
-
-        //         // Get GameObjects
-        //         GameObject[] repulsionObjects = Functions.FindGameObjectsWithLayer (repulsionLayer.layerId);
-        //         Vector3[] objectCoordinates = new Vector3 [repulsionObjects.Length]; // Initialise array of coordinates
-                
-        //         // Get coordinates
-        //         for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
-        //         {
-        //             objectCoordinates [objectId] = repulsionObjects[objectId] .transform.position;
-        //         }
-
-        //         // Write coordinates array to list
-        //         repulsionObjectsCoordinates.Add (objectCoordinates);
-                
-        //     }
-        // }
-
-        // Locate static repulsive objects
+        // Locate static repulsive objects (only called once, because static duh)
         if (locateStaticObjects)
         {
             for (int i = 0; i < this.repulsionLayersStatic.Length; i ++)
@@ -545,11 +519,6 @@ public class FishMovement : MonoBehaviour
         };
         
         this.boundariesMesh.triangles = new int[] {
-            // Bottom face
-            // 0, 1, 2,
-            // 0, 2, 3,
-            // 0, 2, 1,
-            // 0, 3, 2,
 
             // xMin face
             0, 4, 5,
@@ -574,12 +543,6 @@ public class FishMovement : MonoBehaviour
             2, 5, 6,
             2, 5, 1,
             2, 6, 5,
-
-            // Top face
-            // 4, 7, 6,
-            // 4, 6, 5,
-            // 4, 6, 7,
-            // 4, 5, 6
         };
         
         this.boundariesMesh.RecalculateNormals();
@@ -608,14 +571,16 @@ public class FishMovement : MonoBehaviour
 
 }
 
+
+// User-referenced repulsion layer
 [System.Serializable]
 public struct RepulsionLayer
 {
     public string name;
-
     public int layerId;
     public float repulsionRadius;
 }
+
 
 public static class GameFunctions
 {
