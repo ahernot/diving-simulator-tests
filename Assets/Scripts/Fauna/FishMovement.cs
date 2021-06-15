@@ -171,6 +171,10 @@ public class FishMovement : MonoBehaviour
         this.heading = this.speed * randomHeading / randomHeading.magnitude;
     }
 
+
+    /**
+    * Locate all repulsive objects in the scene and store them in memory
+    */
     void LocateObjects (bool locateStaticObjects)
     {
         // Locate static repulsive objects (only called once, because static duh)
@@ -224,7 +228,7 @@ public class FishMovement : MonoBehaviour
     }
 
 
-    // Calculate repulsion vectors
+    // Calculate repulsion vectors (static & dynamic objects)
     void CalculateObjectsRepulsion ()
     {
         // Initialise objectsRepulsion vector
@@ -578,6 +582,7 @@ public struct RepulsionLayer
 {
     public string name;
     public int layerId;
+    public Vector3 repulsionSphereOffset;
     public float repulsionRadius;
 }
 
