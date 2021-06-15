@@ -54,9 +54,10 @@ public class FishMovement : MonoBehaviour
     // Repulsion: water level
     [Header("Water level")]
     [Tooltip("Water level")]
-    public float waterHeight;
+    public float waterHeight = 0f;
     public float waterSurfaceRepulsionMultiplier = 100f;
     public float waterSurfaceRepulsionDistance = 1f;
+    public float groundHeight = -150f;
 
     [Space(10)]
     [Tooltip("Terrain")]
@@ -212,7 +213,7 @@ public class FishMovement : MonoBehaviour
         this.ChangeHeading();
     }
 
-    // TODO: change within a cone
+
     void ChangeHeading ()
     {
         // Recalculate base vectors
@@ -399,11 +400,6 @@ public class FishMovement : MonoBehaviour
 
             // Apply repulsion force multiplier (based on distance)
             float repulsionMult = GameFunctions.SoftRepulsionFunction (this.boundaryRepulsionMultiplier, this.boundaryRepulsionDistance, minXDistanceSigned);
-            // if (minXDistanceSigned < boundaryRepulsionDistance) {
-            //     repulsionMult = this.repulsionAmplitude;
-            // } else {
-            //     repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * minXDistanceSigned / boundaryRepulsionDistance);
-            // };
             repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
@@ -418,11 +414,6 @@ public class FishMovement : MonoBehaviour
 
             // Apply repulsion force multiplier (based on distance)
             float repulsionMult = GameFunctions.SoftRepulsionFunction (this.boundaryRepulsionMultiplier, this.boundaryRepulsionDistance, maxXDistanceSigned);
-            // if (maxXDistanceSigned < boundaryRepulsionDistance) {
-            //     repulsionMult = this.repulsionAmplitude;
-            // } else {
-            //     repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * maxXDistanceSigned / boundaryRepulsionDistance);
-            // };
             repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
@@ -437,11 +428,6 @@ public class FishMovement : MonoBehaviour
 
             // Apply repulsion force multiplier (based on distance)
             float repulsionMult = GameFunctions.SoftRepulsionFunction (this.boundaryRepulsionMultiplier, this.boundaryRepulsionDistance, minZDistanceSigned);
-            // if (minZDistanceSigned < boundaryRepulsionDistance) {
-            //     repulsionMult = this.repulsionAmplitude;
-            // } else {
-            //     repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * minZDistanceSigned / boundaryRepulsionDistance);
-            // };
             repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
@@ -456,11 +442,6 @@ public class FishMovement : MonoBehaviour
 
             // Apply repulsion force multiplier (based on distance)
             float repulsionMult = GameFunctions.SoftRepulsionFunction (this.boundaryRepulsionMultiplier, this.boundaryRepulsionDistance, maxZDistanceSigned);
-            // if (maxZDistanceSigned < boundaryRepulsionDistance) {
-            //     repulsionMult = this.repulsionAmplitude;
-            // } else {
-            //     repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * maxZDistanceSigned / boundaryRepulsionDistance);
-            // };
             repulsionForce *= repulsionMult;
 
             // Add to global repulsion vector
@@ -486,8 +467,6 @@ public class FishMovement : MonoBehaviour
         float repulsionMult = 0f;
         if (distanceSigned <= this.waterSurfaceRepulsionDistance * 10)
         {
-            // float repulsionForce = this.repulsionAmplitude * Mathf.Exp (-1 * this.repulsionScale * distance / this.waterSurfaceRepulsionDistance);
-            // this.seaLevelRepulsion = repulsionForce * Vector3.down;
             repulsionMult = GameFunctions.HardRepulsionFunction (this.waterSurfaceRepulsionMultiplier, this.waterSurfaceRepulsionDistance, distanceSigned);
         }
         repulsionForce *= repulsionMult;
@@ -497,15 +476,28 @@ public class FishMovement : MonoBehaviour
 
     /**
     * Calculate the terrain repulsion force vector
-    --- TODO ---
+    --- TODO --- Get max terrain height on nearest vertices of current chunk
     */
     void CalculateTerrainRepulsion ()
     {
         // Initialise terrainRepulsionForce vector
         this.terrainRepulsionForce = new Vector3();
 
-        // TODO: Get max terrain height on nearest vertices of current chunk
-        //
+        // Calculate distance to ground surface
+        float distanceSigned = transform.position.y - this.groundHeight;
+
+        // Initialise repulsion force vector
+        Vector3 repulsionForce = Vector3.up;
+        
+        // Calculate repulsion force multiplier (based on distance)
+        float repulsionMult = 0f;
+        if (distanceSigned <= this.waterSurfaceRepulsionDistance * 10)
+        {
+            repulsionMult = GameFunctions.HardRepulsionFunction (this.waterSurfaceRepulsionMultiplier, this.waterSurfaceRepulsionDistance, distanceSigned);
+        }
+        repulsionForce *= repulsionMult;
+
+        this.terrainRepulsionForce = repulsionForce; 
     }
 
 
