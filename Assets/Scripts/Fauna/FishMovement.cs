@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.2
+ FishMovement v1.3
 */
 
 // TODO: new random movement frequency selector
@@ -23,15 +23,33 @@ using UnityEngine;
 
 public class FishMovement : MonoBehaviour
 {
+
+    // Random heading
+    Vector3 minHeading;
+    Vector3 maxHeading;
+
+    // Repulsion: bounding box
     [Header("Movement boundaries")]
     [Tooltip("Min boundaries on the x and z axes")]
     public Vector2 minCoordinates;
     [Tooltip("Max boundaries on the x and z axes")]
     public Vector2 maxCoordinates;
 
-    // Speed
-    public float speed = 2f;
-    public float repulsionSpeed = 10f;
+    // Repulsion: water level
+    [Tooltip("Water level")]
+    public float waterHeight;
+
+    [Tooltip("Terrain")]
+    public GameObject terrainChunkManager;
+
+    // Repulsion: layers
+    [Header("Repulsion Layers")]
+    [Tooltip("Static repulsive objects")]
+    public RepulsionLayer[] repulsionLayersStatic;
+    [Tooltip("Dynamic repulsive objects (position recalculatedd each frame)")]
+    public RepulsionLayer[] repulsionLayersDynamic;
+
+
 
     // Repulsion function parameters
     float repulsionAmplitude = 100f;
@@ -39,21 +57,16 @@ public class FishMovement : MonoBehaviour
     float boundaryRepulsionDistance = 0.1f;
     float waterSurfaceRepulsionDistance = 1f;
 
-    // Random heading settings
-    Vector3 minHeading;
-    Vector3 maxHeading;
-    
-    [Header("Repulsion Layers")]
-    [Tooltip("Water level")]
-    public float waterHeight;
+    // Speed
+    public float speed = 2f;
+    public float repulsionSpeed = 10f;
 
-    [Tooltip("Terrain")]
-    public GameObject terrainChunkManager;
 
-    [Tooltip("Static repulsive objects")]
-    public RepulsionLayer[] repulsionLayersStatic;
-    [Tooltip("Dynamic repulsive objects (position recalculatedd each frame)")]
-    public RepulsionLayer[] repulsionLayersDynamic;
+    Vector3 acceleration;
+    Vector3 velocity; // replaces heading
+    // do not bother with rotation inertia for now
+
+
 
     [Header("Current heading")]
     [SerializeField]
@@ -73,15 +86,12 @@ public class FishMovement : MonoBehaviour
     List<Vector3[]> repulsionObjectsCoordinatesDynamic = new List<Vector3[]>();
     List<float> repulsionRadiiDynamic = new List<float>();
 
-    // Gizmos
+    // Gizmos (debug mode)
+    [Tooltip("Enable Gizmos visualisations")]
+    public bool debugMode;
     Mesh boundariesMesh;
     Mesh topMesh;
 
-    [Space(30)]
-
-    // Debug mode
-    [Tooltip("Enable Gizmos visualisations")]
-    public bool debugMode;
 
 
     void Start ()
