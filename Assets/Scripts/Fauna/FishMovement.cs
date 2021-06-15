@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.3
+ FishMovement v1.3.1
 */
 
 // TODO: apply repulsion sphere offset
@@ -337,13 +337,8 @@ public class FishMovement : MonoBehaviour
                 // Calculate repulsion force and vector (if not too far away)
                 if (distance <= repulsionRadius * 10)
                 {
-                    // Apply repulsion force multipiler (based on distance)
+                    // Apply repulsion force multiplier (based on distance)
                     float repulsionMult = GameFunctions.HardRepulsionFunction (this.globalRepulsionMultiplier, repulsionRadius, distance);
-                    // if (distance < repulsionRadius) {
-                    //     repulsionMult = this.repulsionAmplitude;
-                    // } else {
-                    //     repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * (distance - repulsionRadius) / repulsionRadius);  
-                    // };
                     repulsionForce = (repulsionForce / distance) * repulsionMult;
 
                     // Add to global repulsion vector
@@ -369,13 +364,8 @@ public class FishMovement : MonoBehaviour
                 // Calculate repulsion force and vector (if not too far away)
                 if (distance <= repulsionRadius * 10)
                 {
-                    // Apply repulsion force multipiler (based on distance)
+                    // Apply repulsion force multiplier (based on distance)
                     float repulsionMult = GameFunctions.HardRepulsionFunction (this.globalRepulsionMultiplier, repulsionRadius, distance);
-                    // if (distance < repulsionRadius) {
-                    //     repulsionMult = this.repulsionAmplitude;
-                    // } else {
-                    //     repulsionMult = this.repulsionAmplitude * Mathf.Exp(-1 * this.repulsionScale * (distance - repulsionRadius) / repulsionRadius);  
-                    // };
                     repulsionForce = (repulsionForce / distance) * repulsionMult;
 
                     // Add to global repulsion vector
@@ -591,7 +581,7 @@ public class FishMovement : MonoBehaviour
             Gizmos.DrawLine (transform.position, transform.position + this.terrainRepulsionForce);
         }
 
-        // uvw gizmos
+        // Draw uvw gizmos
         // Gizmos.color = Color.red;
         // Gizmos.DrawLine (transform.position, transform.position + this.u);
         // Gizmos.color = Color.green;
@@ -738,7 +728,6 @@ public static class GameFunctions
         } else {
             return multiplier;
         }
-        
     }
 
     public static float SoftRepulsionFunction (float multiplier, float radius, float x)
