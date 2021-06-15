@@ -23,6 +23,7 @@
 * Information:
 *   The water level, terrain, and object boundaries are hard boundaries
 *   The bounding box boundaries are flexible
+*   Object mass is 1kg
 */
 
 
@@ -36,21 +37,22 @@ public class FishMovement : MonoBehaviour
 
     // Random heading
     public float movementForceMultiplier = 1f;
+    public float dragForceMultiplier = 1.1f;
     Vector3 minHeading;
     Vector3 maxHeading;
 
-    [Header("Repulsion Objects")]
     // Repulsion: bounding box
     [Header("Movement boundaries")]
     [Tooltip("Min boundaries on the x and z axes")]
     public Vector2 minCoordinates;
     [Tooltip("Max boundaries on the x and z axes")]
     public Vector2 maxCoordinates;
-    public float boundaryRepulsionMultiplier = 100f;
-    public float boundaryRepulsionDistance = 0.1f;
+    public float boundaryRepulsionMultiplier = 0.3f;
+    public float boundaryRepulsionDistance = 1f;
     
     [Space(10)]
     // Repulsion: water level
+    [Header("Water level")]
     [Tooltip("Water level")]
     public float waterHeight;
     public float waterSurfaceRepulsionMultiplier = 100f;
@@ -88,6 +90,10 @@ public class FishMovement : MonoBehaviour
 
     // Force vectors
     [SerializeField]
+    Vector3 movementForce;
+    [SerializeField]
+    Vector3 dragForce;
+    [SerializeField]
     Vector3 objectsRepulsionForce;
     [SerializeField]
     Vector3 boundaryRepulsionForce;
@@ -113,6 +119,10 @@ public class FishMovement : MonoBehaviour
 
     void Start ()
     {
+        // Initialise acceleration vector and drag force vector
+        this.acceleration = new Vector3();
+        this.dragForce = new Vector3();
+
         // Generate gizmo meshes
         if (this.debugMode)
         {
@@ -136,35 +146,44 @@ public class FishMovement : MonoBehaviour
         // Pick a new direction (0.2% chance per frame)
         float rd = UnityEngine.Random.Range(0, 999);
         if (rd <= 2) { this.ChangeHeading(); }
-        // this.heading = new Vector3(); // Reset heading
+        
+        // Reset acceleration
+        this.acceleration = this.movementForce;
 
-        // Calculate repulsion vectors
+        // Calculate repulsion forces
         this.CalculateObjectsRepulsion();
         this.CalculateSeaLevelRepulsion();
-        // this.CalculateBoundaryRepulsion();
+        this.CalculateBoundaryRepulsion();
+        this.CalculateDragForce();
 
-        // Apply objects repulsion vector
-        if (!float.IsNaN(this.objectsRepulsion.x) && !float.IsNaN(this.objectsRepulsion.y) && !float.IsNaN(this.objectsRepulsion.z)) {
+        // Apply objects repulsion force
+        if (!float.IsNaN(this.objectsRepulsionForce.x) && !float.IsNaN(this.objectsRepulsionForce.y) && !float.IsNaN(this.objectsRepulsionForce.z)) {
             this.acceleration += this.objectsRepulsionForce;
         }
-        // Apply sea level repulsion vector
-        if (!float.IsNaN(this.seaLevelRepulsion.x) && !float.IsNaN(this.seaLevelRepulsion.y) && !float.IsNaN(this.seaLevelRepulsion.z)) {
-            this.heading += this.seaLevelRepulsion;// * 0.001f;
+        // Apply boundary repulsion force
+        if (!float.IsNaN(this.boundaryRepulsionForce.x) && !float.IsNaN(this.boundaryRepulsionForce.y) && !float.IsNaN(this.boundaryRepulsionForce.z)) {
+            this.acceleration += this.boundaryRepulsionForce;
         }
-        // Apply boundary repulsion vector
-        if (!float.IsNaN(this.boundaryRepulsion.x) && !float.IsNaN(this.boundaryRepulsion.y) && !float.IsNaN(this.boundaryRepulsion.z)) {
-            this.heading += this.boundaryRepulsion;// * 0.001f;
+        // Apply sea level repulsion force
+        if (!float.IsNaN(this.seaLevelRepulsionForce.x) && !float.IsNaN(this.seaLevelRepulsionForce.y) && !float.IsNaN(this.seaLevelRepulsionForce.z)) {
+            this.acceleration += this.seaLevelRepulsionForce;
         }
-        // Apply terrain repulsion vector (NOT IMPLEMENTED)
-        if (!float.IsNaN(this.terrainRepulsion.x) && !float.IsNaN(this.terrainRepulsion.y) && !float.IsNaN(this.terrainRepulsion.z)) {
-            this.heading += this.terrainRepulsion;
+        // Apply terrain repulsion force
+        if (!float.IsNaN(this.terrainRepulsionForce.x) && !float.IsNaN(this.terrainRepulsionForce.y) && !float.IsNaN(this.terrainRepulsionForce.z)) {
+            this.acceleration += this.terrainRepulsionForce;
         }
 
-        // Move this.gameObject
-        // TODO: Apply fish rotation and animation here too, using (Vector3)this.heading
-        transform.position += this.heading * Time.deltaTime;
+        // Apply drag force
+        this.acceleration += this.dragForce;
+
+        // Integrate motion
+        this.velocity += this.acceleration * Time.deltaTime;
+        Vector3 positionDelta = this.velocity * Time.deltaTime;
+
+        // Move and rotate
+        // --- TODO --- TODO: Apply fish rotation and animation here too, using (Vector3)this.heading
+        transform.position += positionDelta;
         //transform.rotation = Quaternion.Euler();
-
 
 
         // Generate gizmo meshes if debug mode toggled on during runtime
@@ -183,7 +202,7 @@ public class FishMovement : MonoBehaviour
         );
 
         // Set heading
-        this.heading = this.speed * randomHeading / randomHeading.magnitude;
+        this.movementForce = this.movementForceMultiplier * randomHeading / randomHeading.magnitude;
     }
 
 
@@ -228,6 +247,11 @@ public class FishMovement : MonoBehaviour
         }
     }
 
+
+    void CalculateDragForce ()
+    {
+        this.dragForce = -1f * this.dragForceMultiplier * this.velocity;
+    }
 
     /**
     * Calculate the object repulsion force vectors
@@ -492,31 +516,31 @@ public class FishMovement : MonoBehaviour
 
         // General heading vector
         Gizmos.color = Color.black;
-        Gizmos.DrawLine (transform.position, transform.position + this.heading);
+        Gizmos.DrawLine (transform.position, transform.position + this.acceleration);
 
         // Objects repulsion vector
-        if (!float.IsNaN(this.objectsRepulsion.x) && !float.IsNaN(this.objectsRepulsion.y) && !float.IsNaN(this.objectsRepulsion.z)) {
+        if (!float.IsNaN(this.objectsRepulsionForce.x) && !float.IsNaN(this.objectsRepulsionForce.y) && !float.IsNaN(this.objectsRepulsionForce.z)) {
             Gizmos.color = Color.green;
-            Gizmos.DrawLine (transform.position, transform.position + this.objectsRepulsion);
+            Gizmos.DrawLine (transform.position, transform.position + this.objectsRepulsionForce);
+        }
+
+        // Boundary repulsion vector
+        if (!float.IsNaN(this.boundaryRepulsionForce.x) && !float.IsNaN(this.boundaryRepulsionForce.y) && !float.IsNaN(this.boundaryRepulsionForce.z)) {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine (transform.position, transform.position + this.boundaryRepulsionForce);
         }
        
         // Sea level repulsion vector
-        if (!float.IsNaN(this.seaLevelRepulsion.x) && !float.IsNaN(this.seaLevelRepulsion.y) && !float.IsNaN(this.seaLevelRepulsion.z)) {
+        if (!float.IsNaN(this.seaLevelRepulsionForce.x) && !float.IsNaN(this.seaLevelRepulsionForce.y) && !float.IsNaN(this.seaLevelRepulsionForce.z)) {
             Gizmos.color = Color.blue;
-            Gizmos.DrawLine (transform.position, transform.position + this.seaLevelRepulsion);
-        }
-        
-        // Boundary repulsion vector
-        if (!float.IsNaN(this.boundaryRepulsion.x) && !float.IsNaN(this.boundaryRepulsion.y) && !float.IsNaN(this.boundaryRepulsion.z)) {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine (transform.position, transform.position + this.boundaryRepulsion);
+            Gizmos.DrawLine (transform.position, transform.position + this.seaLevelRepulsionForce);
         }
         
         // Terrain repulsion vector
-        // if (!float.IsNaN(this.terrainRepulsion.x) && !float.IsNaN(this.terrainRepulsion.y) && !float.IsNaN(this.terrainRepulsion.z)) {
-        //     Gizmos.color = Color.yellow;
-        //     Gizmos.DrawLine (transform.position, transform.position + this.terrainRepulsion);
-        // }
+        if (!float.IsNaN(this.terrainRepulsionForce.x) && !float.IsNaN(this.terrainRepulsionForce.y) && !float.IsNaN(this.terrainRepulsionForce.z)) {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine (transform.position, transform.position + this.terrainRepulsionForce);
+        }
 
         // Draw boundaries mesh and its vertices
         if (Application.isPlaying)
