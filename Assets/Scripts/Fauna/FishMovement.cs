@@ -36,8 +36,8 @@ public class FishMovement : MonoBehaviour
 {
 
     // Random heading
-    public float movementForceMultiplier = 1f;
-    public float dragForceMultiplier = 1.1f;
+    public float movementForceMultiplier = 10f;
+    public float dragForceMultiplier = 5f;
     Vector3 minHeading;
     Vector3 maxHeading;
 
@@ -47,7 +47,7 @@ public class FishMovement : MonoBehaviour
     public Vector2 minCoordinates;
     [Tooltip("Max boundaries on the x and z axes")]
     public Vector2 maxCoordinates;
-    public float boundaryRepulsionMultiplier = 0.3f;
+    public float boundaryRepulsionMultiplier = 0.5f;
     public float boundaryRepulsionDistance = 1f;
     
     [Space(10)]

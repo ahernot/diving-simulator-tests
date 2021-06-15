@@ -600,10 +600,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947e3f134fde74e05b25809da8d7a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementForceMultiplier: 1
+  movementForceMultiplier: 10
+  dragForceMultiplier: 5
   minCoordinates: {x: -50, y: -50}
   maxCoordinates: {x: 50, y: 50}
-  boundaryRepulsionMultiplier: 0.3
+  boundaryRepulsionMultiplier: 0.5
   boundaryRepulsionDistance: 1
   waterHeight: 10
   waterSurfaceRepulsionMultiplier: 10
@@ -623,6 +624,8 @@ MonoBehaviour:
   speed: 1
   repulsionSpeed: 1
   heading: {x: 0, y: 0, z: 0}
+  movementForce: {x: 0, y: 0, z: 0}
+  dragForce: {x: 0, y: 0, z: 0}
   objectsRepulsionForce: {x: 0, y: 0, z: 0}
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
