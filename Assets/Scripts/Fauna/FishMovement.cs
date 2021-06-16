@@ -67,6 +67,7 @@ public class FishMovement : MonoBehaviour
     public RepulsionLayer[] repulsionLayersStatic;
     [Tooltip("Dynamic repulsive objects (position recalculatedd each frame)")]
     public RepulsionLayer[] repulsionLayersDynamic;
+    [Space(10)]
     // Repulsion function parameters
     public float globalRepulsionMultiplier = 1f;
 
