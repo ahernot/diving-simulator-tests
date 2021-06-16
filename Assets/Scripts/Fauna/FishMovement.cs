@@ -392,7 +392,7 @@ public class FishMovement : MonoBehaviour
         // Initialise boundaryRepulsionForce vector
         this.boundaryRepulsionForce = new Vector3();
 
-        // Calculate distances to boundaries
+        // Calculate distances to boundaries (can be null without posing a problem)
         float minXDistanceSigned = transform.position.x - this.minCoordinates.x;
         float maxXDistanceSigned = this.maxCoordinates.x - transform.position.x;
         float minZDistanceSigned = transform.position.z - this.minCoordinates.y;
@@ -463,7 +463,7 @@ public class FishMovement : MonoBehaviour
         // Initialise seaLevelRepulsionForce vector
         this.seaLevelRepulsionForce = new Vector3();
 
-        // Calculate distance to water surface
+        // Calculate distance to water surface (can be null without a problem)
         float distanceSigned = this.waterHeight - transform.position.y;
 
         // Initialise repulsion force vector
@@ -489,7 +489,7 @@ public class FishMovement : MonoBehaviour
         // Initialise terrainRepulsionForce vector
         this.terrainRepulsionForce = new Vector3();
 
-        // Calculate distance to ground surface
+        // Calculate distance to ground surface (can be null without a problem)
         float distanceSigned = transform.position.y - this.groundHeight;
 
         // Initialise repulsion force vector
