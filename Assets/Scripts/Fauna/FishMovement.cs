@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.3.3
+ FishMovement v1.3.4
 */
 
 // TODO: apply repulsion sphere offset
@@ -105,6 +105,8 @@ public class FishMovement : MonoBehaviour
     List<GameObject[]> repulsionObjectsDynamic = new List<GameObject[]>();
     List<float> repulsionRadiiDynamic = new List<float>();
 
+
+    public float minDistance = 0.00001f;
 
     // Gizmos (debug mode)
     [Tooltip("Enable Gizmos visualisations")]
@@ -331,7 +333,7 @@ public class FishMovement : MonoBehaviour
             float repulsionRadius = this.repulsionRadiiStatic [i];
             GameObject[] repulsionObjects = this.repulsionObjectsStatic [i];
 
-            // Run through objects' coordinates
+            // Run through objects
             for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
             {
                 // Compute direction from repulsive object to current GameObject
@@ -339,6 +341,7 @@ public class FishMovement : MonoBehaviour
                 float distance = repulsionForce.magnitude;
 
                 // Calculate repulsion force and vector (if not too far away)
+                if (distance <= this.minDistance) { distance = this.minDistance; }
                 if (distance <= repulsionRadius * 10)
                 {
                     // Apply repulsion force multiplier (based on distance)
@@ -352,31 +355,32 @@ public class FishMovement : MonoBehaviour
         }
 
         // Dynamic objects' repulsion
-        // for (int i = 0; i < this.repulsionLayersDynamic.Length; i ++)
-        // {
-        //     // Get replusion radius
-        //     float repulsionRadius = this.repulsionRadiiDynamic [i];
-        //     GameObject[] repulsionObjects = this.repulsionObjectsDynamic [i];
+        for (int i = 0; i < this.repulsionLayersDynamic.Length; i ++)
+        {
+            // Get GameObject[] and repulsionRadius
+            float repulsionRadius = this.repulsionRadiiDynamic [i];
+            GameObject[] repulsionObjects = this.repulsionObjectsDynamic [i];
 
-        //     // Run through objects' coordinates
-        //     for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
-        //     {
-        //         // Compute direction from repulsive object to current GameObject
-        //         Vector3 repulsionForce = transform.position - repulsionObjects[objectId].transform.position;
-        //         float distance = repulsionForce.magnitude;
+            // Run through objects
+            for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
+            {
+                // Compute direction from repulsive object to current GameObject
+                Vector3 repulsionForce = transform.position - repulsionObjects[objectId].transform.position;
+                float distance = repulsionForce.magnitude;
 
-        //         // Calculate repulsion force and vector (if not too far away)
-        //         if (distance <= repulsionRadius * 10)
-        //         {
-        //             // Apply repulsion force multiplier (based on distance)
-        //             float repulsionMult = GameFunctions.HardRepulsionFunction (this.globalRepulsionMultiplier, repulsionRadius, distance);
-        //             repulsionForce = (repulsionForce / distance) * repulsionMult;
+                // Calculate repulsion force and vector (if not too far away)
+                if (distance <= this.minDistance) { distance = this.minDistance; }
+                if (distance <= repulsionRadius * 10)
+                {
+                    // Apply repulsion force multiplier (based on distance)
+                    float repulsionMult = GameFunctions.HardRepulsionFunction (this.globalRepulsionMultiplier, repulsionRadius, distance);
+                    repulsionForce = (repulsionForce / distance) * repulsionMult;
 
-        //             // Add to global repulsion vector
-        //             this.objectsRepulsionForce += repulsionForce;
-        //         }
-        //     }
-        // }
+                    // Add to global repulsion vector
+                    this.objectsRepulsionForce += repulsionForce;
+                }
+            }
+        }
 
     }
 
@@ -554,9 +558,6 @@ public class FishMovement : MonoBehaviour
 
     void OnDrawGizmos ()
     {
-        // Exit method if debug mode off
-        if (!this.debugMode) { return; };
-
         // General heading vector
         Gizmos.color = Color.black;
         Gizmos.DrawLine (transform.position, transform.position + this.acceleration);
@@ -592,6 +593,9 @@ public class FishMovement : MonoBehaviour
         // Gizmos.DrawLine (transform.position, transform.position + this.v);
         // Gizmos.color = Color.blue;
         // Gizmos.DrawLine (transform.position, transform.position + this.w);
+
+        // Exit method if debug mode off
+        if (!this.debugMode) { return; };
 
         // Draw boundaries mesh and its vertices
         if (Application.isPlaying)
