@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8074287
 Transform:
   m_ObjectHideFlags: 0
@@ -203,6 +203,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &8074289
@@ -284,7 +285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &14962039
 Transform:
   m_ObjectHideFlags: 0
@@ -347,6 +348,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &14962041
@@ -428,7 +430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &41214864
 Transform:
   m_ObjectHideFlags: 0
@@ -491,6 +493,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &41214866
@@ -572,7 +575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &42368666
 Transform:
   m_ObjectHideFlags: 0
@@ -635,6 +638,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &42368668
@@ -716,7 +720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &48617569
 Transform:
   m_ObjectHideFlags: 0
@@ -779,6 +783,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &48617571
@@ -860,7 +865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &56300687
 Transform:
   m_ObjectHideFlags: 0
@@ -923,6 +928,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &56300689
@@ -1004,7 +1010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &56791880
 Transform:
   m_ObjectHideFlags: 0
@@ -1067,6 +1073,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &56791882
@@ -1148,7 +1155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &59996230
 Transform:
   m_ObjectHideFlags: 0
@@ -1211,6 +1218,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &59996232
@@ -1292,7 +1300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &62266096
 Transform:
   m_ObjectHideFlags: 0
@@ -1355,6 +1363,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &62266098
@@ -1436,7 +1445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &69627906
 Transform:
   m_ObjectHideFlags: 0
@@ -1499,6 +1508,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &69627908
@@ -1580,7 +1590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &87483234
 Transform:
   m_ObjectHideFlags: 0
@@ -1643,6 +1653,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &87483236
@@ -1724,7 +1735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &93839877
 Transform:
   m_ObjectHideFlags: 0
@@ -1787,6 +1798,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &93839879
@@ -1868,7 +1880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &103218884
 Transform:
   m_ObjectHideFlags: 0
@@ -1931,6 +1943,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &103218886
@@ -2012,7 +2025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &139120365
 Transform:
   m_ObjectHideFlags: 0
@@ -2075,6 +2088,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &139120367
@@ -2156,7 +2170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &145847920
 Transform:
   m_ObjectHideFlags: 0
@@ -2219,6 +2233,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &145847922
@@ -2338,7 +2353,7 @@ MonoBehaviour:
   - name: TestFish
     layerId: 10
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 5
+    repulsionRadius: 1
   globalRepulsionMultiplier: 1
   u: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -2349,6 +2364,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &147864480
@@ -2444,7 +2460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &151246460
 Transform:
   m_ObjectHideFlags: 0
@@ -2507,6 +2523,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &151246462
@@ -2588,7 +2605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &154983164
 Transform:
   m_ObjectHideFlags: 0
@@ -2651,6 +2668,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &154983166
@@ -2732,7 +2750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &157542031
 Transform:
   m_ObjectHideFlags: 0
@@ -2795,6 +2813,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &157542033
@@ -2876,7 +2895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &165074680
 Transform:
   m_ObjectHideFlags: 0
@@ -2939,6 +2958,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &165074682
@@ -3020,7 +3040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &176920082
 Transform:
   m_ObjectHideFlags: 0
@@ -3083,6 +3103,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &176920084
@@ -3227,6 +3248,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &180202976
@@ -3371,6 +3393,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &181978427
@@ -3452,7 +3475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &182420856
 Transform:
   m_ObjectHideFlags: 0
@@ -3515,6 +3538,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &182420858
@@ -3596,7 +3620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &195919527
 Transform:
   m_ObjectHideFlags: 0
@@ -3659,6 +3683,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &195919529
@@ -3740,7 +3765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &198180844
 Transform:
   m_ObjectHideFlags: 0
@@ -3803,6 +3828,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &198180846
@@ -3884,7 +3910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &202485070
 Transform:
   m_ObjectHideFlags: 0
@@ -3947,6 +3973,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &202485072
@@ -4091,6 +4118,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &216898519
@@ -4172,7 +4200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &226431630
 Transform:
   m_ObjectHideFlags: 0
@@ -4235,6 +4263,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &226431632
@@ -4316,7 +4345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &226935234
 Transform:
   m_ObjectHideFlags: 0
@@ -4379,6 +4408,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &226935236
@@ -4460,7 +4490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &236157625
 Transform:
   m_ObjectHideFlags: 0
@@ -4523,6 +4553,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &236157627
@@ -4604,7 +4635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &242394845
 Transform:
   m_ObjectHideFlags: 0
@@ -4667,6 +4698,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &242394847
@@ -4748,7 +4780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &261267711
 Transform:
   m_ObjectHideFlags: 0
@@ -4811,6 +4843,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &261267713
@@ -4892,7 +4925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &262389108
 Transform:
   m_ObjectHideFlags: 0
@@ -4955,6 +4988,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &262389110
@@ -5036,7 +5070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &263110394
 Transform:
   m_ObjectHideFlags: 0
@@ -5099,6 +5133,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &263110396
@@ -5243,6 +5278,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &269788016
@@ -5324,7 +5360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &282232639
 Transform:
   m_ObjectHideFlags: 0
@@ -5387,6 +5423,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &282232641
@@ -5531,6 +5568,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &295961898
@@ -5612,7 +5650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &297927298
 Transform:
   m_ObjectHideFlags: 0
@@ -5675,6 +5713,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &297927300
@@ -5756,7 +5795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &298236385
 Transform:
   m_ObjectHideFlags: 0
@@ -5819,6 +5858,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &298236387
@@ -5900,7 +5940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &299363645
 Transform:
   m_ObjectHideFlags: 0
@@ -5963,6 +6003,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &299363647
@@ -6044,7 +6085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &299747701
 Transform:
   m_ObjectHideFlags: 0
@@ -6107,6 +6148,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &299747703
@@ -6251,6 +6293,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &308650579
@@ -6332,7 +6375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &315596874
 Transform:
   m_ObjectHideFlags: 0
@@ -6395,6 +6438,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &315596876
@@ -6539,6 +6583,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &347027147
@@ -6620,7 +6665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &348423686
 Transform:
   m_ObjectHideFlags: 0
@@ -6683,6 +6728,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &348423688
@@ -6764,7 +6810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &358864682
 Transform:
   m_ObjectHideFlags: 0
@@ -6827,6 +6873,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &358864684
@@ -6908,7 +6955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &360450518
 Transform:
   m_ObjectHideFlags: 0
@@ -6971,6 +7018,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &360450520
@@ -7115,6 +7163,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &369309880
@@ -7196,7 +7245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &387774353
 Transform:
   m_ObjectHideFlags: 0
@@ -7259,6 +7308,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &387774355
@@ -7340,7 +7390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &390647745
 Transform:
   m_ObjectHideFlags: 0
@@ -7403,6 +7453,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &390647747
@@ -7484,7 +7535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &391796724
 Transform:
   m_ObjectHideFlags: 0
@@ -7547,6 +7598,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &391796726
@@ -7691,6 +7743,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &405478492
@@ -7772,7 +7825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &416182847
 Transform:
   m_ObjectHideFlags: 0
@@ -7835,6 +7888,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &416182849
@@ -7916,7 +7970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &417104264
 Transform:
   m_ObjectHideFlags: 0
@@ -7979,6 +8033,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &417104266
@@ -8060,7 +8115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &424905609
 Transform:
   m_ObjectHideFlags: 0
@@ -8123,6 +8178,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &424905611
@@ -8204,7 +8260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &439344484
 Transform:
   m_ObjectHideFlags: 0
@@ -8267,6 +8323,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &439344486
@@ -8348,7 +8405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &443887236
 Transform:
   m_ObjectHideFlags: 0
@@ -8411,6 +8468,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &443887238
@@ -8492,7 +8550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &444080930
 Transform:
   m_ObjectHideFlags: 0
@@ -8555,6 +8613,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &444080932
@@ -8636,7 +8695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &445325337
 Transform:
   m_ObjectHideFlags: 0
@@ -8699,6 +8758,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &445325339
@@ -8780,7 +8840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &448857714
 Transform:
   m_ObjectHideFlags: 0
@@ -8843,6 +8903,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &448857716
@@ -8987,6 +9048,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &457583275
@@ -9068,7 +9130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &461531731
 Transform:
   m_ObjectHideFlags: 0
@@ -9131,6 +9193,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &461531733
@@ -9212,7 +9275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &468230097
 Transform:
   m_ObjectHideFlags: 0
@@ -9275,6 +9338,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &468230099
@@ -9356,7 +9420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &474868592
 Transform:
   m_ObjectHideFlags: 0
@@ -9419,6 +9483,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &474868594
@@ -9563,6 +9628,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &480709119
@@ -9644,7 +9710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &483004853
 Transform:
   m_ObjectHideFlags: 0
@@ -9707,6 +9773,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &483004855
@@ -9788,7 +9855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &484623551
 Transform:
   m_ObjectHideFlags: 0
@@ -9851,6 +9918,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &484623553
@@ -9995,6 +10063,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &499116036
@@ -10076,7 +10145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &502222580
 Transform:
   m_ObjectHideFlags: 0
@@ -10139,6 +10208,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &502222582
@@ -10220,7 +10290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &506394039
 Transform:
   m_ObjectHideFlags: 0
@@ -10283,6 +10353,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &506394041
@@ -10364,7 +10435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &512894886
 Transform:
   m_ObjectHideFlags: 0
@@ -10427,6 +10498,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &512894888
@@ -10508,7 +10580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &522745157
 Transform:
   m_ObjectHideFlags: 0
@@ -10571,6 +10643,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &522745159
@@ -10652,7 +10725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &525482384
 Transform:
   m_ObjectHideFlags: 0
@@ -10715,6 +10788,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &525482386
@@ -10796,7 +10870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &536342523
 Transform:
   m_ObjectHideFlags: 0
@@ -10859,6 +10933,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &536342525
@@ -10940,7 +11015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &539984645
 Transform:
   m_ObjectHideFlags: 0
@@ -11003,6 +11078,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &539984647
@@ -11084,7 +11160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &560349452
 Transform:
   m_ObjectHideFlags: 0
@@ -11147,6 +11223,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &560349454
@@ -11228,7 +11305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &560394589
 Transform:
   m_ObjectHideFlags: 0
@@ -11291,6 +11368,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &560394591
@@ -11372,7 +11450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &566052232
 Transform:
   m_ObjectHideFlags: 0
@@ -11435,6 +11513,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &566052234
@@ -11579,6 +11658,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &573577948
@@ -11660,7 +11740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &615091732
 Transform:
   m_ObjectHideFlags: 0
@@ -11723,6 +11803,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &615091734
@@ -11804,7 +11885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &619115151
 Transform:
   m_ObjectHideFlags: 0
@@ -11867,6 +11948,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &619115153
@@ -11948,7 +12030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &620921516
 Transform:
   m_ObjectHideFlags: 0
@@ -12011,6 +12093,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &620921518
@@ -12092,7 +12175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &637248739
 Transform:
   m_ObjectHideFlags: 0
@@ -12155,6 +12238,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &637248741
@@ -12236,7 +12320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &638025978
 Transform:
   m_ObjectHideFlags: 0
@@ -12299,6 +12383,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &638025980
@@ -12473,7 +12558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &640065850
 Transform:
   m_ObjectHideFlags: 0
@@ -12536,6 +12621,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &640065852
@@ -12617,7 +12703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &642790014
 Transform:
   m_ObjectHideFlags: 0
@@ -12680,6 +12766,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &642790016
@@ -12761,7 +12848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &652538806
 Transform:
   m_ObjectHideFlags: 0
@@ -12824,6 +12911,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &652538808
@@ -12905,7 +12993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &656173113
 Transform:
   m_ObjectHideFlags: 0
@@ -12968,6 +13056,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &656173115
@@ -13049,7 +13138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &663576422
 Transform:
   m_ObjectHideFlags: 0
@@ -13112,6 +13201,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &663576424
@@ -13193,7 +13283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &667272130
 Transform:
   m_ObjectHideFlags: 0
@@ -13256,6 +13346,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &667272132
@@ -13337,7 +13428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &673559283
 Transform:
   m_ObjectHideFlags: 0
@@ -13400,6 +13491,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &673559285
@@ -13481,7 +13573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &674987105
 Transform:
   m_ObjectHideFlags: 0
@@ -13544,6 +13636,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &674987107
@@ -13625,7 +13718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &681782422
 Transform:
   m_ObjectHideFlags: 0
@@ -13688,6 +13781,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &681782424
@@ -13769,7 +13863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &684054410
 Transform:
   m_ObjectHideFlags: 0
@@ -13832,6 +13926,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &684054412
@@ -13913,7 +14008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &698504627
 Transform:
   m_ObjectHideFlags: 0
@@ -13976,6 +14071,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &698504629
@@ -14120,6 +14216,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &702530612
@@ -14201,7 +14298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &703443834
 Transform:
   m_ObjectHideFlags: 0
@@ -14264,6 +14361,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &703443836
@@ -14408,6 +14506,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &703466294
@@ -14582,7 +14681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &717074433
 Transform:
   m_ObjectHideFlags: 0
@@ -14645,6 +14744,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &717074435
@@ -14726,7 +14826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &719249786
 Transform:
   m_ObjectHideFlags: 0
@@ -14789,6 +14889,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &719249788
@@ -14933,6 +15034,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &720999441
@@ -15014,7 +15116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &727403988
 Transform:
   m_ObjectHideFlags: 0
@@ -15077,6 +15179,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &727403990
@@ -15158,7 +15261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &735997432
 Transform:
   m_ObjectHideFlags: 0
@@ -15221,6 +15324,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &735997434
@@ -15302,7 +15406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &751759510
 Transform:
   m_ObjectHideFlags: 0
@@ -15365,6 +15469,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &751759512
@@ -15446,7 +15551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &756613750
 Transform:
   m_ObjectHideFlags: 0
@@ -15509,6 +15614,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &756613752
@@ -15590,7 +15696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &763815038
 Transform:
   m_ObjectHideFlags: 0
@@ -15653,6 +15759,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &763815040
@@ -15734,7 +15841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &772990990
 Transform:
   m_ObjectHideFlags: 0
@@ -15797,6 +15904,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &772990992
@@ -15878,7 +15986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &780989403
 Transform:
   m_ObjectHideFlags: 0
@@ -15941,6 +16049,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &780989405
@@ -16022,7 +16131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &794623917
 Transform:
   m_ObjectHideFlags: 0
@@ -16085,6 +16194,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &794623919
@@ -16166,7 +16276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &795033493
 Transform:
   m_ObjectHideFlags: 0
@@ -16229,6 +16339,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &795033495
@@ -16373,6 +16484,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &797290453
@@ -16454,7 +16566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &797827764
 Transform:
   m_ObjectHideFlags: 0
@@ -16517,6 +16629,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &797827766
@@ -16598,7 +16711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &798269364
 Transform:
   m_ObjectHideFlags: 0
@@ -16661,6 +16774,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &798269366
@@ -16742,7 +16856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &802347865
 Transform:
   m_ObjectHideFlags: 0
@@ -16805,6 +16919,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &802347867
@@ -16886,7 +17001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &805339076
 Transform:
   m_ObjectHideFlags: 0
@@ -16949,6 +17064,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &805339078
@@ -17093,6 +17209,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &817955562
@@ -17174,7 +17291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &819047347
 Transform:
   m_ObjectHideFlags: 0
@@ -17237,6 +17354,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &819047349
@@ -17318,7 +17436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &827313890
 Transform:
   m_ObjectHideFlags: 0
@@ -17381,6 +17499,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &827313892
@@ -17462,7 +17581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &829253555
 Transform:
   m_ObjectHideFlags: 0
@@ -17525,6 +17644,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &829253557
@@ -17606,7 +17726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &849078875
 Transform:
   m_ObjectHideFlags: 0
@@ -17669,6 +17789,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &849078877
@@ -17750,7 +17871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &858297007
 Transform:
   m_ObjectHideFlags: 0
@@ -17813,6 +17934,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &858297009
@@ -17987,7 +18109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &879601393
 Transform:
   m_ObjectHideFlags: 0
@@ -18050,6 +18172,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &879601395
@@ -18131,7 +18254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &881551290
 Transform:
   m_ObjectHideFlags: 0
@@ -18194,6 +18317,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &881551292
@@ -18275,7 +18399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &886678458
 Transform:
   m_ObjectHideFlags: 0
@@ -18338,6 +18462,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &886678460
@@ -18419,7 +18544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &888933024
 Transform:
   m_ObjectHideFlags: 0
@@ -18482,6 +18607,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &888933026
@@ -18626,6 +18752,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &892302271
@@ -18707,7 +18834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &892998069
 Transform:
   m_ObjectHideFlags: 0
@@ -18770,6 +18897,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &892998071
@@ -18851,7 +18979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &894175829
 Transform:
   m_ObjectHideFlags: 0
@@ -18914,6 +19042,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &894175831
@@ -18995,7 +19124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &894872687
 Transform:
   m_ObjectHideFlags: 0
@@ -19058,6 +19187,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &894872689
@@ -19139,7 +19269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &897605985
 Transform:
   m_ObjectHideFlags: 0
@@ -19202,6 +19332,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &897605987
@@ -19283,7 +19414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &911783439
 Transform:
   m_ObjectHideFlags: 0
@@ -19346,6 +19477,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &911783441
@@ -19427,7 +19559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &913870943
 Transform:
   m_ObjectHideFlags: 0
@@ -19490,6 +19622,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &913870945
@@ -19571,7 +19704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &914570735
 Transform:
   m_ObjectHideFlags: 0
@@ -19634,6 +19767,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &914570737
@@ -19715,7 +19849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &914715038
 Transform:
   m_ObjectHideFlags: 0
@@ -19778,6 +19912,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &914715040
@@ -19922,6 +20057,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &922463699
@@ -20003,7 +20139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &932653432
 Transform:
   m_ObjectHideFlags: 0
@@ -20066,6 +20202,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &932653434
@@ -20147,7 +20284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &940248616
 Transform:
   m_ObjectHideFlags: 0
@@ -20210,6 +20347,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &940248618
@@ -20291,7 +20429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &944286974
 Transform:
   m_ObjectHideFlags: 0
@@ -20354,6 +20492,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &944286976
@@ -20435,7 +20574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &944894683
 Transform:
   m_ObjectHideFlags: 0
@@ -20498,6 +20637,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &944894685
@@ -20579,7 +20719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &970449334
 Transform:
   m_ObjectHideFlags: 0
@@ -20642,6 +20782,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &970449336
@@ -20723,7 +20864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &972986316
 Transform:
   m_ObjectHideFlags: 0
@@ -20786,6 +20927,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &972986318
@@ -20867,7 +21009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &979733245
 Transform:
   m_ObjectHideFlags: 0
@@ -20930,6 +21072,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &979733247
@@ -21011,7 +21154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &984121044
 Transform:
   m_ObjectHideFlags: 0
@@ -21074,6 +21217,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &984121046
@@ -21155,7 +21299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &988623970
 Transform:
   m_ObjectHideFlags: 0
@@ -21218,6 +21362,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &988623972
@@ -21299,7 +21444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1001375822
 Transform:
   m_ObjectHideFlags: 0
@@ -21362,6 +21507,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1001375824
@@ -21537,7 +21683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1031267369
 Transform:
   m_ObjectHideFlags: 0
@@ -21600,6 +21746,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1031267371
@@ -21744,6 +21891,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1032925721
@@ -21825,7 +21973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1033097732
 Transform:
   m_ObjectHideFlags: 0
@@ -21888,6 +22036,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1033097734
@@ -22032,6 +22181,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1044907954
@@ -22176,6 +22326,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1051566990
@@ -22257,7 +22408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1063862968
 Transform:
   m_ObjectHideFlags: 0
@@ -22320,6 +22471,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1063862970
@@ -22401,7 +22553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1063928270
 Transform:
   m_ObjectHideFlags: 0
@@ -22464,6 +22616,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1063928272
@@ -22545,7 +22698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1065647604
 Transform:
   m_ObjectHideFlags: 0
@@ -22608,6 +22761,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1065647606
@@ -22689,7 +22843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1073612668
 Transform:
   m_ObjectHideFlags: 0
@@ -22752,6 +22906,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1073612670
@@ -22833,7 +22988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1083140214
 Transform:
   m_ObjectHideFlags: 0
@@ -22896,6 +23051,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1083140216
@@ -22977,7 +23133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1086188392
 Transform:
   m_ObjectHideFlags: 0
@@ -23040,6 +23196,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1086188394
@@ -23121,7 +23278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1091785627
 Transform:
   m_ObjectHideFlags: 0
@@ -23184,6 +23341,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1091785629
@@ -23265,7 +23423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1107190088
 Transform:
   m_ObjectHideFlags: 0
@@ -23328,6 +23486,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1107190090
@@ -23409,7 +23568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1112860667
 Transform:
   m_ObjectHideFlags: 0
@@ -23472,6 +23631,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1112860669
@@ -23616,6 +23776,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1117857838
@@ -23790,7 +23951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1155959029
 Transform:
   m_ObjectHideFlags: 0
@@ -23853,6 +24014,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1155959031
@@ -23934,7 +24096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1156676674
 Transform:
   m_ObjectHideFlags: 0
@@ -23997,6 +24159,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1156676676
@@ -24078,7 +24241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1159319161
 Transform:
   m_ObjectHideFlags: 0
@@ -24141,6 +24304,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1159319163
@@ -24222,7 +24386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1166907658
 Transform:
   m_ObjectHideFlags: 0
@@ -24285,6 +24449,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1166907660
@@ -24366,7 +24531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1168397877
 Transform:
   m_ObjectHideFlags: 0
@@ -24429,6 +24594,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1168397879
@@ -24510,7 +24676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1170764641
 Transform:
   m_ObjectHideFlags: 0
@@ -24573,6 +24739,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1170764643
@@ -24654,7 +24821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1172423799
 Transform:
   m_ObjectHideFlags: 0
@@ -24717,6 +24884,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1172423801
@@ -24798,7 +24966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1174948228
 Transform:
   m_ObjectHideFlags: 0
@@ -24861,6 +25029,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1174948230
@@ -24942,7 +25111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1177618261
 Transform:
   m_ObjectHideFlags: 0
@@ -25005,6 +25174,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1177618263
@@ -25086,7 +25256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1180087440
 Transform:
   m_ObjectHideFlags: 0
@@ -25149,6 +25319,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1180087442
@@ -25230,7 +25401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1200643795
 Transform:
   m_ObjectHideFlags: 0
@@ -25293,6 +25464,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1200643797
@@ -25374,7 +25546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1202276040
 Transform:
   m_ObjectHideFlags: 0
@@ -25437,6 +25609,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1202276042
@@ -25518,7 +25691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1203338287
 Transform:
   m_ObjectHideFlags: 0
@@ -25581,6 +25754,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1203338289
@@ -25992,7 +26166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1204847088
 Transform:
   m_ObjectHideFlags: 0
@@ -26055,6 +26229,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1204847090
@@ -26136,7 +26311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1208034699
 Transform:
   m_ObjectHideFlags: 0
@@ -26199,6 +26374,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1208034701
@@ -26280,7 +26456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1208785337
 Transform:
   m_ObjectHideFlags: 0
@@ -26343,6 +26519,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1208785339
@@ -26487,6 +26664,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1224657242
@@ -26568,7 +26746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1230323571
 Transform:
   m_ObjectHideFlags: 0
@@ -26631,6 +26809,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1230323573
@@ -26712,7 +26891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1236650595
 Transform:
   m_ObjectHideFlags: 0
@@ -26775,6 +26954,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1236650597
@@ -26979,6 +27159,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 1
   timeMultiplier: 1
 --- !u!1 &1249794366
@@ -27000,7 +27181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1249794367
 Transform:
   m_ObjectHideFlags: 0
@@ -27063,6 +27244,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1249794369
@@ -27144,7 +27326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1257607049
 Transform:
   m_ObjectHideFlags: 0
@@ -27207,6 +27389,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1257607051
@@ -27288,7 +27471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1289352892
 Transform:
   m_ObjectHideFlags: 0
@@ -27351,6 +27534,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1289352894
@@ -27495,6 +27679,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1291795884
@@ -27576,7 +27761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1292681946
 Transform:
   m_ObjectHideFlags: 0
@@ -27639,6 +27824,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1292681948
@@ -27720,7 +27906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1295030104
 Transform:
   m_ObjectHideFlags: 0
@@ -27783,6 +27969,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1295030106
@@ -27864,7 +28051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1295495331
 Transform:
   m_ObjectHideFlags: 0
@@ -27927,6 +28114,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1295495333
@@ -28008,7 +28196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1310634138
 Transform:
   m_ObjectHideFlags: 0
@@ -28071,6 +28259,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1310634140
@@ -28152,7 +28341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1314180239
 Transform:
   m_ObjectHideFlags: 0
@@ -28215,6 +28404,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1314180241
@@ -28296,7 +28486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1319199783
 Transform:
   m_ObjectHideFlags: 0
@@ -28359,6 +28549,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1319199785
@@ -28440,7 +28631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1329371454
 Transform:
   m_ObjectHideFlags: 0
@@ -28503,6 +28694,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1329371456
@@ -28647,6 +28839,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1336913898
@@ -28728,7 +28921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1337341154
 Transform:
   m_ObjectHideFlags: 0
@@ -28791,6 +28984,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1337341156
@@ -28872,7 +29066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1338810079
 Transform:
   m_ObjectHideFlags: 0
@@ -28935,6 +29129,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1338810081
@@ -29079,6 +29274,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1344318322
@@ -29160,7 +29356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1349350468
 Transform:
   m_ObjectHideFlags: 0
@@ -29223,6 +29419,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1349350470
@@ -29304,7 +29501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1349552025
 Transform:
   m_ObjectHideFlags: 0
@@ -29367,6 +29564,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1349552027
@@ -29448,7 +29646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1362346750
 Transform:
   m_ObjectHideFlags: 0
@@ -29511,6 +29709,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1362346752
@@ -29592,7 +29791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1362671886
 Transform:
   m_ObjectHideFlags: 0
@@ -29655,6 +29854,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1362671888
@@ -29799,6 +29999,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1364377009
@@ -29963,7 +30164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1374138232
 Transform:
   m_ObjectHideFlags: 0
@@ -30026,6 +30227,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1374138234
@@ -30200,7 +30402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1376956497
 Transform:
   m_ObjectHideFlags: 0
@@ -30263,6 +30465,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1376956499
@@ -30344,7 +30547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1384139106
 Transform:
   m_ObjectHideFlags: 0
@@ -30407,6 +30610,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1384139108
@@ -30488,7 +30692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1403818492
 Transform:
   m_ObjectHideFlags: 0
@@ -30551,6 +30755,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1403818494
@@ -30632,7 +30837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1413744536
 Transform:
   m_ObjectHideFlags: 0
@@ -30695,6 +30900,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1413744538
@@ -30839,6 +31045,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1423361366
@@ -30983,6 +31190,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1431575126
@@ -31064,7 +31272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1440469543
 Transform:
   m_ObjectHideFlags: 0
@@ -31127,6 +31335,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1440469545
@@ -31208,7 +31417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1454859672
 Transform:
   m_ObjectHideFlags: 0
@@ -31271,6 +31480,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1454859674
@@ -31352,7 +31562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1471499606
 Transform:
   m_ObjectHideFlags: 0
@@ -31415,6 +31625,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1471499608
@@ -31496,7 +31707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1474667019
 Transform:
   m_ObjectHideFlags: 0
@@ -31559,6 +31770,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1474667021
@@ -31640,7 +31852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1477722798
 Transform:
   m_ObjectHideFlags: 0
@@ -31703,6 +31915,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1477722800
@@ -31784,7 +31997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1501318402
 Transform:
   m_ObjectHideFlags: 0
@@ -31847,6 +32060,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1501318404
@@ -31928,7 +32142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1502344869
 Transform:
   m_ObjectHideFlags: 0
@@ -31991,6 +32205,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1502344871
@@ -32072,7 +32287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1516061578
 Transform:
   m_ObjectHideFlags: 0
@@ -32135,6 +32350,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1516061580
@@ -32216,7 +32432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1523976238
 Transform:
   m_ObjectHideFlags: 0
@@ -32279,6 +32495,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1523976240
@@ -32360,7 +32577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1524990181
 Transform:
   m_ObjectHideFlags: 0
@@ -32423,6 +32640,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1524990183
@@ -32567,6 +32785,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1528989255
@@ -32648,7 +32867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1535119978
 Transform:
   m_ObjectHideFlags: 0
@@ -32711,6 +32930,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1535119980
@@ -32792,7 +33012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1535952154
 Transform:
   m_ObjectHideFlags: 0
@@ -32855,6 +33075,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1535952156
@@ -32936,7 +33157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1537182876
 Transform:
   m_ObjectHideFlags: 0
@@ -32999,6 +33220,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1537182878
@@ -33080,7 +33302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1552637378
 Transform:
   m_ObjectHideFlags: 0
@@ -33143,6 +33365,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1552637380
@@ -33224,7 +33447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1553593187
 Transform:
   m_ObjectHideFlags: 0
@@ -33287,6 +33510,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1553593189
@@ -33368,7 +33592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1554082221
 Transform:
   m_ObjectHideFlags: 0
@@ -33431,6 +33655,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1554082223
@@ -33575,6 +33800,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1559690003
@@ -33719,6 +33945,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1562032119
@@ -33800,7 +34027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1578229466
 Transform:
   m_ObjectHideFlags: 0
@@ -33863,6 +34090,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1578229468
@@ -34007,6 +34235,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1582748653
@@ -34088,7 +34317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1587319526
 Transform:
   m_ObjectHideFlags: 0
@@ -34151,6 +34380,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1587319528
@@ -34295,6 +34525,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1587709447
@@ -34376,7 +34607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1591221771
 Transform:
   m_ObjectHideFlags: 0
@@ -34439,6 +34670,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1591221773
@@ -34583,6 +34815,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1593747572
@@ -34756,7 +34989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1605907112
 Transform:
   m_ObjectHideFlags: 0
@@ -34819,6 +35052,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1605907114
@@ -34963,6 +35197,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1624730362
@@ -35044,7 +35279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1629317433
 Transform:
   m_ObjectHideFlags: 0
@@ -35107,6 +35342,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1629317435
@@ -35188,7 +35424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1630698708
 Transform:
   m_ObjectHideFlags: 0
@@ -35251,6 +35487,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1630698710
@@ -35332,7 +35569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1633230438
 Transform:
   m_ObjectHideFlags: 0
@@ -35395,6 +35632,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1633230440
@@ -35476,7 +35714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1647541121
 Transform:
   m_ObjectHideFlags: 0
@@ -35539,6 +35777,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1647541123
@@ -35620,7 +35859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1654729213
 Transform:
   m_ObjectHideFlags: 0
@@ -35683,6 +35922,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1654729215
@@ -35764,7 +36004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1655454995
 Transform:
   m_ObjectHideFlags: 0
@@ -35827,6 +36067,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1655454997
@@ -35971,6 +36212,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1665643344
@@ -36115,6 +36357,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1667021011
@@ -36289,7 +36532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1672120907
 Transform:
   m_ObjectHideFlags: 0
@@ -36352,6 +36595,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1672120909
@@ -36433,7 +36677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1679384355
 Transform:
   m_ObjectHideFlags: 0
@@ -36496,6 +36740,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1679384357
@@ -36733,6 +36978,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1697581493
@@ -36814,7 +37060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1716017355
 Transform:
   m_ObjectHideFlags: 0
@@ -36877,6 +37123,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1716017357
@@ -36958,7 +37205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1723048497
 Transform:
   m_ObjectHideFlags: 0
@@ -37021,6 +37268,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1723048499
@@ -37102,7 +37350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1725550219
 Transform:
   m_ObjectHideFlags: 0
@@ -37165,6 +37413,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1725550221
@@ -37246,7 +37495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1729843398
 Transform:
   m_ObjectHideFlags: 0
@@ -37309,6 +37558,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1729843400
@@ -37390,7 +37640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1734096531
 Transform:
   m_ObjectHideFlags: 0
@@ -37453,6 +37703,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1734096533
@@ -37534,7 +37785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1743646499
 Transform:
   m_ObjectHideFlags: 0
@@ -37597,6 +37848,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1743646501
@@ -37741,6 +37993,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1745861340
@@ -37822,7 +38075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1749394687
 Transform:
   m_ObjectHideFlags: 0
@@ -37885,6 +38138,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1749394689
@@ -37966,7 +38220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1760232077
 Transform:
   m_ObjectHideFlags: 0
@@ -38029,6 +38283,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1760232079
@@ -38110,7 +38365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1785043550
 Transform:
   m_ObjectHideFlags: 0
@@ -38173,6 +38428,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1785043552
@@ -38254,7 +38510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1786119931
 Transform:
   m_ObjectHideFlags: 0
@@ -38317,6 +38573,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1786119933
@@ -38398,7 +38655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1803533740
 Transform:
   m_ObjectHideFlags: 0
@@ -38461,6 +38718,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1803533742
@@ -38542,7 +38800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1810748394
 Transform:
   m_ObjectHideFlags: 0
@@ -38605,6 +38863,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1810748396
@@ -38686,7 +38945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1825555292
 Transform:
   m_ObjectHideFlags: 0
@@ -38749,6 +39008,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1825555294
@@ -38893,6 +39153,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1825623497
@@ -38974,7 +39235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1832375826
 Transform:
   m_ObjectHideFlags: 0
@@ -39037,6 +39298,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1832375828
@@ -39118,7 +39380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1839115585
 Transform:
   m_ObjectHideFlags: 0
@@ -39181,6 +39443,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1839115587
@@ -39262,7 +39525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1841206182
 Transform:
   m_ObjectHideFlags: 0
@@ -39325,6 +39588,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1841206184
@@ -39469,6 +39733,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1848349469
@@ -39550,7 +39815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1856723813
 Transform:
   m_ObjectHideFlags: 0
@@ -39613,6 +39878,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1856723815
@@ -39694,7 +39960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1869029105
 Transform:
   m_ObjectHideFlags: 0
@@ -39757,6 +40023,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1869029107
@@ -39838,7 +40105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1882775313
 Transform:
   m_ObjectHideFlags: 0
@@ -39901,6 +40168,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1882775315
@@ -39982,7 +40250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1895557402
 Transform:
   m_ObjectHideFlags: 0
@@ -40045,6 +40313,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1895557404
@@ -40126,7 +40395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1901121475
 Transform:
   m_ObjectHideFlags: 0
@@ -40189,6 +40458,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1901121477
@@ -40270,7 +40540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1908157723
 Transform:
   m_ObjectHideFlags: 0
@@ -40333,6 +40603,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1908157725
@@ -40414,7 +40685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1912593564
 Transform:
   m_ObjectHideFlags: 0
@@ -40477,6 +40748,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1912593566
@@ -40558,7 +40830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1916836915
 Transform:
   m_ObjectHideFlags: 0
@@ -40621,6 +40893,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1916836917
@@ -40702,7 +40975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1921368684
 Transform:
   m_ObjectHideFlags: 0
@@ -40765,6 +41038,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1921368686
@@ -40846,7 +41120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1934378189
 Transform:
   m_ObjectHideFlags: 0
@@ -40909,6 +41183,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1934378191
@@ -40990,7 +41265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1934479410
 Transform:
   m_ObjectHideFlags: 0
@@ -41053,6 +41328,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1934479412
@@ -41134,7 +41410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1944915867
 Transform:
   m_ObjectHideFlags: 0
@@ -41197,6 +41473,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1944915869
@@ -41278,7 +41555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1946988573
 Transform:
   m_ObjectHideFlags: 0
@@ -41341,6 +41618,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1946988575
@@ -41422,7 +41700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1948118981
 Transform:
   m_ObjectHideFlags: 0
@@ -41485,6 +41763,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1948118983
@@ -41566,7 +41845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1962447720
 Transform:
   m_ObjectHideFlags: 0
@@ -41629,6 +41908,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &1962447722
@@ -41710,7 +41990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2011868731
 Transform:
   m_ObjectHideFlags: 0
@@ -41773,6 +42053,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2011868733
@@ -41854,7 +42135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2020647522
 Transform:
   m_ObjectHideFlags: 0
@@ -41917,6 +42198,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2020647524
@@ -41998,7 +42280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2030624966
 Transform:
   m_ObjectHideFlags: 0
@@ -42061,6 +42343,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2030624968
@@ -42205,6 +42488,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2061077216
@@ -42349,6 +42633,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2073582386
@@ -42493,6 +42778,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2074270484
@@ -42574,7 +42860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2075171593
 Transform:
   m_ObjectHideFlags: 0
@@ -42637,6 +42923,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2075171595
@@ -42718,7 +43005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2077465939
 Transform:
   m_ObjectHideFlags: 0
@@ -42781,6 +43068,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2077465941
@@ -42862,7 +43150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2080656722
 Transform:
   m_ObjectHideFlags: 0
@@ -42925,6 +43213,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2080656724
@@ -43069,6 +43358,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2080794320
@@ -43150,7 +43440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2087315574
 Transform:
   m_ObjectHideFlags: 0
@@ -43213,6 +43503,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2087315576
@@ -43294,7 +43585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2088294301
 Transform:
   m_ObjectHideFlags: 0
@@ -43357,6 +43648,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2088294303
@@ -43438,7 +43730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2088350335
 Transform:
   m_ObjectHideFlags: 0
@@ -43501,6 +43793,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2088350337
@@ -43582,7 +43875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2098940267
 Transform:
   m_ObjectHideFlags: 0
@@ -43645,6 +43938,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2098940269
@@ -43789,6 +44083,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2100485763
@@ -43870,7 +44165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2104596611
 Transform:
   m_ObjectHideFlags: 0
@@ -43933,6 +44228,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2104596613
@@ -44014,7 +44310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2106528498
 Transform:
   m_ObjectHideFlags: 0
@@ -44077,6 +44373,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2106528500
@@ -44158,7 +44455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2123996868
 Transform:
   m_ObjectHideFlags: 0
@@ -44221,6 +44518,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2123996870
@@ -44302,7 +44600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2125616118
 Transform:
   m_ObjectHideFlags: 0
@@ -44365,6 +44663,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2125616120
@@ -44446,7 +44745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2140248092
 Transform:
   m_ObjectHideFlags: 0
@@ -44509,6 +44808,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2140248094
@@ -44653,6 +44953,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2144568647
@@ -44734,7 +45035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2145030890
 Transform:
   m_ObjectHideFlags: 0
@@ -44797,6 +45098,7 @@ MonoBehaviour:
   boundaryRepulsionForce: {x: 0, y: 0, z: 0}
   seaLevelRepulsionForce: {x: 0, y: 0, z: 0}
   terrainRepulsionForce: {x: 0, y: 0, z: 0}
+  minDistance: 0.00001
   debugMode: 0
   timeMultiplier: 1
 --- !u!135 &2145030892
