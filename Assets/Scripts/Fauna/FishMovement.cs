@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.3.1
+ FishMovement v1.3.2
 */
 
 // TODO: apply repulsion sphere offset
@@ -139,7 +139,7 @@ public class FishMovement : MonoBehaviour
         float rd = UnityEngine.Random.Range(0f, 1f);
         if (rd <= this.headingChangeProbability) {
             this.ChangeHeading();
-            if (this.debugMode) { Debug.Log ("Changed heading"); }
+            if (this.debugMode) { Debug.Log (gameObject.name + ": changed heading"); }
         }
 
         // Reset acceleration
