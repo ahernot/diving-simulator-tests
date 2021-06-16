@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.3.2
+ FishMovement v1.3.3
 */
 
 // TODO: apply repulsion sphere offset
@@ -111,6 +111,7 @@ public class FishMovement : MonoBehaviour
     public bool debugMode = false;
     Mesh boundariesMesh;
     Mesh topMesh;
+    public float timeMultiplier = 1f;
 
 
 
@@ -153,6 +154,8 @@ public class FishMovement : MonoBehaviour
         this.CalculateTerrainRepulsion();
         this.CalculateDragForce();
 
+        Debug.Log (this.objectsRepulsionForce);
+
         // Apply objects repulsion force
         if (!float.IsNaN(this.objectsRepulsionForce.x) && !float.IsNaN(this.objectsRepulsionForce.y) && !float.IsNaN(this.objectsRepulsionForce.z)) {
             this.acceleration += this.objectsRepulsionForce;
@@ -180,8 +183,8 @@ public class FishMovement : MonoBehaviour
         
 
         // Integrate motion
-        this.velocity += this.acceleration * Time.deltaTime;
-        Vector3 positionDelta = this.velocity * Time.deltaTime;
+        this.velocity += this.acceleration * Time.deltaTime * this.timeMultiplier;
+        Vector3 positionDelta = this.velocity * Time.deltaTime * this.timeMultiplier;
 
         // Move and rotate
         // --- TODO --- TODO: Apply fish rotation and animation here too, using (Vector3)this.u
@@ -349,31 +352,31 @@ public class FishMovement : MonoBehaviour
         }
 
         // Dynamic objects' repulsion
-        for (int i = 0; i < this.repulsionLayersDynamic.Length; i ++)
-        {
-            // Get replusion radius
-            float repulsionRadius = this.repulsionRadiiDynamic [i];
-            GameObject[] repulsionObjects = this.repulsionObjectsDynamic [i];
+        // for (int i = 0; i < this.repulsionLayersDynamic.Length; i ++)
+        // {
+        //     // Get replusion radius
+        //     float repulsionRadius = this.repulsionRadiiDynamic [i];
+        //     GameObject[] repulsionObjects = this.repulsionObjectsDynamic [i];
 
-            // Run through objects' coordinates
-            for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
-            {
-                // Compute direction from repulsive object to current GameObject
-                Vector3 repulsionForce = transform.position - repulsionObjects[objectId].transform.position;
-                float distance = repulsionForce.magnitude;
+        //     // Run through objects' coordinates
+        //     for (int objectId = 0; objectId < repulsionObjects.Length; objectId ++)
+        //     {
+        //         // Compute direction from repulsive object to current GameObject
+        //         Vector3 repulsionForce = transform.position - repulsionObjects[objectId].transform.position;
+        //         float distance = repulsionForce.magnitude;
 
-                // Calculate repulsion force and vector (if not too far away)
-                if (distance <= repulsionRadius * 10)
-                {
-                    // Apply repulsion force multiplier (based on distance)
-                    float repulsionMult = GameFunctions.HardRepulsionFunction (this.globalRepulsionMultiplier, repulsionRadius, distance);
-                    repulsionForce = (repulsionForce / distance) * repulsionMult;
+        //         // Calculate repulsion force and vector (if not too far away)
+        //         if (distance <= repulsionRadius * 10)
+        //         {
+        //             // Apply repulsion force multiplier (based on distance)
+        //             float repulsionMult = GameFunctions.HardRepulsionFunction (this.globalRepulsionMultiplier, repulsionRadius, distance);
+        //             repulsionForce = (repulsionForce / distance) * repulsionMult;
 
-                    // Add to global repulsion vector
-                    this.objectsRepulsionForce += repulsionForce;
-                }
-            }
-        }
+        //             // Add to global repulsion vector
+        //             this.objectsRepulsionForce += repulsionForce;
+        //         }
+        //     }
+        // }
 
     }
 
