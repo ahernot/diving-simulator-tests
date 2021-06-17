@@ -163,8 +163,6 @@ public class FishMovement : MonoBehaviour
         this.CalculateTerrainRepulsion();
         this.CalculateDragForce();
 
-        Debug.Log (this.objectsRepulsionForce);
-
         // Apply objects repulsion force
         if (!float.IsNaN(this.objectsRepulsionForce.x) && !float.IsNaN(this.objectsRepulsionForce.y) && !float.IsNaN(this.objectsRepulsionForce.z)) {
             this.acceleration += this.objectsRepulsionForce;
