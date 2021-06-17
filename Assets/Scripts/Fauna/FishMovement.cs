@@ -3,11 +3,10 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.3.4
+ FishMovement v1.4
 */
 
 // TODO: apply repulsion sphere offset
-// TODO: add a getter in TerrainChunkManager to know current player chunk, and nearest vertex position
 // TODO: add a cone gizmo to visualise the possible deflection paths
 
 /*
@@ -53,12 +52,13 @@ public class FishMovement : MonoBehaviour
     public float waterHeight = 10f;
     public float waterSurfaceRepulsionMultiplier = 10f;
     public float waterSurfaceRepulsionDistance = 1f;
-    public float groundHeight = -30f;
+    // public float groundHeight = -30f;
 
     // --- TODO --- (not used yet)
-    // [Space(10)]
-    // [Tooltip("Terrain")]
-    // public GameObject terrainChunkManager;
+    [Space(10)]
+    [Tooltip("Terrain")]
+    public GameObject terrainChunkManager;
+    TerrainChunkManager terrainChunkManagerScript;
 
     [Space(10)]
     // Repulsion: layers
@@ -135,6 +135,13 @@ public class FishMovement : MonoBehaviour
 
         // Initialise heading
         this.InitialiseHeading();
+
+
+
+
+        //
+        this.terrainChunkManagerScript = this.terrainChunkManager.GetComponent<TerrainChunkManager>();
+    
     }
 
     void Update ()
@@ -486,11 +493,15 @@ public class FishMovement : MonoBehaviour
     */
     void CalculateTerrainRepulsion ()
     {
+
+        GameObject chunk = this.terrainChunkManagerScript.GetChunkAtPosition(transform.position.x, transform.position.z);
+        float groundHeight = this.terrainChunkManagerScript.GetHeightAtPosition(transform.position.x, transform.position.z);
+
         // Initialise terrainRepulsionForce vector
         this.terrainRepulsionForce = new Vector3();
 
         // Calculate distance to ground surface (can be null without a problem)
-        float distanceSigned = transform.position.y - this.groundHeight;
+        float distanceSigned = transform.position.y - groundHeight;
 
         // Initialise repulsion force vector
         Vector3 repulsionForce = Vector3.up;
