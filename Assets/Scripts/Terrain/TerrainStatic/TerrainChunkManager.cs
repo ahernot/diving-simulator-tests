@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- TerrainChunkManager v1.3
+ TerrainChunkManager v1.4
 */
 
 using System.Collections;
@@ -173,6 +173,55 @@ public class TerrainChunkManager : MonoBehaviour
         this.xChunkPlayer = (int) Mathf.Floor((float)x / this.xChunkSize);
         this.zChunkPlayer = (int) Mathf.Floor((float)z / this.zChunkSize);
     }
+
+    public GameObject GetChunkAtPosition (float x, float z)
+    {
+        // Generate chunk ID
+        int xChunkId = (int) Mathf.Floor (x / this.xChunkSize);
+        int zChunkId = (int) Mathf.Floor (z / this.zChunkSize);
+
+        // Chunk out of generation bounds
+        if ((Mathf.Abs(xChunkId) > xHalfNbChunks) || (Mathf.Abs(zChunkId) > zHalfNbChunks))
+        {
+            return null;
+        }
+
+        // Generate chunk name
+        string chunkName = "TerrainChunk_" + xChunkId.ToString() + "_" + zChunkId.ToString(); // same as in this.GenerateChunks()
+
+        // Get chunk object
+        GameObject chunk = GameObject.Find (chunkName);
+
+        return chunk;
+    }
+
+    public float GetHeightAtPosition (float x, float z)
+    {
+        float heightOffset = transform.position.y;
+
+        // Get chunk
+        GameObject chunk = this.GetChunkAtPosition (x, z);
+        if (chunk == null) { return heightOffset; }
+
+        // Get chunk mesh and vertices
+        Mesh chunkMesh = chunk.GetComponent<MeshFilter>().mesh;
+        Vector3[] vertices = chunkMesh.vertices;
+
+        // Calculate position in chunk
+        float xRel = x - Mathf.Floor (x / this.xChunkSize) * this.xChunkSize;
+        float zRel = z - Mathf.Floor (z / this.zChunkSize) * this.zChunkSize;
+
+        // Calculate nearest vertex id in chunk
+        int xVertexId = (int) Mathf.Floor ((xRel / this.xChunkSize) * (this.xNbPolygons)); // xNbPolygons+1 or not?
+        int zVertexId = (int) Mathf.Floor ((zRel / this.zChunkSize) * (this.zNbPolygons)); // zNbPolygons+1 or not?
+
+        // Get chunk noise map
+        float[,] chunkNoiseMap = chunk.GetComponent<TerrainChunkMesh>().noiseMap;
+        float noiseHeight = chunkNoiseMap [xVertexId, zVertexId];
+
+        return heightOffset + noiseHeight;
+    }
+    
 
     void UpdateResolutions ()
     {
