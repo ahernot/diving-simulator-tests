@@ -3,11 +3,12 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.4.2
+ FishMovement v1.4.3
 */
 
 // TODO: apply repulsion sphere offset
 // TODO: add a cone gizmo to visualise the possible deflection paths
+// Rotation to change; inertia => deltaTheta between old and new vector, and will rotate until it gets to new vector (careful bout oscillation)
 
 /*
 * Special instructions:
@@ -108,6 +109,7 @@ public class FishMovement : MonoBehaviour
 
 
     public float minDistance = 0.00001f;
+    float detectectionRangeMultiplier = 2f;
 
     // Gizmos (debug mode)
     [Tooltip("Enable Gizmos visualisations")]
@@ -358,7 +360,7 @@ public class FishMovement : MonoBehaviour
 
                 // Calculate repulsion force and vector (if not too far away)
                 if (distance <= this.minDistance) { distance = this.minDistance; }
-                if (distance <= repulsionRadius * 10)
+                if (distance <= repulsionRadius * this.detectectionRangeMultiplier)
                 {
                     // Apply repulsion force multiplier (based on distance)
                     float repulsionMult = GameFunctions.HardRepulsionFunction (this.globalRepulsionMultiplier, repulsionRadius, distance);
@@ -386,7 +388,7 @@ public class FishMovement : MonoBehaviour
 
                 // Calculate repulsion force and vector (if not too far away)
                 if (distance <= this.minDistance) { distance = this.minDistance; }
-                if (distance <= repulsionRadius * 10)
+                if (distance <= repulsionRadius * this.detectectionRangeMultiplier)
                 {
                     // Apply repulsion force multiplier (based on distance)
                     float repulsionMult = GameFunctions.HardRepulsionFunction (this.globalRepulsionMultiplier, repulsionRadius, distance);
@@ -415,7 +417,7 @@ public class FishMovement : MonoBehaviour
         float maxZDistanceSigned = this.maxCoordinates.y - transform.position.z;
 
         // Min X
-        if (minXDistanceSigned <= boundaryRepulsionDistance * 10)
+        if (minXDistanceSigned <= boundaryRepulsionDistance * this.detectectionRangeMultiplier)
         {
             // Initialise repulsion force vector
             Vector3 repulsionForce = new Vector3 (1f, 0f, 0f);
@@ -429,7 +431,7 @@ public class FishMovement : MonoBehaviour
         }
         
         // Max X
-        else if (maxXDistanceSigned <= boundaryRepulsionDistance * 10)
+        else if (maxXDistanceSigned <= boundaryRepulsionDistance * this.detectectionRangeMultiplier)
         {
             // Initialise repulsion force vector
             Vector3 repulsionForce = new Vector3 (-1f, 0f, 0f);
@@ -443,7 +445,7 @@ public class FishMovement : MonoBehaviour
         }
 
         // Min Z
-        if (minZDistanceSigned <= boundaryRepulsionDistance * 10)
+        if (minZDistanceSigned <= boundaryRepulsionDistance * this.detectectionRangeMultiplier)
         {
             // Initialise repulsion force vector
             Vector3 repulsionForce = new Vector3 (0f, 0f, 1f);
@@ -457,7 +459,7 @@ public class FishMovement : MonoBehaviour
         }
         
         // Max Z
-        else if (maxZDistanceSigned <= boundaryRepulsionDistance * 10)
+        else if (maxZDistanceSigned <= boundaryRepulsionDistance * this.detectectionRangeMultiplier)
         {
             // Initialise repulsion force vector
             Vector3 repulsionForce = new Vector3 (0f, 0f, -1f);
@@ -487,7 +489,7 @@ public class FishMovement : MonoBehaviour
         
         // Calculate repulsion force multiplier (based on distance)
         float repulsionMult = 0f;
-        if (distanceSigned <= this.waterSurfaceRepulsionDistance * 10)
+        if (distanceSigned <= this.waterSurfaceRepulsionDistance * this.detectectionRangeMultiplier)
         {
             repulsionMult = GameFunctions.HardRepulsionFunction (this.waterSurfaceRepulsionMultiplier, this.waterSurfaceRepulsionDistance, distanceSigned);
         }
@@ -519,7 +521,7 @@ public class FishMovement : MonoBehaviour
         
         // Calculate repulsion force multiplier (based on distance)
         float repulsionMult = 0f;
-        if (distanceSigned <= this.waterSurfaceRepulsionDistance * 10)
+        if (distanceSigned <= this.waterSurfaceRepulsionDistance * this.detectectionRangeMultiplier)
         {
             repulsionMult = GameFunctions.HardRepulsionFunction (this.waterSurfaceRepulsionMultiplier, this.waterSurfaceRepulsionDistance, distanceSigned);
         }
