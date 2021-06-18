@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.4
+ FishMovement v1.4.1
 */
 
 // TODO: apply repulsion sphere offset
@@ -52,13 +52,14 @@ public class FishMovement : MonoBehaviour
     public float waterHeight = 10f;
     public float waterSurfaceRepulsionMultiplier = 10f;
     public float waterSurfaceRepulsionDistance = 1f;
-    // public float groundHeight = -30f;
+    
 
     // --- TODO --- (not used yet)
     [Space(10)]
     [Tooltip("Terrain")]
     public GameObject terrainChunkManager;
     TerrainChunkManager terrainChunkManagerScript;
+    float defaultGroundHeight = -30f;
 
     [Space(10)]
     // Repulsion: layers
@@ -136,11 +137,13 @@ public class FishMovement : MonoBehaviour
         // Initialise heading
         this.InitialiseHeading();
 
-
-
-
         //
-        this.terrainChunkManagerScript = this.terrainChunkManager.GetComponent<TerrainChunkManager>();
+        try {
+            this.terrainChunkManagerScript = this.terrainChunkManager.GetComponent<TerrainChunkManager>();
+        } catch {
+            this.terrainChunkManagerScript = null;
+        };
+        
     
     }
 
@@ -194,7 +197,6 @@ public class FishMovement : MonoBehaviour
         Vector3 positionDelta = this.velocity * Time.deltaTime * this.timeMultiplier;
 
         // Move and rotate
-        // --- TODO --- TODO: Apply fish rotation and animation here too, using (Vector3)this.u
         transform.position += positionDelta;
         // Set heading
         transform.forward = this.velocity; // = this.u;
@@ -487,13 +489,15 @@ public class FishMovement : MonoBehaviour
 
     /**
     * Calculate the terrain repulsion force vector
-    --- TODO --- Get max terrain height on nearest vertices of current chunk
     */
     void CalculateTerrainRepulsion ()
     {
-
-        GameObject chunk = this.terrainChunkManagerScript.GetChunkAtPosition(transform.position.x, transform.position.z);
-        float groundHeight = this.terrainChunkManagerScript.GetHeightAtPosition(transform.position.x, transform.position.z);
+        float groundHeight;
+        if (this.terrainChunkManagerScript != null) {
+            groundHeight = this.terrainChunkManagerScript.GetHeightAtPosition(transform.position.x, transform.position.z);
+        } else {
+            groundHeight = this.defaultGroundHeight;
+        }
 
         // Initialise terrainRepulsionForce vector
         this.terrainRepulsionForce = new Vector3();
