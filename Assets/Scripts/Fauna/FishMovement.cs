@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.4.1
+ FishMovement v1.4.2
 */
 
 // TODO: apply repulsion sphere offset
