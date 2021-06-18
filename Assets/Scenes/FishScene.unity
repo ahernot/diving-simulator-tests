@@ -619,10 +619,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -909,10 +905,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -1344,10 +1336,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -2006,43 +1994,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103218883}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &106571733
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 106571734}
-  m_Layer: 0
-  m_Name: Obstacles
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &106571734
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106571733}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1123780197}
-  - {fileID: 639260619}
-  - {fileID: 708647188}
-  - {fileID: 1669061666}
-  - {fileID: 1375012238}
-  - {fileID: 1695283837}
-  - {fileID: 1029471494}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &139120364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,19 +2329,15 @@ MonoBehaviour:
   waterSurfaceRepulsionDistance: 1
   terrainChunkManager: {fileID: 363784657}
   repulsionLayersStatic:
-  - name: Rocks
+  - name: Rocks 1
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 1
+    repulsionRadius: 2
   globalRepulsionMultiplier: 1
   u: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -3121,10 +3068,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -3266,10 +3209,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -3411,10 +3350,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -4136,10 +4071,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -4281,10 +4212,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -4426,10 +4353,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -4716,10 +4639,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -5006,10 +4925,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -5296,10 +5211,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -5586,10 +5497,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -6311,10 +6218,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -6601,10 +6504,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -6891,10 +6790,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -7199,7 +7094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &369309877
 GameObject:
@@ -7264,10 +7159,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -7844,10 +7735,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -7989,10 +7876,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -8134,10 +8017,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -8714,10 +8593,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -9149,10 +9024,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -9729,10 +9600,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -10164,10 +10031,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -10744,10 +10607,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -11179,10 +11038,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -11469,10 +11324,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -11759,10 +11610,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -12049,10 +11896,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -12653,11 +12496,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639260615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 106571734}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &640065849
 GameObject:
@@ -13882,10 +13725,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -14317,10 +14156,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -14607,10 +14442,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -14776,11 +14607,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708647184}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: -10}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 106571734}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &717074432
 GameObject:
@@ -14990,10 +14821,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -15135,10 +14962,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -15860,10 +15683,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -16150,10 +15969,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -16295,10 +16110,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -16585,10 +16396,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -17310,10 +17117,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -17745,10 +17548,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -18208,7 +18007,7 @@ Transform:
   m_LocalScale: {x: 100, y: 10, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &879601392
 GameObject:
@@ -18708,10 +18507,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -18853,10 +18648,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -19143,10 +18934,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -19433,10 +19220,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -20158,10 +19941,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -20883,10 +20662,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -21318,10 +21093,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -21778,11 +21549,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029471490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -20, z: -10}
+  m_LocalPosition: {x: 0, y: -20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 106571734}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031267368
 GameObject:
@@ -21992,10 +21763,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -22282,10 +22049,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -22427,10 +22190,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -22572,10 +22331,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -23297,10 +23052,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -23877,10 +23628,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -24046,11 +23793,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123780193}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: -10}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 106571734}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1155959028
 GameObject:
@@ -24115,10 +23862,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -25275,10 +25018,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -25855,10 +25594,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -25952,7 +25687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1204727550
 Transform:
   m_ObjectHideFlags: 0
@@ -26265,7 +26000,7 @@ Transform:
   - {fileID: 849078875}
   - {fileID: 474868592}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204847087
 GameObject:
@@ -26765,10 +26500,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -27256,19 +26987,15 @@ MonoBehaviour:
   waterSurfaceRepulsionDistance: 1
   terrainChunkManager: {fileID: 363784657}
   repulsionLayersStatic:
-  - name: Rocks
+  - name: Rocks 1
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 1
+    repulsionRadius: 2
   globalRepulsionMultiplier: 1
   u: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -27780,10 +27507,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -28940,10 +28663,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -29375,10 +29094,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -30100,10 +29815,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -30422,7 +30133,7 @@ GameObject:
   - component: {fileID: 1375012237}
   - component: {fileID: 1375012236}
   - component: {fileID: 1375012235}
-  m_Layer: 8
+  m_Layer: 20
   m_Name: Obstacle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30497,11 +30208,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375012234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: -10}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 106571734}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1376956496
 GameObject:
@@ -31146,10 +30857,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -31291,10 +30998,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -32741,10 +32444,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -32886,10 +32585,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -33901,10 +33596,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -34046,10 +33737,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -34336,10 +34023,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -34481,10 +34164,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -34626,10 +34305,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -34771,10 +34446,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -34916,10 +34587,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -35298,10 +34965,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -35443,10 +35106,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -35733,10 +35392,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -36313,10 +35968,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -36458,10 +36109,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -36627,11 +36274,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669061662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -20}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 106571734}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1672120906
 GameObject:
@@ -37010,11 +36657,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695283833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: -10}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 106571734}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1697581490
 GameObject:
@@ -37079,10 +36726,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -37659,10 +37302,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -38094,10 +37733,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -38384,10 +38019,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -38529,10 +38160,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -38964,10 +38591,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -39254,10 +38877,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -39834,10 +39453,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -40704,10 +40319,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -40849,10 +40460,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -41574,10 +41181,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -42589,10 +42192,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -42734,10 +42333,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -42879,10 +42474,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -43200,10 +42791,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -43345,10 +42932,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -43490,10 +43073,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -43925,10 +43504,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -44215,10 +43790,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -44360,10 +43931,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -44505,10 +44072,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -44650,10 +44213,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
@@ -45085,10 +44644,6 @@ MonoBehaviour:
     layerId: 20
     repulsionSphereOffset: {x: 0, y: 0, z: 0}
     repulsionRadius: 3
-  - name: Rocks 2
-    layerId: 21
-    repulsionSphereOffset: {x: 0, y: 0, z: 0}
-    repulsionRadius: 10
   repulsionLayersDynamic:
   - name: TestFish
     layerId: 10
