@@ -282,6 +282,9 @@ public class FishMovement : MonoBehaviour
     */
     void LocateObjects (bool locateStaticObjects)
     {
+        // Initialise name blacklist
+        string[] nameBlacklist = new string[] {gameObject.name};
+
         // Locate static repulsive objects (only called once, because static duh)
         if (locateStaticObjects)
         {
@@ -296,8 +299,11 @@ public class FishMovement : MonoBehaviour
                 // Get GameObjects
                 GameObject[] repulsionObjects = GameFunctions.FindGameObjectsWithLayer (repulsionLayer.layerId);
 
+                // Apply blacklist
+                GameObject[] filteredGameObject = GameFunctions.FilterGameObjectsWithName (repulsionObjects);
+
                 // Add GameObject[] to list
-                this.repulsionObjectsStatic.Add (repulsionObjects);   
+                this.repulsionObjectsStatic.Add (filteredGameObject);   
             }
         }
 
@@ -313,8 +319,11 @@ public class FishMovement : MonoBehaviour
             // Get GameObjects
             GameObject[] repulsionObjects = GameFunctions.FindGameObjectsWithLayer (repulsionLayer.layerId);
 
+            // Apply blacklist
+            GameObject[] filteredGameObject = GameFunctions.FilterGameObjectsWithName (repulsionObjects);
+
             // Add GameObject[] to list
-            this.repulsionObjectsDynamic.Add (repulsionObjects); 
+            this.repulsionObjectsDynamic.Add (filteredGameObject); 
         }
     }
 
@@ -761,5 +770,33 @@ public static class GameFunctions
         // } else {
         //     return (float) multiplier * Mathf.Exp ((radius - x) / radius);
         // }
+    }
+
+
+    public static GameObject[] FilterGameObjectsWithName (GameObject[] gameObjects, string[] nameBlacklist)
+    {
+
+        int nameNb = nameBlacklist.Length;
+
+        // Initialised filtered list
+        List<GameObject> filteredGameObjects = new List<GameObject>();
+
+        // Loop through GameObject array items
+        for (int objectId = 0; objectId < gameObjects.Length; objectId ++)
+        {
+            for (int nameId = 0; nameId < nameNb; nameId ++)
+            {
+                // Get gameObject
+                GameObject gameObject = gameObjects [objectId];
+
+                // Add only if name not in blacklist
+                if (gameObject.name != nameBlacklist[nameId])
+                {
+                    filteredGameObjects.Add (gameObject);
+                }
+            }
+        }
+
+        return filteredGameObjects.ToArray();
     }
 }
