@@ -300,7 +300,7 @@ public class FishMovement : MonoBehaviour
                 GameObject[] repulsionObjects = GameFunctions.FindGameObjectsWithLayer (repulsionLayer.layerId);
 
                 // Apply blacklist
-                GameObject[] filteredGameObject = GameFunctions.FilterGameObjectsWithName (repulsionObjects);
+                GameObject[] filteredGameObject = GameFunctions.FilterGameObjectsWithName (repulsionObjects, nameBlacklist);
 
                 // Add GameObject[] to list
                 this.repulsionObjectsStatic.Add (filteredGameObject);   
@@ -320,7 +320,7 @@ public class FishMovement : MonoBehaviour
             GameObject[] repulsionObjects = GameFunctions.FindGameObjectsWithLayer (repulsionLayer.layerId);
 
             // Apply blacklist
-            GameObject[] filteredGameObject = GameFunctions.FilterGameObjectsWithName (repulsionObjects);
+            GameObject[] filteredGameObject = GameFunctions.FilterGameObjectsWithName (repulsionObjects, nameBlacklist);
 
             // Add GameObject[] to list
             this.repulsionObjectsDynamic.Add (filteredGameObject); 
