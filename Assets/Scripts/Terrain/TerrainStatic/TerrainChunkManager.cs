@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- TerrainChunkManager v1.4
+ TerrainChunkManager v1.4.1
 */
 
 using System.Collections;
@@ -24,6 +24,8 @@ public class TerrainChunkManager : MonoBehaviour
     // List of chunks
     [HideInInspector]
     public GameObject[] chunks;
+
+    public int layerId;
 
     [Header("Generation Settings")]
     // Number of chunks
@@ -117,7 +119,7 @@ public class TerrainChunkManager : MonoBehaviour
                 this.chunks[i] = new GameObject();
                 this.chunks[i] .name = "TerrainChunk_" + xChunkId.ToString() + "_" + zChunkId.ToString();
                 this.chunks[i] .transform.parent = gameObject.transform; // set parent
-                this.chunks[i] .layer = 8;
+                this.chunks[i] .layer = this.layerId;
 
                 // Update position and rotation
                 this.chunks[i] .transform.position = new Vector3(xChunkId * this.xChunkSize, gameObject.transform.position.y, zChunkId * this.zChunkSize);
