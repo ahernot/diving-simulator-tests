@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.4.3
+ FishMovement v1.5
 */
 
 // TODO: apply repulsion sphere offset
@@ -100,6 +100,15 @@ public class FishMovement : MonoBehaviour
     Vector3 seaLevelRepulsionForce;
     [SerializeField]
     Vector3 terrainRepulsionForce;
+
+    // Rotation
+    public float headingChangeMultiplier = 1f;
+    [SerializeField]
+    Vector3 rotationAcceleration;
+    [SerializeField]
+    Vector3 rotationVelocity;
+    // [SerializeField]
+    // Vector3 rotation;
 
     // Optimised lists
     List<GameObject[]> repulsionObjectsStatic = new List<GameObject[]>();
@@ -198,15 +207,50 @@ public class FishMovement : MonoBehaviour
         this.velocity += this.acceleration * Time.deltaTime * this.timeMultiplier;
         Vector3 positionDelta = this.velocity * Time.deltaTime * this.timeMultiplier;
 
+        // Integrate rotation
+        this.rotationVelocity += this.rotationAcceleration * Time.deltaTime * this.timeMultiplier;
+        Vector3 rotationDelta = this.rotationVelocity * Time.deltaTime * this.timeMultiplier;
+
+        this.UpdateRotationAcceleration();
+
         // Move and rotate
         transform.position += positionDelta;
+        transform.eulerAngles += rotationDelta;
         // Set heading
-        transform.forward = this.velocity; // = this.u;
+        // transform.forward = this.velocity; // = this.u;
 
 
         // Generate gizmo meshes if debug mode toggled on during runtime
         if ((this.debugMode) && (this.topMesh == null)) { this.GenerateTopMesh(); };
         if ((this.debugMode) && (this.boundariesMesh == null)) { this.GenerateBoundariesMesh(); };
+    }
+
+
+    void UpdateRotationAcceleration ()
+    {
+        // Vector3 headingChangeVector = this.u - trasnform.forward;
+
+        float angleVal = Vector3.Angle (transform.forward, this.u);
+
+        Vector3 angleUVW = new Vector3 (
+            0f,
+            0f,
+            angleVal
+        );
+
+        Vector3[] transformMatrix = new Vector3[3] {
+            this.u,
+            this.v,
+            this.w
+        };
+
+        Vector3 angleXYZ = new Vector3 (
+            transformMatrix[0].x * angleUVW.x + transformMatrix[1].x * angleUVW.y + transformMatrix[2].x * angleUVW.z,
+            transformMatrix[0].y * angleUVW.x + transformMatrix[1].y * angleUVW.y + transformMatrix[2].y * angleUVW.z,
+            transformMatrix[0].z * angleUVW.x + transformMatrix[1].z * angleUVW.y + transformMatrix[2].z * angleUVW.z
+        );
+
+        this.rotationAcceleration = this.headingChangeMultiplier * angleXYZ;
     }
 
 
