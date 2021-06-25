@@ -12,6 +12,7 @@ using System.IO;
 
 // TODO: one file per biome, and then lay biomes out on grid?
 // TODO: make biomes permanent, instead of during runtime only
+// Careful: do not move the biome generator after generation, it messes up the fish movement boundaries
 
 static class Constants
 {
@@ -187,19 +188,19 @@ public class FishBiomeGenerator : MonoBehaviour
 
                     // Generate biomeAsset GameObject
                     GameObject biomeElementObject = GameObject.Instantiate (asset.gameObject);// .Instantiate();
-                    biomeElementObject.name = elementId.ToString() + "_" + biomeElement.name;
+                    biomeElementObject .name = elementId.ToString() + "_" + biomeElement.name;
                     biomeElementObject .transform.parent = biome.transform;
                     biomeElementObject .layer = asset.layerId;
 
                     // Set biomeAsset's parameters
-                    biomeElementObject.transform.position = biomeElement.positionRelative;
-                    biomeElementObject.transform.rotation = Quaternion.Euler (biomeElement.rotation);
-                    biomeElementObject.transform.localScale = biomeElement.scale;
+                    biomeElementObject .transform.position = biomeElement.positionRelative;
+                    biomeElementObject .transform.rotation = Quaternion.Euler (biomeElement.rotation);
+                    biomeElementObject .transform.localScale = biomeElement.scale;
 
                     // Apply material
                     if (biomeElementObject.GetComponent<MeshRenderer>() == null) { biomeElementObject .AddComponent<MeshRenderer>(); }
                     MeshRenderer meshRenderer = biomeElementObject .GetComponent<MeshRenderer>();
-                    meshRenderer.material = (Material)Instantiate (asset.material);
+                    meshRenderer .material = (Material)Instantiate (asset.material);
 
                     //MeshCollider meshCollider = 
                     if (asset.addMeshCollider) { biomeElementObject .AddComponent<MeshCollider>(); }
@@ -211,8 +212,14 @@ public class FishBiomeGenerator : MonoBehaviour
                     fishMovement dragForceMultiplier = 5f;
                     fishMovement .headingChangeProbability = 0.002f;
 
-                    fishMovement .minCoordinates = new Vector2();
-                    fishMovement .maxCoordinates = new Vector2();
+                    fishMovement .minCoordinates = new Vector2 (
+                        transform.position.x + xBiomeId * this.xBiomeSize,
+                        transform.position.z + zBiomeId * this.zBiomeSize
+                    );
+                    fishMovement .maxCoordinates = new Vector2 (
+                        transform.position.x + (xBiomeId + 1) * this.xBiomeSize,
+                        transform.position.z + (zBiomeId + 1) * this.zBiomeSize
+                    );
 
                     fishMovement .boundaryRepulsionMultiplier = 0.5f;
                     fishMovement .boundaryRepulsionDistance = 1f;
