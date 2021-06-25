@@ -2,7 +2,7 @@
  Copyright Anatole Hernot, 2021
  Licensed to CRC Mines ParisTech
  All rights reserved
- FishBiomeGenerator v1.0 (forked from BiomeGenerator v1.2.2)
+ FishBiomeGenerator v1.1 (forked from BiomeGenerator v1.2.2)
 */
 
 using System.Collections;
@@ -45,13 +45,16 @@ public class FishBiomeGenerator : MonoBehaviour
     public float zBiomeSize = 250f;
 
     public GameObject terrainChunkManager;
+    public GameObject player;
 
     [Header("Assets")]
     public FishAsset[] fishAssets;
     Dictionary<string, Asset> assetDictionary;
 
-    // Array of biomes
+    // Array of biome settings
     FishBiome[,] fishBiomes;
+    List<GameObject> biomes;
+    public int loadRadius = 2;
 
     public bool generateOnLoad;
 
@@ -62,6 +65,11 @@ public class FishBiomeGenerator : MonoBehaviour
         {
             this.Generate();
         }
+    }
+
+    void Update ()
+    {
+        this.HideShowChunks();
     }
 
     public void Generate ()
@@ -78,6 +86,32 @@ public class FishBiomeGenerator : MonoBehaviour
         // Build biomes
         this.BuildFishBiomes();
     }
+
+
+    void HideShowChunks ()
+    {
+
+        float chunkDiagonal =  Mathf.Sqrt (
+            Mathf.Pow (this.xBiomeSize, 2) + Mathf.Pow (this.zBiomeSize, 2)
+        );
+
+        for (int i = 0; i < this.biomes.Length; i ++)
+        {
+
+            float distance = Vector2.Distance (
+                new Vector2 (this.biomes[i].midCoordinates.x, this.biomes[i].midCoordinates.z),
+                new Vector2 (this.player.transform.coordinates.x, this.player.transform.coordinates.z)
+            );
+
+            if (distance > this.loadRadius * chunkDiagonal) {
+                this.biomes[i] .SetActive (false);
+            } else {
+                this.biomes[i] .SetActive (true);
+            }
+
+        }
+    }
+
 
     void GenerateAssetDictionary ()
     {
@@ -189,10 +223,10 @@ public class FishBiomeGenerator : MonoBehaviour
                     FishAsset fishAsset = this.assetDictionary [fishBiomeElement.name];
 
                     // Generate biomeAsset GameObject
-                    GameObject biomeElementObject = GameObject.Instantiate (asset.gameObject);// .Instantiate();
+                    GameObject biomeElementObject = GameObject.Instantiate (fishAsset.gameObject);// .Instantiate();
                     biomeElementObject .name = elementId.ToString() + "_" + fishBiomeElement.name;
                     biomeElementObject .transform.parent = biome.transform;
-                    biomeElementObject .layer = asset.layerId;
+                    biomeElementObject .layer = fishAsset.layerId;
 
                     // Set biomeAsset's parameters
                     biomeElementObject .transform.position = fishBiomeElement.positionRelative;
@@ -202,10 +236,10 @@ public class FishBiomeGenerator : MonoBehaviour
                     // Apply material
                     if (biomeElementObject.GetComponent<MeshRenderer>() == null) { biomeElementObject .AddComponent<MeshRenderer>(); }
                     MeshRenderer meshRenderer = biomeElementObject .GetComponent<MeshRenderer>();
-                    meshRenderer .material = (Material)Instantiate (asset.material);
+                    meshRenderer .material = (Material)Instantiate (fishAsset.material);
 
                     //MeshCollider meshCollider = 
-                    if (asset.addMeshCollider) { biomeElementObject .AddComponent<MeshCollider>(); }
+                    if (fishAsset.addMeshCollider) { biomeElementObject .AddComponent<MeshCollider>(); }
 
                     // Add FishMovement script
                     FishMovement fishMovement = biomeElementObject .AddComponent<FishMovement>();
@@ -257,12 +291,12 @@ public class FishBiomeGenerator : MonoBehaviour
 
                     // Add other script
                     RealSpace3D_AudioSource audioSource = biomeElementObject .AddComponent<RealSpace3D_AudioSource>();
-                    audioSource .rs3d_LoadAudioClip (@"audio.mp3");
+                    audioSource .rs3d_LoadAudioClip (fishAsset.audioPath);
                     
                     
 
                     // Hidden status
-                    if (asset.hidden) { 
+                    if (fishAsset.hidden) { 
                         biomeElementObject.SetActive (false);
                     } else {
                         biomeElementObject.SetActive (true);
@@ -277,6 +311,9 @@ public class FishBiomeGenerator : MonoBehaviour
                 BiomeContainer biomeContainer = biome .AddComponent<BiomeContainer>();
                 biomeContainer .xSize = this.xBiomeSize;
                 biomeContainer .zSize = this.zBiomeSize;
+
+                // Add to biome list
+                this.biomes .Add(biome);
 
             }
         }
@@ -295,8 +332,9 @@ public class FishAsset
     public Material material;
     public bool addMeshCollider;
     public bool hidden;
+    public string audioPath;
 
-    public Asset (string name, int layerId, GameObject gameObject, Material material, bool addMeshCollider, bool hidden)
+    public Asset (string name, int layerId, GameObject gameObject, Material material, bool addMeshCollider, bool hidden, string audioPath)
     {
         this.name = name;
         this.layerId = layerId;
@@ -304,6 +342,7 @@ public class FishAsset
         this.material = material;
         this.addMeshCollider = addMeshCollider;
         this.hidden = hidden;
+        this.audioPath = audioPath;
     }
 }
 

@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- BiomeContainer v1.0
+ BiomeContainer v1.0.1
 */
 
 using System.Collections;
@@ -29,6 +29,7 @@ public class BiomeContainer : MonoBehaviour
     // Boundary coordinates (horizontal)
     Vector2 minCoordinates;
     Vector2 maxCoordinates;
+    public Vector2 midCoordinates;
 
     // Boundaries mesh
     Mesh boundariesMesh;
@@ -42,6 +43,12 @@ public class BiomeContainer : MonoBehaviour
 
         // Generate boundaries mesh
         this.GenerateBoundayMesh();
+
+        this.midCoordinates = new Vector2 (
+            transform.position.x + this.xSize / 2f,
+            transform.position.y,
+            transform.position.z + this.zSize / 2f
+        );
     }
 
 
