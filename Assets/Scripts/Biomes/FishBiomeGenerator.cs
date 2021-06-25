@@ -10,11 +10,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+using RealSpace3D;
+
 // TODO: one file per biome, and then lay biomes out on grid?
 // TODO: make biomes permanent, instead of during runtime only
 // Careful: do not move the biome generator after generation, it messes up the fish movement boundaries
 
-static class Constants
+static class FishConstants
 {
     public const string settingsPathRelative = @"./Assets/Scripts/Biomes/FishBiomeSettings.csv";
     public const char CSVSeparator = ',';
@@ -45,11 +47,11 @@ public class FishBiomeGenerator : MonoBehaviour
     public GameObject terrainChunkManager;
 
     [Header("Assets")]
-    public Asset[] assets;
+    public FishAsset[] fishAssets;
     Dictionary<string, Asset> assetDictionary;
 
     // Array of biomes
-    Biome[,] biomes;
+    FishBiome[,] fishBiomes;
 
     public bool generateOnLoad;
 
@@ -65,7 +67,7 @@ public class FishBiomeGenerator : MonoBehaviour
     public void Generate ()
     {
         // Generate biomes array
-        this.GenerateBiomeArray();
+        this.GenerateFishBiomeArray();
 
         // Generate assets dictionary
         this.GenerateAssetDictionary();
@@ -74,25 +76,25 @@ public class FishBiomeGenerator : MonoBehaviour
         this.ReadCSV();
 
         // Build biomes
-        this.BuildBiomes();
+        this.BuildFishBiomes();
     }
 
     void GenerateAssetDictionary ()
     {
         // Initialise dictionary
-        this.assetDictionary = new Dictionary<string, Asset>();
+        this.assetDictionary = new Dictionary<string, FishAsset>();
 
         // Fill dictionary
-        for (int i = 0; i < this.assets.Length; i ++)
+        for (int i = 0; i < this.fishAssets.Length; i ++)
         {
-            this.assetDictionary [this.assets[i].name] = this.assets[i];
+            this.assetDictionary [this.fishAssets[i].name] = this.fishAssets[i];
         }
     }
 
     void GenerateBiomeArray ()
     {
         // Initialise biomes array
-        this.biomes = new Biome[xNbBiomes, zNbBiomes];
+        this.fishBiomes = new FishBiome[xNbBiomes, zNbBiomes];
 
         // Fill biomes array
         for (int xBiomeId = this.xBiomeMin; xBiomeId <= this.xBiomeMax; xBiomeId ++)
@@ -100,14 +102,14 @@ public class FishBiomeGenerator : MonoBehaviour
             for (int zBiomeId = this.zBiomeMin; zBiomeId <= this.zBiomeMax; zBiomeId ++)
             {
                 // Debug.Log("generating" + xBiomeId.ToString() + "_" + zBiomeId.ToString());
-                this.biomes [xBiomeId, zBiomeId] = new Biome();
+                this.fishBiomes [xBiomeId, zBiomeId] = new FishBiome();
             }
         }
     }
 
     void ReadCSV ()
     {
-        using (var reader = new StreamReader (Constants.settingsPathRelative))
+        using (var reader = new StreamReader (FishConstants.settingsPathRelative))
         {
             
             int lineId = -1;
@@ -121,7 +123,7 @@ public class FishBiomeGenerator : MonoBehaviour
                 if (lineId <= 0) { continue; }
 
                 // Split line
-                var values = line.Split (Constants.CSVSeparator);
+                var values = line.Split (FishConstants.CSVSeparator);
 
                 // Unpack line
                 int   xBiomeId          = int.Parse   (values[0]);
@@ -143,10 +145,10 @@ public class FishBiomeGenerator : MonoBehaviour
                 Vector3 scale = new Vector3 (xScale, yScale, zScale);
 
                 // Create BiomeElement
-                BiomeElement biomeElement = new BiomeElement (assetName, positionRelative, rotation, scale);
+                FishBiomeElement fishBiomeElement = new FishBiomeElement (assetName, positionRelative, rotation, scale);
 
                 // Add to corresponding biome
-                this.biomes [xBiomeId, zBiomeId].biomeElements .Add(biomeElement);
+                this.fishBiomes [xBiomeId, zBiomeId].biomeElements .Add(fishBiomeElement);
             }
         }
     }
@@ -169,33 +171,33 @@ public class FishBiomeGenerator : MonoBehaviour
 
                 // Generate biome GameObject
                 GameObject biome = new GameObject();
-                biome.name = "Biome" + "_" + xBiomeId.ToString() + "_" + zBiomeId.ToString();
+                biome.name = "FishBiome" + "_" + xBiomeId.ToString() + "_" + zBiomeId.ToString();
                 biome .transform.parent = biomeWrapper.transform;
 
                 // Get biome elements list
-                List<BiomeElement> biomeElements = this.biomes[xBiomeId, zBiomeId] .biomeElements;
+                List<FishBiomeElement> fishBiomeElements = this.fishBiomes[xBiomeId, zBiomeId] .fishBiomeElements;
 
                 // Generate biome elements
-                for (int elementId = 0; elementId < biomeElements.Count; elementId ++)
+                for (int elementId = 0; elementId < fishBiomeElements.Count; elementId ++)
                 {
 
                     // Get elementSettings struct instance
-                    BiomeElement biomeElement = biomeElements [elementId];
+                    FishBiomeElement fishBiomeElement = fishBiomeElements [elementId];
 
                     // Get asset
-                    if (!this.assetDictionary.ContainsKey (biomeElement.name)) { continue; }
-                    Asset asset = this.assetDictionary [biomeElement.name];
+                    if (!this.assetDictionary.ContainsKey (fishBiomeElement.name)) { continue; }
+                    FishAsset fishAsset = this.assetDictionary [fishBiomeElement.name];
 
                     // Generate biomeAsset GameObject
                     GameObject biomeElementObject = GameObject.Instantiate (asset.gameObject);// .Instantiate();
-                    biomeElementObject .name = elementId.ToString() + "_" + biomeElement.name;
+                    biomeElementObject .name = elementId.ToString() + "_" + fishBiomeElement.name;
                     biomeElementObject .transform.parent = biome.transform;
                     biomeElementObject .layer = asset.layerId;
 
                     // Set biomeAsset's parameters
-                    biomeElementObject .transform.position = biomeElement.positionRelative;
-                    biomeElementObject .transform.rotation = Quaternion.Euler (biomeElement.rotation);
-                    biomeElementObject .transform.localScale = biomeElement.scale;
+                    biomeElementObject .transform.position = fishBiomeElement.positionRelative;
+                    biomeElementObject .transform.rotation = Quaternion.Euler (fishBiomeElement.rotation);
+                    biomeElementObject .transform.localScale = fishBiomeElement.scale;
 
                     // Apply material
                     if (biomeElementObject.GetComponent<MeshRenderer>() == null) { biomeElementObject .AddComponent<MeshRenderer>(); }
@@ -229,20 +231,20 @@ public class FishBiomeGenerator : MonoBehaviour
                     fishMovement .terrainChunkManager = this.terrainChunkManager;
                     fishMovement .defaultGroundHeight = -150f;
 
-                    fishMovement .repulsionLayersStatic = new RepulsionLayer[] {
-                        new RepulsionLayer (
+                    fishMovement .repulsionLayersStatic = new FishRepulsionLayer[] {
+                        new FishRepulsionLayer (
                             "rocks",
                             20,
-                            new Vector3(),
+                            new Vector3 (),
                             25
                         ),
                     };
 
-                    fishMovement .repulsionLayersDynamic = new RepulsionLayer[] {
-                        new RepulsionLayer (
+                    fishMovement .repulsionLayersDynamic = new FishRepulsionLayer[] {
+                        new FishRepulsionLayer (
                             "fish",
                             24,
-                            new Vector3(),
+                            new Vector3 (),
                             5
                         ),
                     };
@@ -254,7 +256,9 @@ public class FishBiomeGenerator : MonoBehaviour
                     fishMovement .timeMultiplier = 1f;
 
                     // Add other script
-                    // FishMovement fishMovement = biomeElementObject .AddComponent<FishMovement>();
+                    RealSpace3D_AudioSource audioSource = biomeElementObject .AddComponent<RealSpace3D_AudioSource>();
+                    audioSource .rs3d_LoadAudioClip (@"audio.mp3");
+                    
                     
 
                     // Hidden status
@@ -283,7 +287,7 @@ public class FishBiomeGenerator : MonoBehaviour
 
 
 [System.Serializable]
-public class Asset
+public class FishAsset
 {
     public string name;
     public int layerId;
@@ -304,14 +308,14 @@ public class Asset
 }
 
 // Biome element (system)
-public struct BiomeElement
+public struct FishBiomeElement
 {
     public string name;
     public Vector3 positionRelative;
     public Vector3 rotation;
     public Vector3 scale;
 
-    public BiomeElement (string name, Vector3 positionRelative, Vector3 rotation, Vector3 scale)
+    public FishBiomeElement (string name, Vector3 positionRelative, Vector3 rotation, Vector3 scale)
     {
         this.name = name;
         this.positionRelative = positionRelative;
@@ -321,12 +325,12 @@ public struct BiomeElement
 }
 
 // Biome
-public class Biome
+public class FishBiome
 {
-    public List<BiomeElement> biomeElements;
+    public List<BiomeElement> fishBiomeElements;
 
-    public Biome ()
+    public FishBiome ()
     {
-        this.biomeElements = new List<BiomeElement>();
+        this.fishBiomeElements = new List<FishBiomeElement>();
     }
 }
