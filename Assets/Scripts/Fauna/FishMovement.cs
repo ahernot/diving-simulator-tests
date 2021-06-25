@@ -3,10 +3,11 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- FishMovement v1.5
+ FishMovement v1.5.1
 */
 
 // TODO: apply repulsion sphere offset
+// TODO: draw less gizmos for performance
 // TODO: add a cone gizmo to visualise the possible deflection paths
 // Rotation to change; inertia => deltaTheta between old and new vector, and will rotate until it gets to new vector (careful bout oscillation)
 
@@ -775,6 +776,14 @@ public struct RepulsionLayer
     public int layerId;
     public Vector3 repulsionSphereOffset;
     public float repulsionRadius;
+
+    public RepulsionLayer (string name, int layerId, Vector3 repulsionSphereOffset, float repulsionRadius)
+    {
+        this.name = name;
+        this.layerId = layerId;
+        this.repulsionSphereOffset = repulsionSphereOffset;
+        this.repulsionRadius = repulsionRadius;
+    }
 }
 
 
