@@ -122,15 +122,15 @@ public class DiverMovement : MonoBehaviour
         float cumulativePositionDelta = handLeftPositionDelta.magnitude + handRightPositionDelta.magnitude;
 
         // Movement torque
-        if (cumulativePositionDelta.magnitude > 0f)
+        if (cumulativePositionDelta > 0f)
         {
-            float movementBalance = rightHandDirection.magnitude / cumulativePositionDelta - 0.5f;
+            float movementBalance = handRightPositionDelta.magnitude / cumulativePositionDelta - 0.5f;
 
             if (Mathf.Abs(movementBalance) > deadZoneAsymmmetry)
             {
                 this.movementTorque = new Vector3 (
                     0f,
-                    -1f * movementBalance * this.movementTorqueMultiplier * this.viewCamera.transform.up,
+                    -1f * movementBalance * this.movementTorqueMultiplier, // * this.viewCamera.transform.up.y,
                     0f
                 );
             }
@@ -141,7 +141,7 @@ public class DiverMovement : MonoBehaviour
 
         if (globalForwardsMotion <= 0f)
         {
-            if (globalPositionDelta.sqrMagnitude > deadZone * deadZone)
+            if (globalPositionDelta.sqrMagnitude > this.deadZoneVal * this.deadZoneVal)
             {
                 // Add swimming force
                 this.movementForce = this.movementForceMultiplier * this.viewCamera.transform.forward;
