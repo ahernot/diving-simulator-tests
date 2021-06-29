@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- TerrainChunkMesh v1.3.3
+ TerrainChunkMesh v1.4
 */
 
 using System;
@@ -21,9 +21,6 @@ public class TerrainChunkMesh : MonoBehaviour
     public int xChunk = 0;
     [HideInInspector]
     public int zChunk = 0;
-
-    // private int x; // x position in world (calculated on run)
-    // private int z; // z position in world (calculated on run)
 
     [Header("Generation Settings")]
     // Chunk dimensions (determined by ChunkManager)
@@ -71,14 +68,6 @@ public class TerrainChunkMesh : MonoBehaviour
     public NoiseLayer[] noiseLayers; // Noise settings
     public float[,] noiseMap;
 
-    //public float noiseMultiplier = 1f; //20f;//5f;
-
-    // Noise settings
-    // public float noiseScale = 3f;
-    // public int noiseOctaves = 4;
-    // public float noiseAmplitudeMult = 2f;
-    // public float noiseFrequencyMult = 10f;
-
     void ClampParameters ()
     {
         if (this.xChunkSize <= 0)
@@ -115,10 +104,6 @@ public class TerrainChunkMesh : MonoBehaviour
         // Initialise vertices' relative positions
         this.xVerticesRel = Functions.LinearRange (0, this.xChunkSize, this.xNbPolygons + 1);
         this.zVerticesRel = Functions.LinearRange (0, this.zChunkSize, this.zNbPolygons + 1);
-
-        // Set world position of chunk (assuming that all the chunks are the same size)
-        // this.x = this.xChunk * this.xChunkSize;
-        // this.z = this.zChunk * this.zChunkSize;
 
         // Generate noise map
         this.noiseManager = new TerrainNoiseManager (this.noiseLayers);
@@ -171,16 +156,8 @@ public class TerrainChunkMesh : MonoBehaviour
         Vector2 vertexStart = new Vector2 (this.xChunkSize * this.xChunk, this.zChunkSize * this.zChunk);
         Vector2 vertexStop = new Vector2 (vertexStart.x + this.xChunkSize, vertexStart.y + this.zChunkSize);
 
-        // TerrainNoise terrainNoise = new TerrainNoise();
-        // this.noiseMap = terrainNoise.GenerateNoiseMap (xChunkSize, zChunkSize, xNbVertices, zNbVertices, seed, noiseLayer.scale, noiseLayer.octaves, noiseLayer.amplitudeMult, noiseLayer.frequencyMult, noiseLayer.multiplier, vertexStart);
-
         Vector2 size = new Vector2 (this.xChunkSize, this.zChunkSize); // will be this.size
         this.noiseMap = this.noiseManager .GenerateNoiseChunk (vertexStart, size, xNbVertices); // xNbVertices or zNbVertices
-
-        // Create NoiseManager instance
-        // NoiseManager noiseManager = new NoiseManager();
-        // noiseManager.noiseLayers = this.noiseLayers;
-        // this.noiseMap = noiseManager.GenerateNoiseMap (vertexStart, vertexStop, this.xNbPolygons + 1, this.zNbPolygons + 1);
     }
     
     public void SetMesh ()
