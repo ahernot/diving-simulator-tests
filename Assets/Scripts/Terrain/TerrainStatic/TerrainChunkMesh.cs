@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- TerrainChunkMesh v1.3
+ TerrainChunkMesh v1.3.3
 */
 
 using System;
@@ -44,6 +44,7 @@ public class TerrainChunkMesh : MonoBehaviour
 
     public enum MeshResolution {Low, Medium, High};
     public MeshResolution meshResolution;
+    MeshResolution previousResolution;
     
     // Initialise mesh resolutions
     Mesh meshLow;
@@ -99,8 +100,12 @@ public class TerrainChunkMesh : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start ()
+    {
+        this.GenerateChunk();
+    }
+
+    public void GenerateChunk ()
     {
         gameObject.isStatic = true;
         
@@ -128,7 +133,10 @@ public class TerrainChunkMesh : MonoBehaviour
     void Update ()
     {
         // Set chosen mesh
-        this.SetMesh();
+        if (this.previousResolution != this.meshResolution)
+        {
+            this.SetMesh();
+        }
     }
 
     ~TerrainChunkMesh ()
@@ -175,7 +183,7 @@ public class TerrainChunkMesh : MonoBehaviour
         // this.noiseMap = noiseManager.GenerateNoiseMap (vertexStart, vertexStop, this.xNbPolygons + 1, this.zNbPolygons + 1);
     }
     
-    void SetMesh ()
+    public void SetMesh ()
     {
         if (this.meshResolution == MeshResolution.Low) {
             GetComponent<MeshFilter>().mesh = this.meshLow;
@@ -188,6 +196,8 @@ public class TerrainChunkMesh : MonoBehaviour
             GetComponent<MeshCollider>().sharedMesh = this.meshHigh;
         }
 
+        // Update previous mesh resolution
+        this.previousResolution = this.meshResolution;
     }
 
     // only called once
@@ -239,9 +249,9 @@ public class TerrainChunkMesh : MonoBehaviour
 
         // Calculate number of polygons per side
         int xNbPolygonsMed = (int) Mathf.Ceil (this.xNbPolygons / this.xReductionRatio); // max between this and 1
-        if (xNbPolygonsMed <= 0) { xNbPolygonsMed = 1; }
+        if (xNbPolygonsMed <= 0) { xNbPolygonsMed = 1; }
         int zNbPolygonsMed = (int) Mathf.Ceil (this.zNbPolygons / this.zReductionRatio); // max between this and 1
-        if (zNbPolygonsMed <= 0) { zNbPolygonsMed = 1; }
+        if (zNbPolygonsMed <= 0) { zNbPolygonsMed = 1; }
 
         // Calculate index step
         int xIdStep = (int) Mathf.Floor (this.xNbPolygons / xNbPolygonsMed); // floor to avoid overrun
