@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- TerrainChunkManager v1.4.4
+ TerrainChunkManager v1.5
 */
 
 using System.Collections;
@@ -68,16 +68,6 @@ public class TerrainChunkManager : MonoBehaviour
     // Noise settings
     [Header("Noise Settings")]
     public NoiseLayer[] noiseLayers;
-    // public List<float[,]> noiseChunks;
-
-    // [Space(50)]
-    // Legacy noise settings
-    // public float noiseScale = 3f;
-    // public int noiseOctaves = 4;
-    // public float noiseAmplitudeMult = 2f;
-    // public float noiseFrequencyMult = 10f;
-
-    // public float noiseMultiplier = 1f;
 
     [Space(30)]
     [Tooltip("Optimize chunk loading by hiding chunks behind player")]
@@ -109,19 +99,6 @@ public class TerrainChunkManager : MonoBehaviour
     **/
     public void GenerateChunks ()
     {
-        // Create new NoiseManager object and pass input parameters
-        // NoiseManager noiseManager = new NoiseManager();
-        // noiseManager .xHalfNbChunks = this.xHalfNbChunks;
-        // noiseManager .zHalfNbChunks = this.zHalfNbChunks;
-        // noiseManager .xNbPolygons = this.xNbPolygons;
-        // noiseManager .zNbPolygons = this.zNbPolygons;
-        // noiseManager .noiseLayers = this.noiseLayers;
-
-        // noiseManager.GenerateNoiseChunks();
-
-        // Generate noise chunks
-        // this.noiseChunks = noiseManager.noiseChunks;
-
         // Initialise chunks array
         this.chunks = new GameObject[this.xHalfNbChunks * this.zHalfNbChunks * 4];
 
