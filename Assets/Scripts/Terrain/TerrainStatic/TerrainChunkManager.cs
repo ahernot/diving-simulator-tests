@@ -3,7 +3,7 @@
  Licensed to CRC Mines ParisTech
  All rights reserved
 
- TerrainChunkManager v1.4.1
+ TerrainChunkManager v1.4.4
 */
 
 using System.Collections;
@@ -83,10 +83,25 @@ public class TerrainChunkManager : MonoBehaviour
     [Tooltip("Optimize chunk loading by hiding chunks behind player")]
     public bool optimizeLoading = false;
 
+    public bool generateOnLoad = false;
+
+    // Frame counter
+    private int frames;
+    public int resolutionSkippedFrames = 30;
+
     void Start ()
     {
-        this.DestroyChunks();
-        this.GenerateChunks();
+        if (generateOnLoad)
+        { 
+            if (gameObject.transform.childCount != 0)
+            {
+                this.DestroyChunks();
+            }
+            
+            this.GenerateChunks();
+        }
+
+        this.UpdateResolutions();
     }
 
     /**
@@ -164,7 +179,15 @@ public class TerrainChunkManager : MonoBehaviour
     void Update ()
     {
         this.GetPlayerChunk();
-        this.UpdateResolutions();
+
+        if (this.frames % this.resolutionSkippedFrames == 0)
+        {
+            this.UpdateResolutions();
+            this.frames = 0;
+        }
+
+        this.frames ++;
+        
     }
 
     void GetPlayerChunk ()
@@ -183,7 +206,7 @@ public class TerrainChunkManager : MonoBehaviour
         int zChunkId = (int) Mathf.Floor (z / this.zChunkSize);
 
         // Chunk out of generation bounds
-        if ((Mathf.Abs(xChunkId) > xHalfNbChunks) || (Mathf.Abs(zChunkId) > zHalfNbChunks))
+        if ((Mathf.Abs(xChunkId) > this.xHalfNbChunks) || (Mathf.Abs(zChunkId) > this.zHalfNbChunks))
         {
             return null;
         }
